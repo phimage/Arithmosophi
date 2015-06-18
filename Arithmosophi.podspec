@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.name         = "Arithmosophi"
   s.version      = "1.0.0"
-  s.summary      = "A set of protocols for Arithmetic and Logic
+  s.summary      = "A set of protocols for Arithmetic and Logic"
   s.description  = <<-DESC
                    Arithmosophi is a set of missing protocols that simplify
                    arithmetic and logicals operations on generic objects or functions.
