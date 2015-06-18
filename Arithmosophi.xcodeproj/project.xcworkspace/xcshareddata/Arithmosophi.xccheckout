@@ -10,14 +10,14 @@
 	<string>Arithmosophi</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>1CAD4A7FF226890D839459667E6045DCF9AC970E</key>
+		<key>05BD26AF9286F79151E435734F159D2434277505</key>
 		<string>gitlab:phimage/Arithmosophi.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Arithmosophi.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>1CAD4A7FF226890D839459667E6045DCF9AC970E</key>
+		<key>05BD26AF9286F79151E435734F159D2434277505</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>1CAD4A7FF226890D839459667E6045DCF9AC970E</string>
+	<string>05BD26AF9286F79151E435734F159D2434277505</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>1CAD4A7FF226890D839459667E6045DCF9AC970E</string>
+			<string>05BD26AF9286F79151E435734F159D2434277505</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Arithmosophi</string>
 		</dict>

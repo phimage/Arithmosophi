@@ -22,7 +22,7 @@ func sumOf<T where T:Addable, T:Initializable>(input : [T]) -> T {
     return reduce(input, T()) {$0 + $1}
 }
 ```
-Array of `Int`, `Double` and even `String` could be passed as arguement to this function. Any `Addable` objects.
+Array of `Int`, `Double` and even `String` could be passed as argument to this function. Any `Addable` objects.
 
 No need to implement a function for `Double`, one for `Float`, one more for `Int`, etc...
 
@@ -64,7 +64,7 @@ func +=<T where T:Addable, T:Initializable> (inout box: Box<T>, addend: T) {
 ```
 
 ## Logical operations
-`LogicalOperationsType` is a missing protocol for `Bool` inspired from `BitwiseOperationsType` (or `IntegerArithmeticType`)
+[`LogicalOperationsType`](LogicalOperationsType.swift) is a missing protocol for `Bool` inspired from `BitwiseOperationsType` (or `IntegerArithmeticType`)
 
 The purpose is the same, implement functions without knowing the base type
 
@@ -89,7 +89,7 @@ func &&=<T:LogicalOperationsType> (inout box: Box<T>, @autoclosure right:  () ->
 Take a look at a more complex enum [Optional](Samples/Optional.swift) which implement also `LogicalOperationsType`
 
 ## Geometry with `Arithmos`(number) & `Statheros`(constant)
-[`Arithmos`](Arithmos.swift) and [`Statheros`](Statheros.swift) add respectively functions and  mathematical constants to `Double`, `Float` and `CGFloat`, allowing to implement generic functions without taking care of type
+[`Arithmos`](Arithmos.swift) and [`Statheros`](Statheros.swift) add respectively functions and  mathematical constants for `Double`, `Float` and `CGFloat`, allowing to implement generic functions without taking care of type
 
 ```swift
 func distance<T: Arithmos>(#x: T, y: T) -> T {
@@ -133,3 +133,6 @@ s.dependency 'Arithmosophi/Logical'
 
 ## Using xcode ##
 Drag files to your projects
+
+## TODO
+- Create intermediate protocol? ex: `protocol ArithmeticType : Addable, Substractable, Multiplicable, Dividable, Modulable {}`
