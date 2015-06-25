@@ -27,7 +27,7 @@ SOFTWARE.
 
 import Foundation
 
-// MARK: Arithmos
+// MARK: Protocols
 
 public protocol Addable {
     func + (lhs: Self, rhs: Self) -> Self
@@ -47,27 +47,89 @@ public protocol Dividable {
 public protocol Modulable {
     func % (lhs: Self, rhs: Self) -> Self
 }
+public protocol Incrementable {
+    prefix func ++(inout x: Self) -> Self
+    postfix func ++(inout x: Self) -> Self
+}
+public protocol Decrementable {
+    prefix func --(inout x: Self) -> Self
+    postfix func --(inout x: Self) -> Self
+}
+
+public protocol AddableWithOverflow {
+    func &+ (lhs: Self, rhs: Self) -> Self
+}
+public protocol SubstractableWithOverflow {
+    func &- (lhs: Self, rhs: Self) -> Self
+}
 
 public protocol Initializable {
     init() // get a zero
 }
 
-extension Int: Initializable, Addable, Negatable, Substractable, Multiplicable, Dividable, Modulable {}
-extension Float: Initializable, Addable, Negatable, Substractable, Multiplicable, Dividable, Modulable {}
-extension Double: Initializable, Addable, Negatable, Substractable, Multiplicable, Dividable, Modulable {}
-extension CGFloat: Initializable, Addable, Negatable, Substractable, Multiplicable, Dividable, Modulable {}
-extension UInt8: Addable, Substractable, Multiplicable, Dividable, Modulable {}
-extension Int8: Initializable, Addable, Negatable, Substractable, Multiplicable, Dividable, Modulable {}
-extension UInt16: Addable, Substractable, Multiplicable, Dividable, Modulable {}
-extension Int16: Initializable, Addable, Negatable, Substractable, Multiplicable, Dividable, Modulable {}
-extension UInt32: Addable, Substractable, Multiplicable, Dividable, Modulable {}
-extension Int32: Initializable, Addable, Negatable, Substractable, Multiplicable, Dividable, Modulable {}
-extension UInt64: Addable, Substractable, Multiplicable, Dividable, Modulable {}
-extension Int64: Initializable, Addable, Negatable, Substractable, Multiplicable, Dividable, Modulable {}
-extension UInt: Addable, Substractable, Multiplicable, Dividable, Modulable{}
+// MARK: combined protocols
+
+protocol Additive: Addable, Substractable, Incrementable, Decrementable {}
+protocol Multiplicative: Multiplicable, Dividable, Modulable {}
+
+protocol AdditiveWithOverflow: Additive, AddableWithOverflow, SubstractableWithOverflow {}
+
+protocol UnsignedArithmeticType: Initializable, Additive, Multiplicative {}
+protocol ArithmeticType: UnsignedArithmeticType, Negatable {}
+
+// MARK: Implement protocols
+
+extension Int: ArithmeticType, AdditiveWithOverflow {}
+extension Float: ArithmeticType {}
+extension Double: ArithmeticType {}
+extension CGFloat: ArithmeticType{}
+extension UInt8: UnsignedArithmeticType, AdditiveWithOverflow {}
+extension Int8: ArithmeticType, AdditiveWithOverflow {}
+extension UInt16: UnsignedArithmeticType, AdditiveWithOverflow {}
+extension Int16: ArithmeticType, AdditiveWithOverflow {}
+extension UInt32: UnsignedArithmeticType, AdditiveWithOverflow {}
+extension Int32: ArithmeticType, AdditiveWithOverflow {}
+extension UInt64: UnsignedArithmeticType, AdditiveWithOverflow {}
+extension Int64: ArithmeticType, AdditiveWithOverflow {}
+extension UInt: UnsignedArithmeticType, AdditiveWithOverflow {}
 
 
 extension String: Initializable, Addable {}
 extension Array: Initializable, Addable {}
 extension Bool: Initializable {}
+
+
+// MARK: utility functions
+public func sumOf<S: SequenceType where S.Generator.Element: protocol<Addable, Initializable>> (seq: S) -> S.Generator.Element {
+    let initialValue: S.Generator.Element  = S.Generator.Element()
+    return reduce (seq, initialValue){ $0 + $1 }
+}
+
+public func productOf<S: SequenceType where S.Generator.Element: protocol<Multiplicable, IntegerLiteralConvertible>> (seq: S) -> S.Generator.Element {
+    let initialValue: S.Generator.Element  = 1
+    return productOf(seq, initialValue)
+}
+public func productOf<S: SequenceType where S.Generator.Element: protocol<Multiplicable, Initializable, Incrementable>> (seq: S) -> S.Generator.Element {
+    var initialValue: S.Generator.Element  = S.Generator.Element()
+    initialValue++
+    return productOf(seq, initialValue)
+}
+
+public func productOf<S: SequenceType where S.Generator.Element: Multiplicable> (seq: S, initialValue: S.Generator.Element) -> S.Generator.Element {
+    return reduce (seq, initialValue){ $0 * $1 }
+}
+
+// MARK: closures (WIP)
+internal func AddableBlock<T:Addable>() -> ((T, T) -> T) {
+    return { left, right in
+        left + right
+    }
+}
+internal func SubstractableBlock<T:Substractable>() -> ((T, T) -> T) {
+    return { left, right in
+        left - right
+    }
+}
+
+
 

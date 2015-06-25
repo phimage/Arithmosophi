@@ -29,11 +29,28 @@ import Foundation
 
 // MARK: Logical
 
-public protocol LogicalOperationsType {
-    
+
+public protocol Conjunctive {
     func && (left: Self, @autoclosure right:  () -> Self) -> Self // AND
+}
+public protocol Disjunctive {
     func || (left: Self, @autoclosure right:  () -> Self) -> Self // OR
+}
+
+public protocol LogicalOperationsType : Conjunctive, Disjunctive{
     prefix func ! (value: Self) -> Self // NOT
 }
 
 extension Bool: LogicalOperationsType {}
+
+
+// MARK: missing operators
+infix operator ||= { associativity right precedence 90 }
+public func ||=(inout lhs:Bool, rhs:Bool) {
+    lhs = lhs || rhs
+}
+
+infix operator &&= { associativity right precedence 90 }
+public func &&=(inout lhs:Bool, rhs:Bool) {
+    lhs = lhs && rhs
+}

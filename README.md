@@ -12,8 +12,9 @@ protocol Addable {
     func + (lhs: Self, rhs: Self) -> Self
 }
 ```
-As you might guess `Substractable` define `-` operator, `Multiplicatable` define `*` operator, etc... - all defined in [Arithmosophi.swift](Arithmosophi.swift)
-
+- As you might guess `Substractable` define `-` operator, `Multiplicatable` define `*` operator, etc...
+- There is also some utility protocols, which combine multiple protocols into a single one : `Additive`, `ArithmeticType`, ...
+- All defined in [Arithmosophi.swift](Arithmosophi.swift)
 
 ## Generic functions
 Take a look at `sumOf` function
@@ -25,6 +26,8 @@ func sumOf<T where T:Addable, T:Initializable>(input : [T]) -> T {
 Array of `Int`, `Double` and even `String` could be passed as argument to this function. Any `Addable` objects.
 
 No need to implement a function for `Double`, one for `Float`, one more for `Int`, etc...
+
+*`sumOf` and `productOf` functions are available in [Arithmosophi.swift](Arithmosophi.swift)*
 
 ## Object attributes
 The power of this simple protocols are released when using operators
@@ -133,6 +136,3 @@ s.dependency 'Arithmosophi/Logical'
 
 ## Using xcode ##
 Drag files to your projects
-
-## TODO
-- Create intermediate protocol? ex: `protocol ArithmeticType : Addable, Substractable, Multiplicable, Dividable, Modulable {}`

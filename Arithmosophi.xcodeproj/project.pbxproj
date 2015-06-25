@@ -7,30 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C4478C371B318FFC00194715 /* Geometry+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4478C361B318FFC00194715 /* Geometry+Animation.swift */; };
 		C4478C391B31911800194715 /* LogicalOperationsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4478C381B31911800194715 /* LogicalOperationsType.swift */; };
 		C470045E1B304CE200EB0C80 /* Arithmosophi.h in Headers */ = {isa = PBXBuildFile; fileRef = C470045D1B304CE200EB0C80 /* Arithmosophi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C47004641B304CE300EB0C80 /* Arithmosophi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C47004581B304CE200EB0C80 /* Arithmosophi.framework */; };
 		C470046B1B304CE300EB0C80 /* ArithmosophiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C470046A1B304CE300EB0C80 /* ArithmosophiTests.swift */; };
 		C47004751B304D5600EB0C80 /* Statheros.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47004741B304D5600EB0C80 /* Statheros.swift */; };
 		C47004771B304D6900EB0C80 /* Arithmosophi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47004761B304D6900EB0C80 /* Arithmosophi.swift */; };
-		C47004851B30514800EB0C80 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47004841B30514800EB0C80 /* Geometry.swift */; };
 		C47004941B30560700EB0C80 /* ArithmosophiOSX.h in Headers */ = {isa = PBXBuildFile; fileRef = C47004931B30560700EB0C80 /* ArithmosophiOSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C470049A1B30560700EB0C80 /* ArithmosophiOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C470048F1B30560700EB0C80 /* ArithmosophiOSX.framework */; };
 		C47004A11B30560700EB0C80 /* ArithmosophiOSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47004A01B30560700EB0C80 /* ArithmosophiOSXTests.swift */; };
 		C47004A81B30560D00EB0C80 /* Arithmosophi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47004761B304D6900EB0C80 /* Arithmosophi.swift */; };
 		C47004A91B30560D00EB0C80 /* Statheros.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47004741B304D5600EB0C80 /* Statheros.swift */; };
-		C47004AB1B30560D00EB0C80 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47004841B30514800EB0C80 /* Geometry.swift */; };
-		C4BD0FAB1B32DE7F00787E0F /* Geometry+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4478C361B318FFC00194715 /* Geometry+Animation.swift */; };
+		C4A151861B383CD100C81C91 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BD0FB81B32FE8600787E0F /* Box.swift */; };
+		C4A151871B383CD100C81C91 /* Boolean.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BD0FB51B32FAF400787E0F /* Boolean.swift */; };
+		C4A151881B383CD100C81C91 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BD0FB11B32F9E500787E0F /* Optional.swift */; };
+		C4A151891B383CD100C81C91 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47004841B30514800EB0C80 /* Geometry.swift */; };
+		C4A1518A1B383CD100C81C91 /* Geometry+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4478C361B318FFC00194715 /* Geometry+Animation.swift */; };
+		C4A1518B1B383CD300C81C91 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BD0FB81B32FE8600787E0F /* Box.swift */; };
+		C4A1518C1B383CD300C81C91 /* Boolean.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BD0FB51B32FAF400787E0F /* Boolean.swift */; };
+		C4A1518D1B383CD300C81C91 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BD0FB11B32F9E500787E0F /* Optional.swift */; };
+		C4A1518E1B383CD300C81C91 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47004841B30514800EB0C80 /* Geometry.swift */; };
+		C4A1518F1B383CD300C81C91 /* Geometry+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4478C361B318FFC00194715 /* Geometry+Animation.swift */; };
+		C4A151911B383EDE00C81C91 /* Parity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A151901B383EDE00C81C91 /* Parity.swift */; };
+		C4A151921B383F6800C81C91 /* Parity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A151901B383EDE00C81C91 /* Parity.swift */; };
 		C4BD0FAD1B32DE8400787E0F /* LogicalOperationsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4478C381B31911800194715 /* LogicalOperationsType.swift */; };
 		C4BD0FAF1B32DF4500787E0F /* Arithmos.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47004861B30530D00EB0C80 /* Arithmos.swift */; };
 		C4BD0FB01B32DF4500787E0F /* Arithmos.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47004861B30530D00EB0C80 /* Arithmos.swift */; };
-		C4BD0FB21B32F9E500787E0F /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BD0FB11B32F9E500787E0F /* Optional.swift */; };
-		C4BD0FB41B32FABF00787E0F /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BD0FB11B32F9E500787E0F /* Optional.swift */; };
-		C4BD0FB61B32FAF400787E0F /* Boolean.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BD0FB51B32FAF400787E0F /* Boolean.swift */; };
-		C4BD0FB71B32FBB900787E0F /* Boolean.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BD0FB51B32FAF400787E0F /* Boolean.swift */; };
-		C4BD0FB91B32FE8600787E0F /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BD0FB81B32FE8600787E0F /* Box.swift */; };
-		C4BD0FBA1B33001A00787E0F /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BD0FB81B32FE8600787E0F /* Box.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C40F9F351B3BFDC900641947 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C40F9F361B3BFDD300641947 /* Arithmosophi.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Arithmosophi.podspec; sourceTree = "<group>"; };
+		C40F9F381B3BFDDB00641947 /* logo-128x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-128x128.png"; sourceTree = "<group>"; };
 		C4478C361B318FFC00194715 /* Geometry+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Geometry+Animation.swift"; sourceTree = "<group>"; };
 		C4478C381B31911800194715 /* LogicalOperationsType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogicalOperationsType.swift; sourceTree = "<group>"; };
 		C47004581B304CE200EB0C80 /* Arithmosophi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Arithmosophi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +74,7 @@
 		C47004991B30560700EB0C80 /* ArithmosophiOSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArithmosophiOSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C470049F1B30560700EB0C80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C47004A01B30560700EB0C80 /* ArithmosophiOSXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArithmosophiOSXTests.swift; sourceTree = "<group>"; };
+		C4A151901B383EDE00C81C91 /* Parity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parity.swift; sourceTree = "<group>"; };
 		C4BD0FB11B32F9E500787E0F /* Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 		C4BD0FB51B32FAF400787E0F /* Boolean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Boolean.swift; sourceTree = "<group>"; };
 		C4BD0FB81B32FE8600787E0F /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
@@ -108,6 +114,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C40F9F341B3BFDB600641947 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				C40F9F361B3BFDD300641947 /* Arithmosophi.podspec */,
+				C40F9F351B3BFDC900641947 /* README.md */,
+				C40F9F381B3BFDDB00641947 /* logo-128x128.png */,
+			);
+			name = Files;
+			sourceTree = "<group>";
+		};
 		C470044E1B304CE200EB0C80 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +137,7 @@
 				C47004901B30560700EB0C80 /* ArithmosophiOSX */,
 				C470049D1B30560700EB0C80 /* ArithmosophiOSXTests */,
 				C47004591B304CE200EB0C80 /* Products */,
+				C40F9F341B3BFDB600641947 /* Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -209,6 +226,7 @@
 				C4BD0FB81B32FE8600787E0F /* Box.swift */,
 				C4BD0FB51B32FAF400787E0F /* Boolean.swift */,
 				C4BD0FB11B32F9E500787E0F /* Optional.swift */,
+				C4A151901B383EDE00C81C91 /* Parity.swift */,
 				C47004841B30514800EB0C80 /* Geometry.swift */,
 				C4478C361B318FFC00194715 /* Geometry+Animation.swift */,
 			);
@@ -389,14 +407,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4BD0FB01B32DF4500787E0F /* Arithmos.swift in Sources */,
-				C4BD0FB61B32FAF400787E0F /* Boolean.swift in Sources */,
 				C47004771B304D6900EB0C80 /* Arithmosophi.swift in Sources */,
-				C47004851B30514800EB0C80 /* Geometry.swift in Sources */,
 				C47004751B304D5600EB0C80 /* Statheros.swift in Sources */,
-				C4478C371B318FFC00194715 /* Geometry+Animation.swift in Sources */,
+				C4A151881B383CD100C81C91 /* Optional.swift in Sources */,
+				C4A1518A1B383CD100C81C91 /* Geometry+Animation.swift in Sources */,
 				C4478C391B31911800194715 /* LogicalOperationsType.swift in Sources */,
-				C4BD0FB21B32F9E500787E0F /* Optional.swift in Sources */,
-				C4BD0FB91B32FE8600787E0F /* Box.swift in Sources */,
+				C4A151891B383CD100C81C91 /* Geometry.swift in Sources */,
+				C4A151871B383CD100C81C91 /* Boolean.swift in Sources */,
+				C4A151911B383EDE00C81C91 /* Parity.swift in Sources */,
+				C4A151861B383CD100C81C91 /* Box.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,14 +432,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4BD0FAF1B32DF4500787E0F /* Arithmos.swift in Sources */,
-				C4BD0FB71B32FBB900787E0F /* Boolean.swift in Sources */,
 				C47004A81B30560D00EB0C80 /* Arithmosophi.swift in Sources */,
 				C4BD0FAD1B32DE8400787E0F /* LogicalOperationsType.swift in Sources */,
-				C47004AB1B30560D00EB0C80 /* Geometry.swift in Sources */,
+				C4A1518D1B383CD300C81C91 /* Optional.swift in Sources */,
+				C4A1518F1B383CD300C81C91 /* Geometry+Animation.swift in Sources */,
 				C47004A91B30560D00EB0C80 /* Statheros.swift in Sources */,
-				C4BD0FAB1B32DE7F00787E0F /* Geometry+Animation.swift in Sources */,
-				C4BD0FB41B32FABF00787E0F /* Optional.swift in Sources */,
-				C4BD0FBA1B33001A00787E0F /* Box.swift in Sources */,
+				C4A1518E1B383CD300C81C91 /* Geometry.swift in Sources */,
+				C4A1518C1B383CD300C81C91 /* Boolean.swift in Sources */,
+				C4A151921B383F6800C81C91 /* Parity.swift in Sources */,
+				C4A1518B1B383CD300C81C91 /* Box.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
