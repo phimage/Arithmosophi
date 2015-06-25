@@ -8,6 +8,7 @@
 
 import Cocoa
 import XCTest
+import ArithmosophiOSX
 
 class ArithmosophiOSXTests: XCTestCase {
     

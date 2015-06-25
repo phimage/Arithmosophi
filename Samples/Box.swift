@@ -26,35 +26,35 @@ SOFTWARE.
 */
 import Foundation
 
-final class Box<T where T:Addable, T:Equatable> : RawRepresentable {
+public final class Box<T where T:Addable, T:Equatable> : RawRepresentable {
     typealias RawValue = T
     
-    var rawValue: T
+    public var rawValue: T
     
-    required init?(rawValue: T) {
+    public required init?(rawValue: T) {
         self.rawValue = rawValue
     }
     
-    init(value: T) {
+    public init(value: T) {
         self.rawValue = value
     }
 }
 
-func +=<T where T:Addable> (inout box: Box<T>, addend: T) {
+public func +=<T where T:Addable> (inout box: Box<T>, addend: T) {
     box.rawValue = box.rawValue + addend
 }
-func -=<T where T:Substractable> (inout box: Box<T>, addend: T) {
+public func -=<T where T:Substractable> (inout box: Box<T>, addend: T) {
     box.rawValue = box.rawValue - addend
 }
 
 // Equatable
 extension Box : Equatable {}
-func == <T:Equatable> (lhs: Box<T>, rhs: Box<T>) -> Bool {
+public func == <T:Equatable> (lhs: Box<T>, rhs: Box<T>) -> Bool {
     return lhs.rawValue == rhs.rawValue
 }
 
 // Addable
 extension Box : Addable {}
-func + <T:Addable> (lhs: Box<T>, rhs: Box<T>) -> Box<T> {
+public func + <T:Addable> (lhs: Box<T>, rhs: Box<T>) -> Box<T> {
     return Box(value: lhs.rawValue + rhs.rawValue)
 }

@@ -28,19 +28,27 @@ SOFTWARE.
 import Foundation
 
 
-enum Optional<T:Initializable> : LogicalOperationsType, Equatable {
+public enum Optional<T:Initializable> : LogicalOperationsType, Equatable, Initializable {
     case None
     case Some(T)
+    
+    public init(_ value: T?) {
+        if let v = value {
+            self = .Some(v)
+        } else {
+            self = .None
+        }
+    }
     
     init(_ value: T) {
         self = .Some(value)
     }
     
-    init() {
+    public init() {
         self = .None
     }
     
-    func unwrap() -> T {
+    public func unwrap() -> T {
         switch self {
         case .Some(let value):
             return value
@@ -50,7 +58,7 @@ enum Optional<T:Initializable> : LogicalOperationsType, Equatable {
     }
 }
 
-func == <T: Equatable>(left: Optional<T>, right: Optional<T>) -> Bool {
+public func == <T: Equatable>(left: Optional<T>, right: Optional<T>) -> Bool {
     switch (left, right) {
     case (.None, .None): return true
     case (.None, .Some), (.Some,.None):  return false
@@ -58,7 +66,7 @@ func == <T: Equatable>(left: Optional<T>, right: Optional<T>) -> Bool {
     }
 }
 
-func == <T>(left: Optional<T>, right: Optional<T>) -> Bool {
+public func == <T>(left: Optional<T>, right: Optional<T>) -> Bool {
     switch (left, right) {
     case (.None, .None): return true
     case (.None, .Some), (.Some,.None):  return false
@@ -66,21 +74,27 @@ func == <T>(left: Optional<T>, right: Optional<T>) -> Bool {
     }
 }
 
-func && <T>(left: Optional<T>, @autoclosure right:  () -> Optional<T>) -> Optional<T> {
+public func && <T>(left: Optional<T>, @autoclosure right:  () -> Optional<T>) -> Optional<T> {
     switch left {
     case .None: return .None
     case .Some:  return right()
     }
 }
-func || <T>(left: Optional<T>, @autoclosure right:  () -> Optional<T>) -> Optional<T> {
+public func || <T>(left: Optional<T>, @autoclosure right:  () -> Optional<T>) -> Optional<T> {
     switch left {
     case .None: return right()
     case .Some:  return left
     }
 }
-prefix func ! <T: Initializable>(value: Optional<T> ) -> Optional<T> {
+public prefix func ! <T: Initializable>(value: Optional<T> ) -> Optional<T> {
     switch value {
     case .None: return .Some(T())
     case .Some:  return .None
+    }
+}
+
+public func ||=<T>(inout lhs:T?, rhs:T) {
+    if lhs == nil {
+        lhs = rhs
     }
 }
