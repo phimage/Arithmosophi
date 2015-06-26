@@ -91,6 +91,11 @@ func &&=<T:LogicalOperationsType> (inout box: Box<T>, @autoclosure right:  () ->
 
 Take a look at a more complex enum [Optional](Samples/Optional.swift) which implement also `LogicalOperationsType`
 
+## Foundation operators
+[`Foundation`](Foundation) folders contains operators for Foundation classes.
+:warning: This non-final foundation classes cannot conform to Arithmosophi protocols
+
+
 ## Geometry with `Arithmos`(number) & `Statheros`(constant)
 [`Arithmos`](Arithmos.swift) and [`Statheros`](Statheros.swift) add respectively functions and  mathematical constants for `Double`, `Float` and `CGFloat`, allowing to implement generic functions without taking care of type
 
@@ -117,6 +122,7 @@ pod 'Arithmosophi/Core' # Arithmosophi.swift
 pod 'Arithmosophi/Logical' # LogicalOperationsType.swift
 pod 'Arithmosophi/Arithmos' # Arithmos.swift
 pod 'Arithmosophi/Statheros' # Statheros.swift
+pod 'Arithmosophi/Foundation' # Foundation/*.swift
 
 pod 'Arithmosophi/Samples' # Samples/*.swift (not installed by default)
 ```

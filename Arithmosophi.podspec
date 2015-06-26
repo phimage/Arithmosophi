@@ -43,6 +43,10 @@ Pod::Spec.new do |s|
     sp.source_files = ['Statheros.swift']
   end
 
+  s.subspec "Foundation" do  |sp|
+    sp.source_files = "Foundation/*.swift"
+  end
+
   s.subspec "Samples" do  |sp|
     sp.source_files = "Samples/*.swift"
     sp.dependency 'Arithmosophi/All'
@@ -53,6 +57,7 @@ Pod::Spec.new do |s|
     sp.dependency 'Arithmosophi/Logical'
     sp.dependency 'Arithmosophi/Arithmos'
     sp.dependency 'Arithmosophi/Statheros'
+    sp.dependency 'Arithmosophi/Foundation'
   end
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

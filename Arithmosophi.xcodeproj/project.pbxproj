@@ -33,6 +33,9 @@
 		C4BD0FAD1B32DE8400787E0F /* LogicalOperationsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4478C381B31911800194715 /* LogicalOperationsType.swift */; };
 		C4BD0FAF1B32DF4500787E0F /* Arithmos.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47004861B30530D00EB0C80 /* Arithmos.swift */; };
 		C4BD0FB01B32DF4500787E0F /* Arithmos.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47004861B30530D00EB0C80 /* Arithmos.swift */; };
+		C4CFB0E21B3D47EA0098C6DA /* NSNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CFB0E11B3D47EA0098C6DA /* NSNumber.swift */; };
+		C4CFB0E41B3D49310098C6DA /* NSDecimalNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CFB0E31B3D49310098C6DA /* NSDecimalNumber.swift */; };
+		C4CFB0E61B3D4A2F0098C6DA /* NSString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CFB0E51B3D4A2F0098C6DA /* NSString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +81,9 @@
 		C4BD0FB11B32F9E500787E0F /* Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 		C4BD0FB51B32FAF400787E0F /* Boolean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Boolean.swift; sourceTree = "<group>"; };
 		C4BD0FB81B32FE8600787E0F /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		C4CFB0E11B3D47EA0098C6DA /* NSNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNumber.swift; sourceTree = "<group>"; };
+		C4CFB0E31B3D49310098C6DA /* NSDecimalNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDecimalNumber.swift; sourceTree = "<group>"; };
+		C4CFB0E51B3D4A2F0098C6DA /* NSString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSString.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +137,7 @@
 				C4478C381B31911800194715 /* LogicalOperationsType.swift */,
 				C47004861B30530D00EB0C80 /* Arithmos.swift */,
 				C47004741B304D5600EB0C80 /* Statheros.swift */,
+				C4CFB0E01B3D47AE0098C6DA /* Foundation */,
 				C4BD0FB31B32FA8400787E0F /* Samples */,
 				C470045A1B304CE200EB0C80 /* Arithmosophi */,
 				C47004671B304CE300EB0C80 /* ArithmosophiTests */,
@@ -231,6 +238,16 @@
 				C4478C361B318FFC00194715 /* Geometry+Animation.swift */,
 			);
 			path = Samples;
+			sourceTree = "<group>";
+		};
+		C4CFB0E01B3D47AE0098C6DA /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				C4CFB0E11B3D47EA0098C6DA /* NSNumber.swift */,
+				C4CFB0E31B3D49310098C6DA /* NSDecimalNumber.swift */,
+				C4CFB0E51B3D4A2F0098C6DA /* NSString.swift */,
+			);
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,8 +429,11 @@
 				C4A151881B383CD100C81C91 /* Optional.swift in Sources */,
 				C4A1518A1B383CD100C81C91 /* Geometry+Animation.swift in Sources */,
 				C4478C391B31911800194715 /* LogicalOperationsType.swift in Sources */,
+				C4CFB0E61B3D4A2F0098C6DA /* NSString.swift in Sources */,
 				C4A151891B383CD100C81C91 /* Geometry.swift in Sources */,
+				C4CFB0E21B3D47EA0098C6DA /* NSNumber.swift in Sources */,
 				C4A151871B383CD100C81C91 /* Boolean.swift in Sources */,
+				C4CFB0E41B3D49310098C6DA /* NSDecimalNumber.swift in Sources */,
 				C4A151911B383EDE00C81C91 /* Parity.swift in Sources */,
 				C4A151861B383CD100C81C91 /* Box.swift in Sources */,
 			);
