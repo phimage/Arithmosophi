@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.name         = "Arithmosophi"
-  s.version      = "1.1.0"
+  s.version      = "2.0.0"
   s.summary      = "A set of protocols for Arithmetic and Logic"
   s.description  = <<-DESC
                    Arithmosophi is a set of missing protocols that simplify
@@ -43,6 +43,10 @@ Pod::Spec.new do |s|
     sp.source_files = ['Statheros.swift']
   end
 
+  s.subspec "MesosOros" do  |sp|
+    sp.source_files = ['MesosOros.swift']
+  end
+
   s.subspec "Samples" do  |sp|
     sp.source_files = "Samples/*.swift"
     sp.dependency 'Arithmosophi/All'
@@ -53,6 +57,7 @@ Pod::Spec.new do |s|
     sp.dependency 'Arithmosophi/Logical'
     sp.dependency 'Arithmosophi/Arithmos'
     sp.dependency 'Arithmosophi/Statheros'
+    sp.dependency 'Arithmosophi/MesosOros'
   end
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

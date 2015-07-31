@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C4478C391B31911800194715 /* LogicalOperationsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4478C381B31911800194715 /* LogicalOperationsType.swift */; };
+		C4687F051B4535CF0063EC05 /* MesosOros.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4687F021B452FB80063EC05 /* MesosOros.swift */; };
+		C4687F061B4535D00063EC05 /* MesosOros.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4687F021B452FB80063EC05 /* MesosOros.swift */; };
 		C470045E1B304CE200EB0C80 /* Arithmosophi.h in Headers */ = {isa = PBXBuildFile; fileRef = C470045D1B304CE200EB0C80 /* Arithmosophi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C47004641B304CE300EB0C80 /* Arithmosophi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C47004581B304CE200EB0C80 /* Arithmosophi.framework */; };
 		C470046B1B304CE300EB0C80 /* ArithmosophiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C470046A1B304CE300EB0C80 /* ArithmosophiTests.swift */; };
@@ -58,6 +60,7 @@
 		C40F9F381B3BFDDB00641947 /* logo-128x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-128x128.png"; sourceTree = "<group>"; };
 		C4478C361B318FFC00194715 /* Geometry+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Geometry+Animation.swift"; sourceTree = "<group>"; };
 		C4478C381B31911800194715 /* LogicalOperationsType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogicalOperationsType.swift; sourceTree = "<group>"; };
+		C4687F021B452FB80063EC05 /* MesosOros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MesosOros.swift; sourceTree = "<group>"; };
 		C47004581B304CE200EB0C80 /* Arithmosophi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Arithmosophi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C470045C1B304CE200EB0C80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C470045D1B304CE200EB0C80 /* Arithmosophi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Arithmosophi.h; sourceTree = "<group>"; };
@@ -131,6 +134,7 @@
 				C4478C381B31911800194715 /* LogicalOperationsType.swift */,
 				C47004861B30530D00EB0C80 /* Arithmos.swift */,
 				C47004741B304D5600EB0C80 /* Statheros.swift */,
+				C4687F021B452FB80063EC05 /* MesosOros.swift */,
 				C4BD0FB31B32FA8400787E0F /* Samples */,
 				C470045A1B304CE200EB0C80 /* Arithmosophi */,
 				C47004671B304CE300EB0C80 /* ArithmosophiTests */,
@@ -333,6 +337,8 @@
 		C470044F1B304CE200EB0C80 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = phimage;
 				TargetAttributes = {
@@ -410,6 +416,7 @@
 				C47004771B304D6900EB0C80 /* Arithmosophi.swift in Sources */,
 				C47004751B304D5600EB0C80 /* Statheros.swift in Sources */,
 				C4A151881B383CD100C81C91 /* Optional.swift in Sources */,
+				C4687F061B4535D00063EC05 /* MesosOros.swift in Sources */,
 				C4A1518A1B383CD100C81C91 /* Geometry+Animation.swift in Sources */,
 				C4478C391B31911800194715 /* LogicalOperationsType.swift in Sources */,
 				C4A151891B383CD100C81C91 /* Geometry.swift in Sources */,
@@ -435,6 +442,7 @@
 				C47004A81B30560D00EB0C80 /* Arithmosophi.swift in Sources */,
 				C4BD0FAD1B32DE8400787E0F /* LogicalOperationsType.swift in Sources */,
 				C4A1518D1B383CD300C81C91 /* Optional.swift in Sources */,
+				C4687F051B4535CF0063EC05 /* MesosOros.swift in Sources */,
 				C4A1518F1B383CD300C81C91 /* Geometry+Animation.swift in Sources */,
 				C47004A91B30560D00EB0C80 /* Statheros.swift in Sources */,
 				C4A1518E1B383CD300C81C91 /* Geometry.swift in Sources */,

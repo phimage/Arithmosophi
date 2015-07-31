@@ -84,7 +84,7 @@ public extension Geometry {
         return (t * T.π2).sin() * T(0.5) + T(0.5)
     }
     
-    public class func miterLength<T where T: Addable, T: Arithmos, T: Multiplicable, T: Dividable>(#lineWidth: T, phi: T) -> T {
+    public class func miterLength<T where T: Addable, T: Arithmos, T: Multiplicable, T: Dividable>(lineWidth lineWidth: T, phi: T) -> T {
         return lineWidth * (T(1.0) / (phi / T(2.0)).sin())
     }
 }
