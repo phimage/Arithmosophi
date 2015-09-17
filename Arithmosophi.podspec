@@ -45,6 +45,7 @@ Pod::Spec.new do |s|
 
   s.subspec "MesosOros" do  |sp|
     sp.source_files = ['MesosOros.swift']
+    sp.dependency 'Arithmosophi/Core'
   end
 
   s.subspec "Samples" do  |sp|
