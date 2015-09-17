@@ -74,15 +74,15 @@ public func == <T>(left: Optional<T>, right: Optional<T>) -> Bool {
     }
 }
 
-public func && <T>(left: Optional<T>, @autoclosure right:  () -> Optional<T>) -> Optional<T> {
+public func && <T>(left: Optional<T>, @autoclosure right:  () throws -> Optional<T>) rethrows -> Optional<T> {
     switch left {
     case .None: return .None
-    case .Some:  return right()
+    case .Some:  return try right()
     }
 }
-public func || <T>(left: Optional<T>, @autoclosure right:  () -> Optional<T>) -> Optional<T> {
+public func || <T>(left: Optional<T>, @autoclosure right:  () throws -> Optional<T>) rethrows -> Optional<T> {
     switch left {
-    case .None: return right()
+    case .None: return try right()
     case .Some:  return left
     }
 }

@@ -27,7 +27,7 @@ SOFTWARE.
 import Foundation
 
 public final class Box<T where T:Addable, T:Equatable> : RawRepresentable {
-    typealias RawValue = T
+    public typealias RawValue = T
     
     public var rawValue: T
     

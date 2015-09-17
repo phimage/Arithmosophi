@@ -38,15 +38,15 @@ public func == (left: Boolean, right: Boolean) -> Bool {
     }
 }
 
-public func && (left: Boolean, @autoclosure right:  () -> Boolean) -> Boolean {
+public func && (left: Boolean, @autoclosure right:  () throws -> Boolean) rethrows -> Boolean {
     switch left {
     case .False: return .False
-    case .True:  return right()
+    case .True:  return try right()
     }
 }
-public func || (left: Boolean, @autoclosure right:  () -> Boolean) -> Boolean {
+public func || (left: Boolean, @autoclosure right:  () throws -> Boolean) rethrows -> Boolean {
     switch left {
-    case .False: return right()
+    case .False: return try right()
     case .True:  return .True
     }
 }

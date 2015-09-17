@@ -31,10 +31,10 @@ import Foundation
 
 
 public protocol Conjunctive {
-    func && (left: Self, @autoclosure right:  () -> Self) -> Self // AND
+    func && (left: Self, @autoclosure right:  () throws -> Self) rethrows -> Self // AND
 }
 public protocol Disjunctive {
-    func || (left: Self, @autoclosure right:  () -> Self) -> Self // OR
+    func || (left: Self, @autoclosure right:  () throws -> Self) rethrows -> Self // OR
 }
 
 public protocol LogicalOperationsType : Conjunctive, Disjunctive{
