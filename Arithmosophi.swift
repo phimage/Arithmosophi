@@ -26,6 +26,9 @@ SOFTWARE.
 */
 
 import Foundation
+#if os(watchOS)
+    import UIKit
+#endif
 
 // MARK: Protocols
 
@@ -87,7 +90,6 @@ public protocol ArithmeticType: UnsignedArithmeticType, Negatable {}
 extension Int: ArithmeticType, OverflowOperable {}
 extension Float: ArithmeticType {}
 extension Double: ArithmeticType {}
-extension CGFloat: ArithmeticType{}
 extension UInt8: UnsignedArithmeticType, OverflowOperable {}
 extension Int8: ArithmeticType, OverflowOperable {}
 extension UInt16: UnsignedArithmeticType, OverflowOperable {}
@@ -97,7 +99,7 @@ extension Int32: ArithmeticType, OverflowOperable {}
 extension UInt64: UnsignedArithmeticType, OverflowOperable {}
 extension Int64: ArithmeticType, OverflowOperable {}
 extension UInt: UnsignedArithmeticType, OverflowOperable {}
-
+extension CGFloat: ArithmeticType {}
 
 extension String: Initializable, Addable {}
 extension Array: Initializable, Addable {}

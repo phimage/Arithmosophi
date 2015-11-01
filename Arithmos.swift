@@ -26,6 +26,9 @@ SOFTWARE.
 */
 
 import Foundation
+#if os(watchOS)
+    import UIKit
+#endif
 
 public protocol Arithmos {
     
