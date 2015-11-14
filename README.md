@@ -1,4 +1,6 @@
 # Arithmosophi - Arithmosoϕ
+
+[![Join the chat at https://gitter.im/phimage/Arithmosophi](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/phimage/Arithmosophi?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat
             )](http://mit-license.org) [![Platform](http://img.shields.io/badge/platform-ios_osx-lightgrey.svg?style=flat
              )](https://developer.apple.com/resources/) [![Language](http://img.shields.io/badge/language-swift-orange.svg?style=flat
