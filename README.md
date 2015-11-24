@@ -13,6 +13,7 @@ As `Equatable` define the `==` operator , `Addable` will define the `+` operator
 protocol Addable {
     func + (lhs: Self, rhs: Self) -> Self
 }
+[1, 2, 3, 4].sum //  1 + 2 + 3 + 4
 ```
 - As you might guess `Substractable` define `-` operator, `Multiplicatable` define `*` operator, etc...
 - There is also some utility protocols, which combine multiple protocols into a single one : `Additive`, `ArithmeticType`, ...
@@ -30,6 +31,17 @@ Array of `Int`, `Double` and even `String` could be passed as argument to this f
 No need to implement a function for `Double`, one for `Float`, one more for `Int`, etc...
 
 *`sumOf` and `productOf` functions are available in [Arithmosophi.swift](Arithmosophi.swift)*
+
+
+## CollectionType
+Arithmosophi contains some useful extension on `CollectionType`
+```swift
+[1, 2, 3, 4].sum //  1 + 2 + 3 + 4
+[1, 2, 3, 4].product //  1 * 2 * 3 * 4
+
+["a","b","c","d"].sum // "abcd" same as joinWithSeparator("")
+[["a","b"],["c"],["d"]].sum // ["a","b","c","d"] same as flatMap{$0}
+```
 
 ## Object attributes
 The power of this simple protocols are released when using operators

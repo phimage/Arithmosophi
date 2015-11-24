@@ -110,7 +110,7 @@ extension Bool: Initializable {}
 public func sumOf<S: SequenceType where S.Generator.Element: Addable> (seq: S, initialValue: S.Generator.Element) -> S.Generator.Element {
     return seq.reduce (initialValue){ $0 + $1 }
 }
-public func sumOf<S: SequenceType where S.Generator.Element: protocol<Addable, IntegerLiteralConvertible>> (seq: S) -> S.Generator.Element {
+private func sumOf<S: SequenceType where S.Generator.Element: protocol<Addable, IntegerLiteralConvertible>> (seq: S) -> S.Generator.Element {
     let initialValue: S.Generator.Element  = 0
     return sumOf(seq, initialValue: initialValue)
 }
@@ -122,7 +122,7 @@ public func sumOf<T where T: protocol<Addable, Initializable>> (seq: T...) -> T 
     return sumOf(seq)
 }
 
-public func productOf<S: SequenceType where S.Generator.Element: protocol<Multiplicable, IntegerLiteralConvertible>> (seq: S) -> S.Generator.Element {
+private func productOf<S: SequenceType where S.Generator.Element: protocol<Multiplicable, IntegerLiteralConvertible>> (seq: S) -> S.Generator.Element {
     let initialValue: S.Generator.Element  = 1
     return productOf(seq, initialValue: initialValue)
 }
@@ -136,17 +136,41 @@ public func productOf<S: SequenceType where S.Generator.Element: Multiplicable> 
     return seq.reduce (initialValue){ $0 * $1 }
 }
 
-// MARK: closures (WIP)
-internal func AddableBlock<T:Addable>() -> ((T, T) -> T) {
-    return { left, right in
-        left + right
+// MARK: CollectionType
+private extension SequenceType where Self.Generator.Element: protocol<Addable, IntegerLiteralConvertible> {
+
+    private var sum: Self.Generator.Element {
+        let initialValue: Self.Generator.Element  = 0
+        return self.reduce(initialValue, combine: +)
     }
+    
 }
-internal func SubstractableBlock<T:Substractable>() -> ((T, T) -> T) {
-    return { left, right in
-        left - right
+extension SequenceType where Self.Generator.Element: protocol<Addable, Initializable> {
+    
+    public var sum: Self.Generator.Element {
+        return self.reduce(Self.Generator.Element(), combine: +)
     }
+    
 }
+private extension SequenceType where Self.Generator.Element: protocol<Multiplicable, IntegerLiteralConvertible> {
+    
+    private var product: Self.Generator.Element {
+        let initialValue: Self.Generator.Element  = 1
+        return self.reduce(initialValue, combine: *)
+    }
+    
+}
+extension SequenceType where Self.Generator.Element: protocol<Multiplicable, Initializable, Incrementable> {
+    
+    public var product: Self.Generator.Element {
+        var initialValue: Self.Generator.Element = Self.Generator.Element()
+        initialValue++
+        return self.reduce(initialValue, combine: *)
+    }
+    
+}
+
+
 
 
 
