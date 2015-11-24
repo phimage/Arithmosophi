@@ -19,7 +19,17 @@ protocol Addable {
 - There is also some utility protocols, which combine multiple protocols into a single one : `Additive`, `ArithmeticType`, ...
 - All defined in [Arithmosophi.swift](Arithmosophi.swift)
 
-## Generic functions
+## Contents ##
+- [Generic functions](#generic-functions)
+- [CollectionType](#collectiontype)
+- [Object attributes](#object-attributes)
+- [Logical operations](#logical-operations)
+- [Average](#average)
+- [Complex](#complex)
+- [Geometry](#geometry)
+- [Setup](#setup)
+
+## Generic functions ##
 Take a look at `sumOf` function
 ```swift
 func sumOf<T where T:Addable, T:Initializable>(input : [T]) -> T {
@@ -33,8 +43,8 @@ No need to implement a function for `Double`, one for `Float`, one more for `Int
 *`sumOf` and `productOf` functions are available in [Arithmosophi.swift](Arithmosophi.swift)*
 
 
-## CollectionType
-Arithmosophi contains some useful extension on `CollectionType`
+## CollectionType ##
+Arithmosophi contains some useful extensions on `CollectionType`
 ```swift
 [1, 2, 3, 4].sum //  1 + 2 + 3 + 4
 [1, 2, 3, 4].product //  1 * 2 * 3 * 4
@@ -43,7 +53,7 @@ Arithmosophi contains some useful extension on `CollectionType`
 [["a","b"],["c"],["d"]].sum // ["a","b","c","d"] same as flatMap{$0}
 ```
 
-## Object attributes
+## Object attributes ##
 The power of this simple protocols are released when using operators
 
 If we implement a box object containing a generic `T` value
@@ -69,7 +79,7 @@ myInt += 37
 
 For a full example, see [Prephirence](https://github.com/phimage/Prephirences/blob/master/Prephirences/Preference.swift) file from [Prephirences](https://github.com/phimage/Prephirences) framework, or sample [Box.swift](Samples/Box.swift)
 
-### Optional trick
+### Optional trick ###
 For optional attribute you can use `Initializable` or any protocol which define a way to get a value
 ```swift
 class Box<T> {
@@ -80,7 +90,7 @@ func +=<T where T:Addable, T:Initializable> (inout box: Box<T>, addend: T) {
 }
 ```
 
-## Logical operations
+## Logical operations  ##
 [`LogicalOperationsType`](LogicalOperationsType.swift) is a missing protocol for `Bool` inspired from `BitwiseOperationsType` (or `IntegerArithmeticType`)
 
 The purpose is the same, implement functions without knowing the base type
@@ -105,7 +115,22 @@ func &&=<T:LogicalOperationsType> (inout box: Box<T>, @autoclosure right:  () ->
 
 Take a look at a more complex enum [Optional](Samples/Optional.swift) which implement also `LogicalOperationsType`
 
-## Complex
+## Average ##
+with MesosOros.swift
+
+A type is `Averagable` if it can be dividable by an `Int` and define an operator to do that
+```swift
+func /(lhs: Self, rhs: Int) -> Self
+```
+You can conform to this protocol and `Addable` to make a custom average.
+
+All arithmetic type conform to this protocol and you can get an average for a `CollectionType`
+
+```swift
+[1, 2, 3, 4].average //  (1 + 2 + 3 + 4) / 4
+```
+
+## Complex ##
 `Complex` is a struct of two `ArithmeticType`, the real and the imaginary component
 
 ```swift
@@ -118,7 +143,9 @@ complex + 8 // Complex(real: 20, imaginary: 9)
 Complex(real: 12, imaginary: 9) + Complex(real: 8, imaginary: 1) // Complex(real: 20, imaginary: 10)
 ```
 
-## Geometry with `Arithmos`(number) & `Statheros`(constant)
+## Geometry ##
+with `Arithmos`(number) & `Statheros`(constant)
+
 [`Arithmos`](Arithmos.swift) and [`Statheros`](Statheros.swift) add respectively functions and  mathematical constants for `Double`, `Float` and `CGFloat`, allowing to implement generic functions without taking care of type
 
 ```swift
