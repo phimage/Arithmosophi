@@ -69,7 +69,7 @@ myInt += 37
 
 For a full example, see [Prephirence](https://github.com/phimage/Prephirences/blob/master/Prephirences/Preference.swift) file from [Prephirences](https://github.com/phimage/Prephirences) framework, or sample [Box.swift](Samples/Box.swift)
 
-### Optionnal trick
+### Optional trick
 For optional attribute you can use `Initializable` or any protocol which define a way to get a value
 ```swift
 class Box<T> {
@@ -105,6 +105,19 @@ func &&=<T:LogicalOperationsType> (inout box: Box<T>, @autoclosure right:  () ->
 
 Take a look at a more complex enum [Optional](Samples/Optional.swift) which implement also `LogicalOperationsType`
 
+## Complex
+`Complex` is a struct of two `ArithmeticType`, the real and the imaginary component
+
+```swift
+let complex = Complex(real: 12, imaginary: 9)
+```
+You can apply operation on it `(+, -, *, /, ++, --, -)`
+```
+complex + 8 // Complex(real: 20, imaginary: 9)
+
+Complex(real: 12, imaginary: 9) + Complex(real: 8, imaginary: 1) // Complex(real: 20, imaginary: 10)
+```
+
 ## Geometry with `Arithmos`(number) & `Statheros`(constant)
 [`Arithmos`](Arithmos.swift) and [`Statheros`](Statheros.swift) add respectively functions and  mathematical constants for `Double`, `Float` and `CGFloat`, allowing to implement generic functions without taking care of type
 
@@ -129,6 +142,8 @@ Not interested in full framework ? install a subset with:
 ```ruby
 pod 'Arithmosophi/Core' # Arithmosophi.swift
 pod 'Arithmosophi/Logical' # LogicalOperationsType.swift
+pod 'Arithmosophi/Complex' # Complex.swift
+pod 'Arithmosophi/MesosOros' # MesosOros.swift
 pod 'Arithmosophi/Arithmos' # Arithmos.swift
 pod 'Arithmosophi/Statheros' # Statheros.swift
 
