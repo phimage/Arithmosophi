@@ -74,6 +74,11 @@ public protocol Initializable {
     init() // get a zero
 }
 
+public protocol LatticeType: Comparable {
+    static var min : Self { get }
+    static var max : Self { get }
+}
+
 // MARK: combined protocols
 
 public protocol Additive: Addable, Substractable, Incrementable, Decrementable {}
@@ -82,7 +87,7 @@ public protocol Multiplicative: Multiplicable, Dividable, Modulable {}
 public protocol AdditiveWithOverflow: Additive, AddableWithOverflow, SubstractableWithOverflow {}
 public protocol OverflowOperable: MultiplicableWithOverflow, AddableWithOverflow, SubstractableWithOverflow {}
 
-public protocol UnsignedArithmeticType: Initializable, Additive, Multiplicative {}
+public protocol UnsignedArithmeticType: Initializable, Additive, Multiplicative, LatticeType {}
 public protocol ArithmeticType: UnsignedArithmeticType, Negatable {}
 
 // MARK: Implement protocols
@@ -104,6 +109,43 @@ extension CGFloat: ArithmeticType {}
 extension String: Initializable, Addable {}
 extension Array: Initializable, Addable {}
 extension Bool: Initializable {}
+
+
+extension Bool : LatticeType {
+    public static var min : Bool {
+        return false
+    }
+    
+    public static var max : Bool {
+        return true
+    }
+}
+public func < (l: Bool, r: Bool) -> Bool {
+    if l == r {
+        return false
+    }
+    return l
+}
+
+extension Float : LatticeType {
+    public static var min : Float {
+        return FLT_MIN
+    }
+    
+    public static var max : Float {
+        return FLT_MAX
+    }
+}
+
+extension Double : LatticeType {
+    public static var min : Double {
+        return DBL_MIN
+    }
+    
+    public static var max : Double {
+        return DBL_MAX
+    }
+}
 
 
 // MARK: utility functions
