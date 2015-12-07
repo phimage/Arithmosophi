@@ -2,10 +2,15 @@
 
 [![Join the chat at https://gitter.im/phimage/Arithmosophi](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/phimage/Arithmosophi?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat
-            )](http://mit-license.org) [![Platform](http://img.shields.io/badge/platform-ios_osx-lightgrey.svg?style=flat
-             )](https://developer.apple.com/resources/) [![Language](http://img.shields.io/badge/language-swift-orange.svg?style=flat
-             )](https://developer.apple.com/swift) [![Issues](https://img.shields.io/github/issues/phimage/Arithmosophi.svg?style=flat
-           )](https://github.com/phimage/Arithmosophi/issues) [![Cocoapod](http://img.shields.io/cocoapods/v/Arithmosophi.svg?style=flat)](http://cocoadocs.org/docsets/Arithmosophi/)
+            )](http://mit-license.org)
+[![Platform](http://img.shields.io/badge/platform-ios_osx-tvos-lightgrey.svg?style=flat
+             )](https://developer.apple.com/resources/)
+[![Language](http://img.shields.io/badge/language-swift-orange.svg?style=flat
+             )](https://developer.apple.com/swift)
+[![Issues](https://img.shields.io/github/issues/phimage/Arithmosophi.svg?style=flat
+           )](https://github.com/phimage/Arithmosophi/issues)
+[![Cocoapod](http://img.shields.io/cocoapods/v/Arithmosophi.svg?style=flat)](http://cocoadocs.org/docsets/Arithmosophi/)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 [<img align="left" src="logo-128x128.png" hspace="20">](#logo) Arithmosophi is a set of missing protocols that simplify arithmetic on generic objects or functions.
 As `Equatable` define the `==` operator , `Addable` will define the `+` operator.

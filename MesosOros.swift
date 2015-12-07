@@ -31,8 +31,8 @@ import Foundation
 
 public typealias AveragableDivideType = Int
 
-public protocol Averagable : Addable {
-    func /(lhs: Self, rhs: AveragableDivideType) -> Self
+public protocol Averagable: Addable {
+    func / (lhs: Self, rhs: AveragableDivideType) -> Self
 }
 
 // MARK: Implement protocols
@@ -41,7 +41,7 @@ extension Float: Averagable {}
 public func / (lhs: Float, rhs: AveragableDivideType) -> Float { return lhs / Float(rhs) }
 extension Double: Averagable {}
 public func / (lhs: Double, rhs: AveragableDivideType) -> Double { return lhs / Double(rhs) }
-extension CGFloat: Averagable{}
+extension CGFloat: Averagable {}
 public func / (lhs: CGFloat, rhs: AveragableDivideType) -> CGFloat { return lhs / CGFloat(rhs) }
 extension UInt8: Averagable {}
 public func / (lhs: UInt8, rhs: AveragableDivideType) -> UInt8 { return lhs / UInt8(rhs) }
@@ -85,7 +85,7 @@ public func averageOf<T: protocol<Averagable, Initializable>> (seq: T...) -> T {
 
 // MARK: CollectionType
 public extension CollectionType where Self.Generator.Element: protocol<Averagable, Initializable> {
-    
+
     public var average: Self.Generator.Element {
         let count = AveragableDivideType(self.count.toIntMax()) // Int64...
         if count == 0 {
@@ -93,5 +93,5 @@ public extension CollectionType where Self.Generator.Element: protocol<Averagabl
         }
         return self.sum / count
     }
-    
+
 }

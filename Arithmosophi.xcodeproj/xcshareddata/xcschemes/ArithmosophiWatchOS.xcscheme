@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0710"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C470048E1B30560700EB0C80"
+               BlueprintIdentifier = "C43F37AD1C15C10B00C0915D"
                BuildableName = "Arithmosophi.framework"
-               BlueprintName = "ArithmosophiOSX"
-               ReferencedContainer = "container:Arithmosophi.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C47004981B30560700EB0C80"
-               BuildableName = "ArithmosophiOSXTests.xctest"
-               BlueprintName = "ArithmosophiOSXTests"
+               BlueprintName = "ArithmosophiWatchOS"
                ReferencedContainer = "container:Arithmosophi.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,26 +28,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C47004981B30560700EB0C80"
-               BuildableName = "ArithmosophiOSXTests.xctest"
-               BlueprintName = "ArithmosophiOSXTests"
-               ReferencedContainer = "container:Arithmosophi.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C470048E1B30560700EB0C80"
-            BuildableName = "Arithmosophi.framework"
-            BlueprintName = "ArithmosophiOSX"
-            ReferencedContainer = "container:Arithmosophi.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -78,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C470048E1B30560700EB0C80"
+            BlueprintIdentifier = "C43F37AD1C15C10B00C0915D"
             BuildableName = "Arithmosophi.framework"
-            BlueprintName = "ArithmosophiOSX"
+            BlueprintName = "ArithmosophiWatchOS"
             ReferencedContainer = "container:Arithmosophi.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -96,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C470048E1B30560700EB0C80"
+            BlueprintIdentifier = "C43F37AD1C15C10B00C0915D"
             BuildableName = "Arithmosophi.framework"
-            BlueprintName = "ArithmosophiOSX"
+            BlueprintName = "ArithmosophiWatchOS"
             ReferencedContainer = "container:Arithmosophi.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

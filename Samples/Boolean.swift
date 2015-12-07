@@ -33,8 +33,8 @@ public enum Boolean: LogicalOperationsType, Equatable {case True, False}
 
 public func == (left: Boolean, right: Boolean) -> Bool {
     switch (left, right) {
-    case (.False, .False), (.True,.True): return true
-    case (.False, .True), (.True,.False):  return false
+    case (.False, .False), (.True, .True): return true
+    case (.False, .True), (.True, .False):  return false
     }
 }
 
@@ -50,7 +50,7 @@ public func || (left: Boolean, @autoclosure right:  () throws -> Boolean) rethro
     case .True:  return .True
     }
 }
-public prefix func !(value: Boolean ) -> Boolean {
+public prefix func ! (value: Boolean ) -> Boolean {
     switch value {
     case .False: return .True
     case .True:  return .False

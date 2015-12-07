@@ -42,7 +42,7 @@ public extension Geometry {
         let f = time.clamp(0...1)
         return f * f * (T(3.0) - T(2.0) * f)
     }
-    
+
     public class func easeOut<T where T: Multiplicable, T: Statheros, T: Arithmos>(time: T) -> T {
         let f = time.clamp(0...1)
         return (f * T.π_2).sin()
@@ -70,7 +70,7 @@ public extension Geometry {
     public class func sawtoothDown<T: Arithmos where T: Substractable>(t: T) -> T {
         return T(1.0) - t.fract()
     }
-    
+
     public class func sineUpThenDown<T where T: Addable, T: Arithmos, T: Multiplicable, T: Statheros>(t: T) -> T {
         return (t * T.π2).sin() * T(0.5) + T(0.5)
     }
@@ -83,7 +83,7 @@ public extension Geometry {
     public class func cosineDownThenUp<T where T: Addable, T: Arithmos, T: Multiplicable, T: Statheros>(t: T) -> T {
         return (t * T.π2).sin() * T(0.5) + T(0.5)
     }
-    
+
     public class func miterLength<T where T: Addable, T: Arithmos, T: Multiplicable, T: Dividable>(lineWidth lineWidth: T, phi: T) -> T {
         return lineWidth * (T(1.0) / (phi / T(2.0)).sin())
     }

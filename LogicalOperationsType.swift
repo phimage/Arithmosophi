@@ -37,7 +37,7 @@ public protocol Disjunctive {
     func || (left: Self, @autoclosure right:  () throws -> Self) rethrows -> Self // OR
 }
 
-public protocol LogicalOperationsType : Conjunctive, Disjunctive{
+public protocol LogicalOperationsType: Conjunctive, Disjunctive {
     prefix func ! (value: Self) -> Self // NOT
 }
 
@@ -46,11 +46,11 @@ extension Bool: LogicalOperationsType {}
 
 // MARK: missing operators
 infix operator ||= { associativity right precedence 90 }
-public func ||=(inout lhs:Bool, rhs:Bool) {
+public func ||= (inout lhs: Bool, rhs: Bool) {
     lhs = lhs || rhs
 }
 
 infix operator &&= { associativity right precedence 90 }
-public func &&=(inout lhs:Bool, rhs:Bool) {
+public func &&= (inout lhs: Bool, rhs: Bool) {
     lhs = lhs && rhs
 }

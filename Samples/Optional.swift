@@ -31,7 +31,7 @@ import Foundation
 public enum Optional<T:Initializable> : LogicalOperationsType, Equatable, Initializable {
     case None
     case Some(T)
-    
+
     public init(_ value: T?) {
         if let v = value {
             self = .Some(v)
@@ -39,15 +39,15 @@ public enum Optional<T:Initializable> : LogicalOperationsType, Equatable, Initia
             self = .None
         }
     }
-    
+
     init(_ value: T) {
         self = .Some(value)
     }
-    
+
     public init() {
         self = .None
     }
-    
+
     public func unwrap() -> T {
         switch self {
         case .Some(let value):
@@ -61,7 +61,7 @@ public enum Optional<T:Initializable> : LogicalOperationsType, Equatable, Initia
 public func == <T: Equatable>(left: Optional<T>, right: Optional<T>) -> Bool {
     switch (left, right) {
     case (.None, .None): return true
-    case (.None, .Some), (.Some,.None):  return false
+    case (.None, .Some), (.Some, .None):  return false
     case (.Some(let x), .Some(let y)): return x == y
     }
 }
@@ -69,7 +69,7 @@ public func == <T: Equatable>(left: Optional<T>, right: Optional<T>) -> Bool {
 public func == <T>(left: Optional<T>, right: Optional<T>) -> Bool {
     switch (left, right) {
     case (.None, .None): return true
-    case (.None, .Some), (.Some,.None):  return false
+    case (.None, .Some), (.Some, .None):  return false
     case (.Some, .Some): return true
     }
 }
@@ -93,7 +93,7 @@ public prefix func ! <T: Initializable>(value: Optional<T> ) -> Optional<T> {
     }
 }
 
-public func ||=<T>(inout lhs:T?, rhs:T) {
+public func ||= <T>(inout lhs: T?, rhs: T) {
     if lhs == nil {
         lhs = rhs
     }

@@ -28,13 +28,13 @@ import Foundation
 
 public final class Box<T where T:Addable, T:Equatable> : RawRepresentable {
     public typealias RawValue = T
-    
+
     public var rawValue: T
-    
+
     public required init?(rawValue: T) {
         self.rawValue = rawValue
     }
-    
+
     public init(value: T) {
         self.rawValue = value
     }
@@ -49,12 +49,12 @@ public func -=<T where T:Substractable> (inout box: Box<T>, addend: T) {
 
 // Equatable
 extension Box : Equatable {}
-public func == <T:Equatable> (lhs: Box<T>, rhs: Box<T>) -> Bool {
+public func == <T: Equatable> (lhs: Box<T>, rhs: Box<T>) -> Bool {
     return lhs.rawValue == rhs.rawValue
 }
 
 // Addable
 extension Box : Addable {}
-public func + <T:Addable> (lhs: Box<T>, rhs: Box<T>) -> Box<T> {
+public func + <T: Addable> (lhs: Box<T>, rhs: Box<T>) -> Box<T> {
     return Box(value: lhs.rawValue + rhs.rawValue)
 }

@@ -14,9 +14,29 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>ArithmosophiTVOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>ArithmosophiWatchOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>C43F37AD1C15C10B00C0915D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C43F37BA1C15C12A00C0915D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C47004571B304CE200EB0C80</key>
 		<dict>
 			<key>primary</key>

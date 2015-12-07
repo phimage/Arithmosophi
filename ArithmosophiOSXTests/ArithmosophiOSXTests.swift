@@ -8,13 +8,13 @@
 
 import Cocoa
 import XCTest
-import ArithmosophiOSX
+import Arithmosophi
 
 class ArithmosophiOSXTests: XCTestCase {
-    
-    let aInt = [1,2,3,4]
+
+    let aInt = [1, 2, 3, 4]
     let aString = ["a","b","c","d"]
-    let aArray = [["a","b"],["c"],["d"]]
+    let aArray = [["a", "b"], ["c"], ["d"]]
 
     override func setUp() {
         super.setUp()
@@ -43,7 +43,7 @@ class ArithmosophiOSXTests: XCTestCase {
     }
     func testSumArray() {
         let value = aArray.sum
-        let expected = aArray.flatMap{$0}
+        let expected = aArray.flatMap {$0}
         XCTAssertEqual(value, expected)
     }
 

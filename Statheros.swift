@@ -31,32 +31,32 @@ import Foundation
 #endif
 
 public protocol Statheros {
-    static var π : Self {get}
-    static var PI : Self {get}
-    static var π_2 : Self {get}
-    static var PI_2 : Self {get}
-    static var π_4 : Self {get}
-    static var PI_4 : Self {get}
-    static var π2 : Self {get}
-    static var PI2 : Self {get}
-    static var _1_π : Self {get}
-    static var _1_PI : Self {get}
-    static var _2_π : Self {get}
-    static var _2_PI : Self {get}
-    
-    static var SQRT2 : Self {get}
-    
-    static var E : Self {get}
-    static var LOG2E : Self {get}
-    static var LOG10E : Self {get}
-    static var LN2 : Self {get}
-    static var LN10 : Self {get}
-    
-    static var φ : Self {get}
-    static var PHI : Self {get}
+    static var π: Self {get}
+    static var PI: Self {get}
+    static var π_2: Self {get}
+    static var PI_2: Self {get}
+    static var π_4: Self {get}
+    static var PI_4: Self {get}
+    static var π2: Self {get}
+    static var PI2: Self {get}
+    static var _1_π: Self {get}
+    static var _1_PI: Self {get}
+    static var _2_π: Self {get}
+    static var _2_PI: Self {get}
+
+    static var SQRT2: Self {get}
+
+    static var E: Self {get}
+    static var LOG2E: Self {get}
+    static var LOG10E: Self {get}
+    static var LN2: Self {get}
+    static var LN10: Self {get}
+
+    static var φ: Self {get}
+    static var PHI: Self {get}
 }
 
-extension Double: Statheros{
+extension Double: Statheros {
     public static var π = M_PI
     public static var PI = M_PI
     public static var π_2 = M_PI_2
@@ -69,20 +69,20 @@ extension Double: Statheros{
     public static var _1_PI = M_1_PI
     public static var _2_π = M_2_PI
     public static var _2_PI = M_2_PI
-    
+
     public  static var SQRT2 = M_SQRT2
-    
+
     public static var E = M_E
     public static var LOG2E = M_LOG2E
     public static var LOG10E = M_LOG10E
     public static var LN2 = M_LN2
     public static var LN10 = M_LN10
- 
+
     public static var φ = (1.0 + Foundation.sqrt(5.0)) / 2.0 // 1.618033988749895
     public static var PHI = Double.φ
 }
 
-extension Float: Statheros{
+extension Float: Statheros {
     public static var π = Float(M_PI)
     public static var PI = Float(M_PI)
     public static var π_2 = Float(M_PI_2)
@@ -95,15 +95,15 @@ extension Float: Statheros{
     public static var _1_PI = Float(M_1_PI)
     public static var _2_π = Float(M_2_PI)
     public static var _2_PI = Float(M_2_PI)
-    
+
     public  static var SQRT2 = Float(M_SQRT2)
-    
+
     public static var E = Float(M_E)
     public static var LOG2E = Float(M_LOG2E)
     public static var LOG10E = Float(M_LOG10E)
     public static var LN2 = Float(M_LN2)
     public static var LN10 = Float(M_LN10)
-    
+
     public static var φ = Float((1.0 + Foundation.sqrt(5.0)) / 2.0)
     public static var PHI = Float.φ
 }
@@ -121,15 +121,15 @@ extension CGFloat: Statheros {
     public static var _1_PI = CGFloat(M_1_PI)
     public static var _2_π = CGFloat(M_2_PI)
     public static var _2_PI = CGFloat(M_2_PI)
-    
+
     public  static var SQRT2 = CGFloat(M_SQRT2)
-    
+
     public static var E = CGFloat(M_E)
     public static var LOG2E = CGFloat(M_LOG2E)
     public static var LOG10E = CGFloat(M_LOG10E)
     public static var LN2 = CGFloat(M_LN2)
     public static var LN10 = CGFloat(M_LN10)
-    
+
     public static var φ = CGFloat((1.0 + CoreGraphics.sqrt(5.0)) / 2.0)
     public static var PHI = CGFloat.φ
 }

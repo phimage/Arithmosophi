@@ -7,16 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C43F37A81C15BCE100C0915D /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = C43F37A71C15BCE100C0915D /* .swiftlint.yml */; };
+		C43F37B11C15C10B00C0915D /* ArithmosophiWatchOS.h in Headers */ = {isa = PBXBuildFile; fileRef = C43F37B01C15C10B00C0915D /* ArithmosophiWatchOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C43F37BE1C15C12A00C0915D /* ArithmosophiTVOS.h in Headers */ = {isa = PBXBuildFile; fileRef = C43F37BD1C15C12A00C0915D /* ArithmosophiTVOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C43F37C31C15C13600C0915D /* Arithmosophi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47004761B304D6900EB0C80 /* Arithmosophi.swift */; };
+		C43F37C41C15C13600C0915D /* LogicalOperationsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4478C381B31911800194715 /* LogicalOperationsType.swift */; };
+		C43F37C51C15C13600C0915D /* Arithmos.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47004861B30530D00EB0C80 /* Arithmos.swift */; };
+		C43F37C61C15C13600C0915D /* Statheros.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47004741B304D5600EB0C80 /* Statheros.swift */; };
+		C43F37C71C15C13600C0915D /* MesosOros.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4687F021B452FB80063EC05 /* MesosOros.swift */; };
+		C43F37C81C15C13600C0915D /* Complex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E20DFE1C046774000655FA /* Complex.swift */; };
+		C43F37C91C15C13600C0915D /* Arithmosophi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47004761B304D6900EB0C80 /* Arithmosophi.swift */; };
+		C43F37CA1C15C13600C0915D /* LogicalOperationsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4478C381B31911800194715 /* LogicalOperationsType.swift */; };
+		C43F37CB1C15C13600C0915D /* Arithmos.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47004861B30530D00EB0C80 /* Arithmos.swift */; };
+		C43F37CC1C15C13600C0915D /* Statheros.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47004741B304D5600EB0C80 /* Statheros.swift */; };
+		C43F37CD1C15C13600C0915D /* MesosOros.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4687F021B452FB80063EC05 /* MesosOros.swift */; };
+		C43F37CE1C15C13600C0915D /* Complex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E20DFE1C046774000655FA /* Complex.swift */; };
+		C43F37CF1C15C13C00C0915D /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BD0FB81B32FE8600787E0F /* Box.swift */; };
+		C43F37D01C15C13C00C0915D /* Boolean.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BD0FB51B32FAF400787E0F /* Boolean.swift */; };
+		C43F37D11C15C13C00C0915D /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BD0FB11B32F9E500787E0F /* Optional.swift */; };
+		C43F37D21C15C13C00C0915D /* Parity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A151901B383EDE00C81C91 /* Parity.swift */; };
+		C43F37D31C15C13C00C0915D /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47004841B30514800EB0C80 /* Geometry.swift */; };
+		C43F37D41C15C13C00C0915D /* Geometry+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4478C361B318FFC00194715 /* Geometry+Animation.swift */; };
+		C43F37D51C15C13C00C0915D /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BD0FB81B32FE8600787E0F /* Box.swift */; };
+		C43F37D61C15C13C00C0915D /* Boolean.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BD0FB51B32FAF400787E0F /* Boolean.swift */; };
+		C43F37D71C15C13C00C0915D /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BD0FB11B32F9E500787E0F /* Optional.swift */; };
+		C43F37D81C15C13C00C0915D /* Parity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A151901B383EDE00C81C91 /* Parity.swift */; };
+		C43F37D91C15C13C00C0915D /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47004841B30514800EB0C80 /* Geometry.swift */; };
+		C43F37DA1C15C13C00C0915D /* Geometry+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4478C361B318FFC00194715 /* Geometry+Animation.swift */; };
 		C4478C391B31911800194715 /* LogicalOperationsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4478C381B31911800194715 /* LogicalOperationsType.swift */; };
 		C4687F051B4535CF0063EC05 /* MesosOros.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4687F021B452FB80063EC05 /* MesosOros.swift */; };
 		C4687F061B4535D00063EC05 /* MesosOros.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4687F021B452FB80063EC05 /* MesosOros.swift */; };
 		C470045E1B304CE200EB0C80 /* Arithmosophi.h in Headers */ = {isa = PBXBuildFile; fileRef = C470045D1B304CE200EB0C80 /* Arithmosophi.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C47004641B304CE300EB0C80 /* Arithmosophi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C47004581B304CE200EB0C80 /* Arithmosophi.framework */; };
-		C470046B1B304CE300EB0C80 /* ArithmosophiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C470046A1B304CE300EB0C80 /* ArithmosophiTests.swift */; };
 		C47004751B304D5600EB0C80 /* Statheros.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47004741B304D5600EB0C80 /* Statheros.swift */; };
 		C47004771B304D6900EB0C80 /* Arithmosophi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47004761B304D6900EB0C80 /* Arithmosophi.swift */; };
 		C47004941B30560700EB0C80 /* ArithmosophiOSX.h in Headers */ = {isa = PBXBuildFile; fileRef = C47004931B30560700EB0C80 /* ArithmosophiOSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C470049A1B30560700EB0C80 /* ArithmosophiOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C470048F1B30560700EB0C80 /* ArithmosophiOSX.framework */; };
+		C470049A1B30560700EB0C80 /* Arithmosophi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C470048F1B30560700EB0C80 /* Arithmosophi.framework */; };
 		C47004A11B30560700EB0C80 /* ArithmosophiOSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47004A01B30560700EB0C80 /* ArithmosophiOSXTests.swift */; };
 		C47004A81B30560D00EB0C80 /* Arithmosophi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47004761B304D6900EB0C80 /* Arithmosophi.swift */; };
 		C47004A91B30560D00EB0C80 /* Statheros.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47004741B304D5600EB0C80 /* Statheros.swift */; };
@@ -39,14 +64,19 @@
 		C4E20E001C046774000655FA /* Complex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E20DFE1C046774000655FA /* Complex.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		C47004651B304CE300EB0C80 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C470044F1B304CE200EB0C80 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C47004571B304CE200EB0C80;
-			remoteInfo = Arithmosophi;
+/* Begin PBXBuildRule section */
+		C43F37A41C15BC2D00C0915D /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "";
 		};
+/* End PBXBuildRule section */
+
+/* Begin PBXContainerItemProxy section */
 		C470049B1B30560700EB0C80 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C470044F1B304CE200EB0C80 /* Project object */;
@@ -60,20 +90,24 @@
 		C40F9F351B3BFDC900641947 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C40F9F361B3BFDD300641947 /* Arithmosophi.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Arithmosophi.podspec; sourceTree = "<group>"; };
 		C40F9F381B3BFDDB00641947 /* logo-128x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-128x128.png"; sourceTree = "<group>"; };
+		C43F37A71C15BCE100C0915D /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		C43F37AE1C15C10B00C0915D /* Arithmosophi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Arithmosophi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C43F37B01C15C10B00C0915D /* ArithmosophiWatchOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArithmosophiWatchOS.h; sourceTree = "<group>"; };
+		C43F37B21C15C10B00C0915D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C43F37BB1C15C12A00C0915D /* Arithmosophi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Arithmosophi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C43F37BD1C15C12A00C0915D /* ArithmosophiTVOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArithmosophiTVOS.h; sourceTree = "<group>"; };
+		C43F37BF1C15C12A00C0915D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4478C361B318FFC00194715 /* Geometry+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Geometry+Animation.swift"; sourceTree = "<group>"; };
 		C4478C381B31911800194715 /* LogicalOperationsType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogicalOperationsType.swift; sourceTree = "<group>"; };
 		C4687F021B452FB80063EC05 /* MesosOros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MesosOros.swift; sourceTree = "<group>"; };
 		C47004581B304CE200EB0C80 /* Arithmosophi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Arithmosophi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C470045C1B304CE200EB0C80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C470045D1B304CE200EB0C80 /* Arithmosophi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Arithmosophi.h; sourceTree = "<group>"; };
-		C47004631B304CE300EB0C80 /* ArithmosophiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArithmosophiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C47004691B304CE300EB0C80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C470046A1B304CE300EB0C80 /* ArithmosophiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArithmosophiTests.swift; sourceTree = "<group>"; };
 		C47004741B304D5600EB0C80 /* Statheros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Statheros.swift; sourceTree = "<group>"; };
 		C47004761B304D6900EB0C80 /* Arithmosophi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arithmosophi.swift; sourceTree = "<group>"; };
 		C47004841B30514800EB0C80 /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
 		C47004861B30530D00EB0C80 /* Arithmos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arithmos.swift; sourceTree = "<group>"; };
-		C470048F1B30560700EB0C80 /* ArithmosophiOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ArithmosophiOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C470048F1B30560700EB0C80 /* Arithmosophi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Arithmosophi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C47004921B30560700EB0C80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C47004931B30560700EB0C80 /* ArithmosophiOSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArithmosophiOSX.h; sourceTree = "<group>"; };
 		C47004991B30560700EB0C80 /* ArithmosophiOSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArithmosophiOSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,18 +121,24 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C47004541B304CE200EB0C80 /* Frameworks */ = {
+		C43F37AA1C15C10B00C0915D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C47004601B304CE300EB0C80 /* Frameworks */ = {
+		C43F37B71C15C12A00C0915D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C47004641B304CE300EB0C80 /* Arithmosophi.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C47004541B304CE200EB0C80 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,7 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C470049A1B30560700EB0C80 /* ArithmosophiOSX.framework in Frameworks */,
+				C470049A1B30560700EB0C80 /* Arithmosophi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,11 +163,30 @@
 		C40F9F341B3BFDB600641947 /* Files */ = {
 			isa = PBXGroup;
 			children = (
+				C43F37A71C15BCE100C0915D /* .swiftlint.yml */,
 				C40F9F361B3BFDD300641947 /* Arithmosophi.podspec */,
 				C40F9F351B3BFDC900641947 /* README.md */,
 				C40F9F381B3BFDDB00641947 /* logo-128x128.png */,
 			);
 			name = Files;
+			sourceTree = "<group>";
+		};
+		C43F37AF1C15C10B00C0915D /* ArithmosophiWatchOS */ = {
+			isa = PBXGroup;
+			children = (
+				C43F37B01C15C10B00C0915D /* ArithmosophiWatchOS.h */,
+				C43F37B21C15C10B00C0915D /* Info.plist */,
+			);
+			path = ArithmosophiWatchOS;
+			sourceTree = "<group>";
+		};
+		C43F37BC1C15C12A00C0915D /* ArithmosophiTVOS */ = {
+			isa = PBXGroup;
+			children = (
+				C43F37BD1C15C12A00C0915D /* ArithmosophiTVOS.h */,
+				C43F37BF1C15C12A00C0915D /* Info.plist */,
+			);
+			path = ArithmosophiTVOS;
 			sourceTree = "<group>";
 		};
 		C470044E1B304CE200EB0C80 = {
@@ -141,9 +200,10 @@
 				C4E20DFE1C046774000655FA /* Complex.swift */,
 				C4BD0FB31B32FA8400787E0F /* Samples */,
 				C470045A1B304CE200EB0C80 /* Arithmosophi */,
-				C47004671B304CE300EB0C80 /* ArithmosophiTests */,
 				C47004901B30560700EB0C80 /* ArithmosophiOSX */,
 				C470049D1B30560700EB0C80 /* ArithmosophiOSXTests */,
+				C43F37AF1C15C10B00C0915D /* ArithmosophiWatchOS */,
+				C43F37BC1C15C12A00C0915D /* ArithmosophiTVOS */,
 				C47004591B304CE200EB0C80 /* Products */,
 				C40F9F341B3BFDB600641947 /* Files */,
 			);
@@ -153,9 +213,10 @@
 			isa = PBXGroup;
 			children = (
 				C47004581B304CE200EB0C80 /* Arithmosophi.framework */,
-				C47004631B304CE300EB0C80 /* ArithmosophiTests.xctest */,
-				C470048F1B30560700EB0C80 /* ArithmosophiOSX.framework */,
+				C470048F1B30560700EB0C80 /* Arithmosophi.framework */,
 				C47004991B30560700EB0C80 /* ArithmosophiOSXTests.xctest */,
+				C43F37AE1C15C10B00C0915D /* Arithmosophi.framework */,
+				C43F37BB1C15C12A00C0915D /* Arithmosophi.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -173,23 +234,6 @@
 			isa = PBXGroup;
 			children = (
 				C470045C1B304CE200EB0C80 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		C47004671B304CE300EB0C80 /* ArithmosophiTests */ = {
-			isa = PBXGroup;
-			children = (
-				C470046A1B304CE300EB0C80 /* ArithmosophiTests.swift */,
-				C47004681B304CE300EB0C80 /* Supporting Files */,
-			);
-			path = ArithmosophiTests;
-			sourceTree = "<group>";
-		};
-		C47004681B304CE300EB0C80 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				C47004691B304CE300EB0C80 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -244,6 +288,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		C43F37AB1C15C10B00C0915D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C43F37B11C15C10B00C0915D /* ArithmosophiWatchOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C43F37B81C15C12A00C0915D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C43F37BE1C15C12A00C0915D /* ArithmosophiTVOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C47004551B304CE200EB0C80 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -263,6 +323,42 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		C43F37AD1C15C10B00C0915D /* ArithmosophiWatchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C43F37B31C15C10B00C0915D /* Build configuration list for PBXNativeTarget "ArithmosophiWatchOS" */;
+			buildPhases = (
+				C43F37A91C15C10B00C0915D /* Sources */,
+				C43F37AA1C15C10B00C0915D /* Frameworks */,
+				C43F37AB1C15C10B00C0915D /* Headers */,
+				C43F37AC1C15C10B00C0915D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ArithmosophiWatchOS;
+			productName = ArithmosophiWatchOS;
+			productReference = C43F37AE1C15C10B00C0915D /* Arithmosophi.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C43F37BA1C15C12A00C0915D /* ArithmosophiTVOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C43F37C01C15C12A00C0915D /* Build configuration list for PBXNativeTarget "ArithmosophiTVOS" */;
+			buildPhases = (
+				C43F37B61C15C12A00C0915D /* Sources */,
+				C43F37B71C15C12A00C0915D /* Frameworks */,
+				C43F37B81C15C12A00C0915D /* Headers */,
+				C43F37B91C15C12A00C0915D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ArithmosophiTVOS;
+			productName = ArithmosophiTVOS;
+			productReference = C43F37BB1C15C12A00C0915D /* Arithmosophi.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		C47004571B304CE200EB0C80 /* Arithmosophi */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C470046E1B304CE300EB0C80 /* Build configuration list for PBXNativeTarget "Arithmosophi" */;
@@ -271,8 +367,10 @@
 				C47004541B304CE200EB0C80 /* Frameworks */,
 				C47004551B304CE200EB0C80 /* Headers */,
 				C47004561B304CE200EB0C80 /* Resources */,
+				C43F37A51C15BC5100C0915D /* SwiftLint */,
 			);
 			buildRules = (
+				C43F37A41C15BC2D00C0915D /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -280,24 +378,6 @@
 			productName = Arithmosophi;
 			productReference = C47004581B304CE200EB0C80 /* Arithmosophi.framework */;
 			productType = "com.apple.product-type.framework";
-		};
-		C47004621B304CE300EB0C80 /* ArithmosophiTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C47004711B304CE300EB0C80 /* Build configuration list for PBXNativeTarget "ArithmosophiTests" */;
-			buildPhases = (
-				C470045F1B304CE300EB0C80 /* Sources */,
-				C47004601B304CE300EB0C80 /* Frameworks */,
-				C47004611B304CE300EB0C80 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C47004661B304CE300EB0C80 /* PBXTargetDependency */,
-			);
-			name = ArithmosophiTests;
-			productName = ArithmosophiTests;
-			productReference = C47004631B304CE300EB0C80 /* ArithmosophiTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		C470048E1B30560700EB0C80 /* ArithmosophiOSX */ = {
 			isa = PBXNativeTarget;
@@ -307,6 +387,7 @@
 				C470048B1B30560700EB0C80 /* Frameworks */,
 				C470048C1B30560700EB0C80 /* Headers */,
 				C470048D1B30560700EB0C80 /* Resources */,
+				C43F37A61C15BC7400C0915D /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -314,7 +395,7 @@
 			);
 			name = ArithmosophiOSX;
 			productName = ArithmosophiOSX;
-			productReference = C470048F1B30560700EB0C80 /* ArithmosophiOSX.framework */;
+			productReference = C470048F1B30560700EB0C80 /* Arithmosophi.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		C47004981B30560700EB0C80 /* ArithmosophiOSXTests */ = {
@@ -346,10 +427,15 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = phimage;
 				TargetAttributes = {
-					C47004571B304CE200EB0C80 = {
-						CreatedOnToolsVersion = 6.3.2;
+					C43F37AD1C15C10B00C0915D = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = GGU39CDBL2;
 					};
-					C47004621B304CE300EB0C80 = {
+					C43F37BA1C15C12A00C0915D = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = GGU39CDBL2;
+					};
+					C47004571B304CE200EB0C80 = {
 						CreatedOnToolsVersion = 6.3.2;
 					};
 					C470048E1B30560700EB0C80 = {
@@ -373,25 +459,34 @@
 			projectRoot = "";
 			targets = (
 				C47004571B304CE200EB0C80 /* Arithmosophi */,
-				C47004621B304CE300EB0C80 /* ArithmosophiTests */,
 				C470048E1B30560700EB0C80 /* ArithmosophiOSX */,
+				C43F37AD1C15C10B00C0915D /* ArithmosophiWatchOS */,
+				C43F37BA1C15C12A00C0915D /* ArithmosophiTVOS */,
 				C47004981B30560700EB0C80 /* ArithmosophiOSXTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C47004561B304CE200EB0C80 /* Resources */ = {
+		C43F37AC1C15C10B00C0915D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C47004611B304CE300EB0C80 /* Resources */ = {
+		C43F37B91C15C12A00C0915D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C47004561B304CE200EB0C80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C43F37A81C15BCE100C0915D /* .swiftlint.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,7 +506,76 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C43F37A51C15BC5100C0915D /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		C43F37A61C15BC7400C0915D /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		C43F37A91C15C10B00C0915D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C43F37D01C15C13C00C0915D /* Boolean.swift in Sources */,
+				C43F37C31C15C13600C0915D /* Arithmosophi.swift in Sources */,
+				C43F37D11C15C13C00C0915D /* Optional.swift in Sources */,
+				C43F37D31C15C13C00C0915D /* Geometry.swift in Sources */,
+				C43F37CF1C15C13C00C0915D /* Box.swift in Sources */,
+				C43F37C71C15C13600C0915D /* MesosOros.swift in Sources */,
+				C43F37C51C15C13600C0915D /* Arithmos.swift in Sources */,
+				C43F37C41C15C13600C0915D /* LogicalOperationsType.swift in Sources */,
+				C43F37C81C15C13600C0915D /* Complex.swift in Sources */,
+				C43F37D21C15C13C00C0915D /* Parity.swift in Sources */,
+				C43F37D41C15C13C00C0915D /* Geometry+Animation.swift in Sources */,
+				C43F37C61C15C13600C0915D /* Statheros.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C43F37B61C15C12A00C0915D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C43F37D61C15C13C00C0915D /* Boolean.swift in Sources */,
+				C43F37C91C15C13600C0915D /* Arithmosophi.swift in Sources */,
+				C43F37D71C15C13C00C0915D /* Optional.swift in Sources */,
+				C43F37D91C15C13C00C0915D /* Geometry.swift in Sources */,
+				C43F37D51C15C13C00C0915D /* Box.swift in Sources */,
+				C43F37CD1C15C13600C0915D /* MesosOros.swift in Sources */,
+				C43F37CB1C15C13600C0915D /* Arithmos.swift in Sources */,
+				C43F37CA1C15C13600C0915D /* LogicalOperationsType.swift in Sources */,
+				C43F37CE1C15C13600C0915D /* Complex.swift in Sources */,
+				C43F37D81C15C13C00C0915D /* Parity.swift in Sources */,
+				C43F37DA1C15C13C00C0915D /* Geometry+Animation.swift in Sources */,
+				C43F37CC1C15C13600C0915D /* Statheros.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C47004531B304CE200EB0C80 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -428,14 +592,6 @@
 				C4A151871B383CD100C81C91 /* Boolean.swift in Sources */,
 				C4A151911B383EDE00C81C91 /* Parity.swift in Sources */,
 				C4A151861B383CD100C81C91 /* Box.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C470045F1B304CE300EB0C80 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C470046B1B304CE300EB0C80 /* ArithmosophiTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,11 +625,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C47004661B304CE300EB0C80 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C47004571B304CE200EB0C80 /* Arithmosophi */;
-			targetProxy = C47004651B304CE300EB0C80 /* PBXContainerItemProxy */;
-		};
 		C470049C1B30560700EB0C80 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C470048E1B30560700EB0C80 /* ArithmosophiOSX */;
@@ -482,6 +633,86 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		C43F37B41C15C10B00C0915D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ArithmosophiWatchOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tv.phimage.ArithmosophiWatchOS;
+				PRODUCT_NAME = Arithmosophi;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		C43F37B51C15C10B00C0915D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ArithmosophiWatchOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tv.phimage.ArithmosophiWatchOS;
+				PRODUCT_NAME = Arithmosophi;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		C43F37C11C15C12A00C0915D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ArithmosophiTVOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tv.phimage.ArithmosophiTVOS;
+				PRODUCT_NAME = Arithmosophi;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		C43F37C21C15C12A00C0915D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ArithmosophiTVOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tv.phimage.ArithmosophiTVOS;
+				PRODUCT_NAME = Arithmosophi;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
 		C470046C1B304CE300EB0C80 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -607,38 +838,6 @@
 			};
 			name = Release;
 		};
-		C47004721B304CE300EB0C80 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = ArithmosophiTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "tv.phimage.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		C47004731B304CE300EB0C80 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = ArithmosophiTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "tv.phimage.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		C47004A31B30560700EB0C80 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -658,7 +857,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "tv.phimage.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Arithmosophi;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 			};
@@ -678,7 +877,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "tv.phimage.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Arithmosophi;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 			};
@@ -726,6 +925,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C43F37B31C15C10B00C0915D /* Build configuration list for PBXNativeTarget "ArithmosophiWatchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C43F37B41C15C10B00C0915D /* Debug */,
+				C43F37B51C15C10B00C0915D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C43F37C01C15C12A00C0915D /* Build configuration list for PBXNativeTarget "ArithmosophiTVOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C43F37C11C15C12A00C0915D /* Debug */,
+				C43F37C21C15C12A00C0915D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		C47004521B304CE200EB0C80 /* Build configuration list for PBXProject "Arithmosophi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -740,15 +955,6 @@
 			buildConfigurations = (
 				C470046F1B304CE300EB0C80 /* Debug */,
 				C47004701B304CE300EB0C80 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C47004711B304CE300EB0C80 /* Build configuration list for PBXNativeTarget "ArithmosophiTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C47004721B304CE300EB0C80 /* Debug */,
-				C47004731B304CE300EB0C80 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

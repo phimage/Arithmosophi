@@ -29,7 +29,7 @@ import Foundation
 
 public enum Parity: IntegerLiteralType, Equatable, Addable, Substractable, Multiplicable {
     case Even, Odd
-    
+
     public init(integerLiteral value: IntegerLiteralType) {
         self = value % 2 == 0 ? .Even : .Odd
     }
@@ -40,7 +40,7 @@ public enum Parity: IntegerLiteralType, Equatable, Addable, Substractable, Multi
 public func == (left: Parity, right: Parity) -> Bool {
     switch (left, right) {
     case (.Even, .Even), (.Odd, .Odd): return true
-    case (.Even, .Odd), (.Odd,.Even):  return false
+    case (.Even, .Odd), (.Odd, .Even):  return false
     }
 }
 
