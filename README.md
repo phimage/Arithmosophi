@@ -19,8 +19,8 @@ protocol Addable {
     func + (lhs: Self, rhs: Self) -> Self
 }
 [1, 2, 3, 4].sum //  1 + 2 + 3 + 4
-[1, 2, 3, 4].average
-[1, 2, 3, 4].varianceSample
+[0, 1, 2, 3, 4].average // 2
+[13, 2.4, 3, 4].varianceSample
 ```
 
 - As you might guess `Substractable` define `-` operator, `Multiplicatable` define `*` operator, etc..., all defined in [Arithmosophi.swift](Arithmosophi.swift)
@@ -35,8 +35,6 @@ protocol Addable {
   - [Covariance](#covariance)
 - [Object attributes](#object-attributes)
 - [Logical operations](#logical-operations)
-
-- [Covariance](#covariance)
 - [Complex](#complex)
 - [Geometry](#geometry)
 - [Setup](#setup)
@@ -66,7 +64,7 @@ This framework contains some useful extensions on `CollectionType`
 ```
 
 ### Average ###
-with [MesosOros.swift](MesosOros.swift)
+_with [MesosOros.swift](MesosOros.swift)_
 
 Computes [arithmetic average/mean](http://en.wikipedia.org/wiki/Arithmetic_mean)
 ```swift
@@ -82,6 +80,8 @@ All arithmetic type conform to this protocol and you can get an average for a `C
 P.S. You can conform to this protocol and `Addable` to make a custom average.
 
 ### Median ###
+_with [MesosOros.swift](MesosOros.swift)_
+
 Get the [median value](http://en.wikipedia.org/wiki/Median) from the array
 
 - Returns the average of the two middle values if there is an even number of elements in the `CollectionType`.
@@ -98,6 +98,7 @@ Get the [median value](http://en.wikipedia.org/wiki/Median) from the array
 ```
 
 ### Variance ###
+_with [Sigma.swift](Sigma.swift)_
 
 Computes [variance](http://en.wikipedia.org/wiki/Variance).
 
@@ -113,6 +114,7 @@ Computes [variance](http://en.wikipedia.org/wiki/Variance).
 ```
 
 ### Standard deviation ###
+_with [Sigma.swift](Sigma.swift)_
 
 Computes [standard deviation](http://en.wikipedia.org/wiki/Standard_deviation).
 
@@ -126,6 +128,7 @@ Computes [standard deviation](http://en.wikipedia.org/wiki/Standard_deviation).
 ```
 
 ### Covariance ###
+_with [Sigma.swift](Sigma.swift)_
 
 Computes [covariance](http://en.wikipedia.org/wiki/Covariance) with another `CollectionType`
 
@@ -144,6 +147,7 @@ Computes [covariance](http://en.wikipedia.org/wiki/Covariance) with another `Col
 ```
 
 ## Complex ##
+_with [Complex.swift](Complex.swift)_
 `Complex` is a struct of two `ArithmeticType`, the real and the imaginary component
 
 ```swift
@@ -160,7 +164,7 @@ Complex(real: 12, imaginary: 9) + Complex(real: 8, imaginary: 1)
 ```
 
 ## Object attributes ##
-The power of this simple protocols are released when using operators
+The power of this simple arithmetic protocols are released when using operators
 
 If we implement a box object containing a generic `T` value
 ```swift

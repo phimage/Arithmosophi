@@ -36,56 +36,6 @@
 #endif
 
 
-// MARK: median
-public extension CollectionType where Self.Generator.Element: protocol<Averagable, Comparable, Initializable> {
-    
-    public var median: Self.Generator.Element? {
-        let count = AveragableDivideType(self.count.toIntMax()) // Int64...
-        if count == 0 {
-            return nil
-        }
-        let sorted = self.sort { (l, r) -> Bool in
-            return l < r
-        }
-        
-        if count % 2 == 0 {
-            let leftIndex = Int(count / 2 - 1)
-            let leftValue = sorted[leftIndex]
-            let rightValue = sorted[leftIndex + 1]
-            return (leftValue + rightValue) / 2
-        } else {
-            return sorted[Int(count / 2)]
-        }
-    }
-    
-    public var medianLow: Self.Generator.Element? {
-        let count = AveragableDivideType(self.count.toIntMax()) // Int64...
-        if count == 0 {
-            return nil
-        }
-        let sorted = self.sort { (l, r) -> Bool in
-            return l < r
-        }
-        
-        if count % 2 == 0 {
-            return sorted[Int(count / 2) - 1]
-        } else {
-            return sorted[Int(count / 2)]
-        }
-    }
-    
-    public var medianHigh: Self.Generator.Element? {
-        let count = AveragableDivideType(self.count.toIntMax()) // Int64...
-        if count == 0 {
-            return nil
-        }
-        let sorted = self.sort { (l, r) -> Bool in
-            return l < r
-        }
-        return sorted[Int(count / 2)]
-    }
-}
-
 // MARK: variance
 // http://en.wikipedia.org/wiki/Variance
 
