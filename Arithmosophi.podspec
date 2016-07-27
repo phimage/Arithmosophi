@@ -2,11 +2,11 @@ Pod::Spec.new do |s|
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.name         = "Arithmosophi"
-  s.version      = "2.0.4"
+  s.version      = "2.2.0"
   s.summary      = "A set of protocols for Arithmetic and Logic"
   s.description  = <<-DESC
                    Arithmosophi is a set of missing protocols that simplify
-                   arithmetic and logicals operations on generic objects or functions.
+                   arithmetic, statistics and logicals operations on generic objects or functions.
                    DESC
   s.homepage     = "https://github.com/phimage/Arithmosophi"
 
@@ -37,7 +37,6 @@ Pod::Spec.new do |s|
     sp.source_files = ['LogicalOperationsType.swift']
   end
 
-
   s.subspec "Arithmos" do  |sp|
     sp.source_files = ['Arithmos.swift']
   end
@@ -56,6 +55,12 @@ Pod::Spec.new do |s|
     sp.dependency 'Arithmosophi/Core'
   end
 
+  s.subspec "Sigma" do  |sp|
+    sp.source_files = ['Sigma.swift']
+    sp.dependency 'Arithmosophi/MesosOros'
+    sp.dependency 'Arithmosophi/Arithmos'
+  end
+
   s.subspec "Samples" do  |sp|
     sp.source_files = "Samples/*.swift"
     sp.dependency 'Arithmosophi/All'
@@ -68,9 +73,10 @@ Pod::Spec.new do |s|
     sp.dependency 'Arithmosophi/Complex'
     sp.dependency 'Arithmosophi/Statheros'
     sp.dependency 'Arithmosophi/MesosOros'
+    sp.dependency 'Arithmosophi/Sigma'
   end
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.resource  = "logo-128x128.png"
+  s.resource  = "logo.png"
 
 end
