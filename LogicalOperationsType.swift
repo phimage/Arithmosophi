@@ -24,7 +24,11 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-import Foundation
+#if os(Linux)
+    import Glibc
+#else
+    import Darwin
+#endif
 
 
 // MARK: Logical

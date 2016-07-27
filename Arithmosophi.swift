@@ -25,9 +25,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import Foundation
+#if os(Linux)
+    import Glibc
+#else
+    import Darwin
+    import CoreGraphics
 #if os(watchOS)
     import UIKit
+#endif
 #endif
 
 // MARK: Protocols

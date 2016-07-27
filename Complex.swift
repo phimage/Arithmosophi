@@ -24,12 +24,19 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-import Foundation
+#if os(Linux)
+    import Glibc
+#else
+    import Darwin
+    import CoreGraphics
 #if os(watchOS)
     import UIKit
 #endif
+#endif
+
 
 public struct Complex<T:ArithmeticType> {
+
     public var real: T = T()
     public var imaginary: T
 
@@ -42,9 +49,29 @@ public struct Complex<T:ArithmeticType> {
         self.imaginary = imaginary
     }
 
+    // conjugate
     public var conjugate: Complex<T> {
-        let inversImaginary = -imaginary
-        return Complex(real: real, imaginary: inversImaginary)
+        return Complex(real: real, imaginary: -imaginary)
+    }
+    
+    // `self * i`
+    public var i: Complex {
+        return Complex(real: -imaginary, imaginary: real)
+    }
+
+    // norm
+    public var norm: T {
+        return real * real + imaginary * imaginary
+    }
+    
+    // a tuble of real and imaginary value
+    public var tuple:(T, T) {
+        get{
+            return (real, imaginary)
+        }
+        set(t){
+            (real, imaginary) = t
+        }
     }
 
     public func combine(rhs: Complex, combineBehavior: (T, T) -> T) -> Complex<T> {
@@ -52,15 +79,59 @@ public struct Complex<T:ArithmeticType> {
         let imaginaryPart = combineBehavior(self.imaginary, rhs.imaginary)
         return Complex(real: realPart, imaginary: imaginaryPart)
     }
+    
+    public var description: String {
+        return "\(self.real), \(self.imaginary)i"
+    }
 }
 
-extension Complex: CustomStringConvertible {
+extension Complex where T: Arithmos {
     public var description: String {
-        return "\(self.real) + \(self.imaginary)i"
+        let sig = imaginary.isSignMinus ? "-" : "+"
+        return "\(self.real) \(sig) \(self.imaginary)i"
+    }
+    
+    public var abs:T {
+        get {
+            return  real.hypot(imaginary)
+        }
+        set(r){
+            let f = r / abs
+            real = real * f
+            imaginary = imaginary * f
+        }
+    }
+
+    public var argument:T  {
+        get {
+            return imaginary.atan2(real)
+        }
+        set(t){
+            let m = abs
+            real = m * t.cos()
+            imaginary = m * t.sin()
+        }
+    }
+
+    public var projection:Complex {
+        if real.isFinite && imaginary.isFinite {
+            return self
+        } else {
+            return Complex(
+                real: T(1)/T(0), imaginary: imaginary.isSignMinus ? -T(0) : T(0)
+            )
+        }
     }
 }
 
 extension Complex: Additive, Initializable {}
+
+public extension ArithmeticType {
+    // self * 1.0i
+    public var i:Complex<Self>{
+        return Complex(real: Self()/*zero*/, imaginary: self)
+    }
+}
 
 // MARK Addable
 extension Complex: Addable {}
@@ -68,7 +139,7 @@ public func +<T: ArithmeticType>(lhs: Complex<T>, rhs: T) -> Complex<T> {
     return lhs + Complex(real: rhs, imaginary: T())
 }
 public func +<T: ArithmeticType>(lhs: T, rhs: Complex<T>) -> Complex<T> {
-    return Complex(real: lhs, imaginary: T()) * rhs
+    return Complex(real: lhs, imaginary: T()) + rhs
 }
 
 public func +<T: ArithmeticType>(lhs: Complex<T>, rhs: Complex<T>) -> Complex<T> {
@@ -152,3 +223,46 @@ public postfix func -- <T: ArithmeticType>(inout x: Complex<T>) -> Complex<T> {
     x.imaginary--
     return Complex(real: real, imaginary: imaginary)
 }
+
+// MARK Modulable
+extension Complex: Modulable {}
+public func % <T: Modulable>(lhs: Complex<T>, rhs: Complex<T>) -> Complex<T> {
+    return lhs - (lhs / rhs) * rhs
+}
+
+public func % <T: Modulable>(lhs: Complex<T>, rhs:T) -> Complex<T> {
+    return lhs - (lhs / rhs) * rhs
+}
+public func % <T: Modulable>(lhs:T, rhs: Complex<T>) -> Complex<T> {
+    return Complex<T>(real: lhs, imaginary: T()) % rhs
+}
+public func %= <T: Modulable>(inout lhs: Complex<T>, rhs: Complex<T>) {
+    lhs = lhs % rhs
+}
+public func %= <T: Modulable>(inout lhs: Complex<T>, rhs:T) {
+    lhs = lhs % rhs
+}
+
+// MARK: CGPoint
+public protocol Complexable {
+    associatedtype Type: ArithmeticType
+    var complex: Complex<Type> {get}
+    
+    init(complex: Complex<Type>)
+}
+#if !os(Linux)
+
+    public typealias ComplexCGFloat = Complex<CGFloat>
+    extension CGPoint: Complexable {
+
+        public var complex: ComplexCGFloat {
+            return ComplexCGFloat(real: self.x, imaginary: self.y)
+        }
+        
+        public init(complex: ComplexCGFloat) {
+            self.x = complex.real
+            self.y = complex.imaginary
+        }
+    }
+
+#endif

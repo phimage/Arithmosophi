@@ -25,9 +25,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import Foundation
+#if os(Linux)
+    import Glibc
+#else
+    import Darwin
+    import CoreGraphics
 #if os(watchOS)
     import UIKit
+#endif
 #endif
 
 public protocol Arithmos {
@@ -56,25 +61,59 @@ public protocol Arithmos {
 
 
     init(_ double: Double)
+    
+    var isFinite: Bool {get}
+    var isInfinite: Bool {get}
+}
+
+extension Arithmos where Self: ArithmeticType {
+    
+    public var isSignMinus: Bool {
+        return self != self.abs()
+    }
+
+    public var isZero: Bool {
+        return self == Self()
+    }
+
 }
 
 extension Double: Arithmos {
 
-    public func abs() -> Double { return Foundation.fabs(self) }
-    public func floor () -> Double { return Foundation.floor(self) }
-    public func ceil () -> Double { return Foundation.ceil(self) }
-    public func round () -> Double { return Foundation.round(self) }
+    #if os(Linux)
+    public func abs() -> Double { return Glibc.fabs(self) }
+    public func floor () -> Double { return Glibc.floor(self) }
+    public func ceil () -> Double { return Glibc.ceil(self) }
+    public func round () -> Double { return Glibc.round(self) }
+    public func fract() -> Double { return self - self.floor() }
+    
+    public func sqrt() -> Double { return Glibc.sqrt(self) }
+    public func pow(value: Double) -> Double { return Glibc.pow(self, value) }
+    
+    public func cos() -> Double { return Glibc.cos(self) }
+    public func exp() -> Double { return Glibc.exp(self) }
+    public func log() -> Double { return Glibc.log(self) }
+    public func sin() -> Double { return Glibc.sin(self) }
+    public func hypot(value: Double) -> Double { return Glibc.hypot(self, value) }
+    public func atan2(value: Double) -> Double { return Glibc.atan2(self, value) }
+
+    #else
+    public func abs() -> Double { return Darwin.fabs(self) }
+    public func floor () -> Double { return Darwin.floor(self) }
+    public func ceil () -> Double { return Darwin.ceil(self) }
+    public func round () -> Double { return Darwin.round(self) }
     public func fract() -> Double { return self - self.floor() }
 
-    public func sqrt() -> Double { return Foundation.sqrt(self) }
-    public func pow(value: Double) -> Double { return Foundation.pow(self, value) }
+    public func sqrt() -> Double { return Darwin.sqrt(self) }
+    public func pow(value: Double) -> Double { return Darwin.pow(self, value) }
 
-    public func cos() -> Double { return Foundation.cos(self) }
-    public func exp() -> Double { return Foundation.exp(self) }
-    public func log() -> Double { return Foundation.log(self) }
-    public func sin() -> Double { return Foundation.sin(self) }
-    public func hypot(value: Double) -> Double { return Foundation.hypot(self, value) }
-    public func atan2(value: Double) -> Double { return Foundation.atan2(self, value) }
+    public func cos() -> Double { return Darwin.cos(self) }
+    public func exp() -> Double { return Darwin.exp(self) }
+    public func log() -> Double { return Darwin.log(self) }
+    public func sin() -> Double { return Darwin.sin(self) }
+    public func hypot(value: Double) -> Double { return Darwin.hypot(self, value) }
+    public func atan2(value: Double) -> Double { return Darwin.atan2(self, value) }
+    #endif
 
     public static func random(max: Double) -> Double {
         return random(0, max: max)
@@ -95,22 +134,42 @@ extension Double: Arithmos {
 }
 
 extension Float: Arithmos {
+    
+    #if os(Linux)
+    public func abs() -> Float { return Glibc.fabs(self) }
+    public func floor () -> Float { return Glibc.floor(self) }
+    public func ceil () -> Float { return Glibc.ceil(self) }
+    public func round () -> Float { return Glibc.round(self) }
+    public func fract() -> Float { return self - self.floor() }
+    
+    public func sqrt() -> Float { return Glibc.sqrt(self) }
+    public func pow(value: Float) -> Float { return Glibc.pow(self, value) }
+    
+    public func cos() -> Float { return Glibc.cos(self) }
+    public func exp() -> Float { return Glibc.exp(self) }
+    public func log() -> Float { return Glibc.log(self) }
+    public func sin() -> Float { return Glibc.sin(self) }
+    public func hypot(value: Float) -> Float { return Glibc.hypot(self, value) }
+    public func atan2(value: Float) -> Float { return Glibc.atan2(self, value) }
+    
+    #else
 
-    public func abs() -> Float { return Foundation.fabs(self) }
-    public func floor () -> Float { return Foundation.floor(self) }
-    public func ceil () -> Float { return Foundation.ceil(self) }
-    public func round () -> Float { return Foundation.round(self) }
+    public func abs() -> Float { return Darwin.fabs(self) }
+    public func floor () -> Float { return Darwin.floor(self) }
+    public func ceil () -> Float { return Darwin.ceil(self) }
+    public func round () -> Float { return Darwin.round(self) }
     public func fract() -> Float { return self - self.floor() }
 
-    public func sqrt() -> Float { return Foundation.sqrt(self) }
-    public func pow(value: Float) -> Float { return Foundation.pow(self, value) }
+    public func sqrt() -> Float { return Darwin.sqrt(self) }
+    public func pow(value: Float) -> Float { return Darwin.pow(self, value) }
 
-    public func cos() -> Float { return Foundation.cos(self) }
-    public func exp() -> Float { return Foundation.exp(self) }
-    public func log() -> Float { return Foundation.log(self) }
-    public func sin() -> Float { return Foundation.sin(self) }
-    public func hypot(value: Float) -> Float { return Foundation.hypot(self, value) }
-    public func atan2(value: Float) -> Float { return Foundation.atan2(self, value) }
+    public func cos() -> Float { return Darwin.cos(self) }
+    public func exp() -> Float { return Darwin.exp(self) }
+    public func log() -> Float { return Darwin.log(self) }
+    public func sin() -> Float { return Darwin.sin(self) }
+    public func hypot(value: Float) -> Float { return Darwin.hypot(self, value) }
+    public func atan2(value: Float) -> Float { return Darwin.atan2(self, value) }
+    #endif
 
     public static func random(max: Float) -> Float {
         return random(0, max: max)
@@ -130,6 +189,7 @@ extension Float: Arithmos {
     }
 }
 
+#if !os(Linux)
 extension CGFloat: Arithmos {
 
     public func abs() -> CGFloat { return CoreGraphics.fabs(self) }
@@ -165,3 +225,4 @@ extension CGFloat: Arithmos {
         return Swift.max(CGFloat(range.startIndex), Swift.min(CGFloat(range.endIndex), self))
     }
 }
+#endif

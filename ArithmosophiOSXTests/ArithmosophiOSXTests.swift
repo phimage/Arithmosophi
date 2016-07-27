@@ -46,5 +46,20 @@ class ArithmosophiOSXTests: XCTestCase {
         let expected = aArray.flatMap {$0}
         XCTAssertEqual(value, expected)
     }
+    
+    func testComplex() {
+        
+        let c = Complex(real: 2, imaginary: 3)
+        let c2 = Complex(real: 4, imaginary: 2)
+        
+        let c3 = c + c2
+        XCTAssertEqual(c3.real, c.real + c2.real)
+        XCTAssertEqual(c3.imaginary, c.imaginary + c2.imaginary)
+        
+        
+        let c4: Complex = 1 + 3.i
+        XCTAssertEqual(c4.real, 1)
+        XCTAssertEqual(c4.imaginary, 3)
+    }
 
 }

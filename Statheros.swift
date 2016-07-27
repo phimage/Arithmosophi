@@ -25,10 +25,16 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import Foundation
+#if os(Linux)
+    import Glibc
+#else
+    import Darwin
+    import CoreGraphics
 #if os(watchOS)
     import UIKit
 #endif
+#endif
+
 
 public protocol Statheros {
     static var π: Self {get}
@@ -78,7 +84,7 @@ extension Double: Statheros {
     public static var LN2 = M_LN2
     public static var LN10 = M_LN10
 
-    public static var φ = (1.0 + Foundation.sqrt(5.0)) / 2.0 // 1.618033988749895
+    public static var φ = (1.0 + 5.0.sqrt()) / 2.0 // 1.618033988749895
     public static var PHI = Double.φ
 }
 
@@ -104,32 +110,34 @@ extension Float: Statheros {
     public static var LN2 = Float(M_LN2)
     public static var LN10 = Float(M_LN10)
 
-    public static var φ = Float((1.0 + Foundation.sqrt(5.0)) / 2.0)
+    public static var φ = Float((1.0 + 5.0.sqrt()) / 2.0)
     public static var PHI = Float.φ
 }
 
-extension CGFloat: Statheros {
-    public static var π = CGFloat(M_PI)
-    public static var PI = CGFloat(M_PI)
-    public static var π_2 = CGFloat(M_PI_2)
-    public static var PI_2 = CGFloat(M_PI_2)
-    public static var π_4 = CGFloat(M_PI_4)
-    public static var PI_4 = CGFloat(M_PI_4)
-    public static var π2 = CGFloat(2 * M_PI)
-    public static var PI2 = CGFloat(2 * M_PI)
-    public static var _1_π = CGFloat(M_1_PI)
-    public static var _1_PI = CGFloat(M_1_PI)
-    public static var _2_π = CGFloat(M_2_PI)
-    public static var _2_PI = CGFloat(M_2_PI)
-
-    public  static var SQRT2 = CGFloat(M_SQRT2)
-
-    public static var E = CGFloat(M_E)
-    public static var LOG2E = CGFloat(M_LOG2E)
-    public static var LOG10E = CGFloat(M_LOG10E)
-    public static var LN2 = CGFloat(M_LN2)
-    public static var LN10 = CGFloat(M_LN10)
-
-    public static var φ = CGFloat((1.0 + CoreGraphics.sqrt(5.0)) / 2.0)
-    public static var PHI = CGFloat.φ
-}
+#if !os(Linux)
+    extension CGFloat: Statheros {
+        public static var π = CGFloat(M_PI)
+        public static var PI = CGFloat(M_PI)
+        public static var π_2 = CGFloat(M_PI_2)
+        public static var PI_2 = CGFloat(M_PI_2)
+        public static var π_4 = CGFloat(M_PI_4)
+        public static var PI_4 = CGFloat(M_PI_4)
+        public static var π2 = CGFloat(2 * M_PI)
+        public static var PI2 = CGFloat(2 * M_PI)
+        public static var _1_π = CGFloat(M_1_PI)
+        public static var _1_PI = CGFloat(M_1_PI)
+        public static var _2_π = CGFloat(M_2_PI)
+        public static var _2_PI = CGFloat(M_2_PI)
+        
+        public  static var SQRT2 = CGFloat(M_SQRT2)
+        
+        public static var E = CGFloat(M_E)
+        public static var LOG2E = CGFloat(M_LOG2E)
+        public static var LOG10E = CGFloat(M_LOG10E)
+        public static var LN2 = CGFloat(M_LN2)
+        public static var LN10 = CGFloat(M_LN10)
+        
+        public static var φ = CGFloat((1.0 + CoreGraphics.sqrt(5.0)) / 2.0)
+        public static var PHI = CGFloat.φ
+    }
+#endif
