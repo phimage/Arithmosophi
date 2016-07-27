@@ -39,9 +39,17 @@ SOFTWARE.
 
 public protocol Addable {
     func + (lhs: Self, rhs: Self) -> Self
+    func += (inout lhs: Self, rhs: Self)
+}
+public func += <T: Addable>(inout lhs: T, rhs: T) {
+    lhs = lhs + rhs
 }
 public protocol Substractable {
     func - (lhs: Self, rhs: Self) -> Self
+    func -= (inout lhs: Self, rhs: Self)
+}
+public func -= <T: Substractable>(inout lhs: T, rhs: T) {
+    lhs = lhs - rhs
 }
 public protocol Negatable {
     prefix func - (instance: Self) -> Self
@@ -115,6 +123,9 @@ extension String: Initializable, Addable {}
 extension Array: Initializable, Addable {}
 extension Bool: Initializable {}
 
+public func += <T> (inout left: Array<T>, right: Array<T>) {
+    left = left + right
+}
 
 extension Bool : LatticeType {
     public static var min: Bool {

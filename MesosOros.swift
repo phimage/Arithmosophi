@@ -101,3 +101,168 @@ public extension CollectionType where Self.Generator.Element: protocol<Averagabl
 
 }
 
+
+
+// MARK: median
+public extension CollectionType where Self.Generator.Element: protocol<Averagable, Comparable, Initializable> {
+    
+    public var median: Self.Generator.Element? {
+        let count = AveragableDivideType(self.count.toIntMax()) // Int64...
+        if count == 0 {
+            return nil
+        }
+        let sorted = self.sort { (l, r) -> Bool in
+            return l < r
+        }
+        
+        if count % 2 == 0 {
+            let leftIndex = Int(count / 2 - 1)
+            let leftValue = sorted[leftIndex]
+            let rightValue = sorted[leftIndex + 1]
+            return (leftValue + rightValue) / 2
+        } else {
+            return sorted[Int(count / 2)]
+        }
+    }
+    
+    public var medianLow: Self.Generator.Element? {
+        let count = AveragableDivideType(self.count.toIntMax()) // Int64...
+        if count == 0 {
+            return nil
+        }
+        let sorted = self.sort { (l, r) -> Bool in
+            return l < r
+        }
+        
+        if count % 2 == 0 {
+            return sorted[Int(count / 2) - 1]
+        } else {
+            return sorted[Int(count / 2)]
+        }
+    }
+    
+    public var medianHigh: Self.Generator.Element? {
+        let count = AveragableDivideType(self.count.toIntMax()) // Int64...
+        if count == 0 {
+            return nil
+        }
+        let sorted = self.sort { (l, r) -> Bool in
+            return l < r
+        }
+        return sorted[Int(count / 2)]
+    }
+}
+
+// MARK: variance
+// http://en.wikipedia.org/wiki/Variance
+
+public extension CollectionType where Self.Generator.Element: protocol<Averagable, Initializable, Substractable, Multiplicable> {
+    
+    // Return varianceSample: Σ( (Element - average)^2 ) / (count - 1)
+    // https://en.wikipedia.org/wiki/Variance#Sample_variance
+    public var varianceSample: Self.Generator.Element? {
+        let count = AveragableDivideType(self.count.toIntMax()) // AveragableDivideType...
+        if count < 2 { return nil }
+        
+        let avgerageValue = average
+        let n = self.reduce(Self.Generator.Element()) { total, value in
+            total + (avgerageValue - value) * (avgerageValue - value)
+        }
+        
+        return n / (count - 1)
+    }
+
+    // Return variancePopulation: Σ( (Element - average)^2 ) / count
+    // https://en.wikipedia.org/wiki/Variance#Population_variance
+    public var variancePopulation: Self.Generator.Element?{
+        let count = AveragableDivideType(self.count.toIntMax()) // AveragableDivideType...
+        if count == 0 { return nil }
+        
+        let avgerageValue = average
+        let numerator = self.reduce(Self.Generator.Element()) { total, value in
+            total +  (avgerageValue - value) * (avgerageValue - value)
+        }
+        
+        return numerator / count
+    }
+
+}
+
+public extension CollectionType where Self.Generator.Element: protocol<Averagable, Initializable, Substractable, Multiplicable, Arithmos> {
+
+    public var standardDeviationSample: Self.Generator.Element? {
+        return varianceSample?.sqrt() ?? nil
+    }
+
+    public var standardDeviationPopulation: Self.Generator.Element? {
+         return variancePopulation?.sqrt() ?? nil
+    }
+}
+
+// MARK: covariance
+public extension CollectionType where Self.Generator.Element: protocol<Averagable, Initializable, Substractable, Multiplicable, Arithmos> {
+    
+    
+    public func covarianceSample<W: CollectionType where W.Generator.Element == Self.Generator.Element>
+        (with: W) -> Self.Generator.Element? {
+        let count = AveragableDivideType(self.count.toIntMax()) // AveragableDivideType...
+        if count < 2 { return nil }
+        let withCount = AveragableDivideType(with.count.toIntMax()) // AveragableDivideType...
+        guard count == withCount else {
+            return nil
+        }
+        
+        let average = self.average
+        let withAverage = with.average
+        
+        var sum = Self.Generator.Element()
+        for (element, withElement) in zip(self, with) {
+            sum += (element - average) * (withElement - withAverage)
+        }
+        
+        return sum / (count - 1)
+    }
+
+    public func covariancePopulation<W: CollectionType where W.Generator.Element == Self.Generator.Element>
+        (with: W) -> Self.Generator.Element? {
+        let count = AveragableDivideType(self.count.toIntMax()) // AveragableDivideType...
+        if count < 2 { return nil }
+        let withCount = AveragableDivideType(with.count.toIntMax()) // AveragableDivideType...
+        guard count == withCount else {
+            return nil
+        }
+        
+        let average = self.average
+        let withAverage = with.average
+        
+        var sum = Self.Generator.Element()
+        for (element, withElement) in zip(self, with) {
+            sum += (element - average) * (withElement - withAverage)
+        }
+
+        return sum / count
+    }
+}
+
+// MARK: Pearson product-moment correlation coefficient
+public extension CollectionType where Self.Generator.Element: protocol<Averagable, Initializable, Substractable, Multiplicable, Arithmos, Equatable, Dividable> {
+    
+    // http://en.wikipedia.org/wiki/Pearson_product-moment_correlation_coefficient
+    public func pearson<W: CollectionType where W.Generator.Element == Self.Generator.Element>
+        (with: W) -> Self.Generator.Element? {
+        if let cov = self.covariancePopulation(with),
+            σself = self.standardDeviationPopulation,
+            σwith = with.standardDeviationPopulation {
+
+            let zero = Self.Generator.Element()
+            if σself == zero || σwith == zero {
+                return nil
+            }
+            return cov / (σself * σwith)
+        }
+        return nil
+    }
+}
+
+// TODO: percentile
+// https://en.wikipedia.org/wiki/Percentile
