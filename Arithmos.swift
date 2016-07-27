@@ -66,17 +66,6 @@ public protocol Arithmos {
     var isInfinite: Bool {get}
 }
 
-extension Arithmos where Self: ArithmeticType {
-    
-    public var isSignMinus: Bool {
-        return self != self.abs()
-    }
-
-    public var isZero: Bool {
-        return self == Self()
-    }
-
-}
 
 extension Double: Arithmos {
 

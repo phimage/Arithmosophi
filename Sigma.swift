@@ -35,7 +35,6 @@
 #endif
 #endif
 
-
 // MARK: variance
 // http://en.wikipedia.org/wiki/Variance
 
@@ -84,7 +83,7 @@ public extension CollectionType where Self.Generator.Element: protocol<Averagabl
     public var σSample: Self.Generator.Element? {
         return standardDeviationSample
     }
-
+    
     public var σPopulation: Self.Generator.Element? {
         return standardDeviationPopulation
     }

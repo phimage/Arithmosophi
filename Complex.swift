@@ -124,6 +124,14 @@ extension Complex where T: Arithmos {
     }
 }
 
+extension Arithmos where Self: Equatable {
+    
+    public var isSignMinus: Bool {
+        return self != self.abs()
+    }
+    
+}
+
 extension Complex: Additive, Initializable {}
 
 public extension ArithmeticType {

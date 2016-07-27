@@ -48,6 +48,7 @@ Pod::Spec.new do |s|
   s.subspec "Complex" do  |sp|
     sp.source_files = "Complex.swift"
     sp.dependency 'Arithmosophi/Core'
+    sp.dependency 'Arithmosophi/Arithmos'
   end
 
   s.subspec "MesosOros" do  |sp|

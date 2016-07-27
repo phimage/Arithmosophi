@@ -87,6 +87,12 @@ public protocol Initializable {
     init() // get a zero
 }
 
+extension Initializable where Self: Equatable {
+    public var isZero: Bool {
+        return self == Self()
+    }
+}
+
 public protocol LatticeType: Comparable {
     static var min: Self { get }
     static var max: Self { get }
