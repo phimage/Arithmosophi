@@ -84,7 +84,7 @@ extension Double: Statheros {
     public static var LN2 = M_LN2
     public static var LN10 = M_LN10
 
-    public static var φ = (1.0 + 5.0.sqrt()) / 2.0 // 1.618033988749895
+    public static var φ = (1.0 + Darwin.sqrt(5.0)) / 2.0 // 1.618033988749895
     public static var PHI = Double.φ
 }
 
@@ -110,7 +110,7 @@ extension Float: Statheros {
     public static var LN2 = Float(M_LN2)
     public static var LN10 = Float(M_LN10)
 
-    public static var φ = Float((1.0 + 5.0.sqrt()) / 2.0)
+    public static var φ = Float((1.0 + Darwin.sqrt(5.0)) / 2.0)
     public static var PHI = Float.φ
 }
 
