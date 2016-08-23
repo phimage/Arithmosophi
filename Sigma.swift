@@ -158,3 +158,53 @@ public extension CollectionType where Self.Generator.Element: protocol<Averagabl
 
 // TODO: percentile
 // https://en.wikipedia.org/wiki/Percentile
+
+// MARK:- collection operations
+
+// MARK: multiply
+private extension CollectionType where Self.Generator.Element: protocol<Multiplicable> {
+    
+    private func multiply<W: CollectionType where W.Generator.Element == Self.Generator.Element>
+        (with: W) -> [Self.Generator.Element] {
+        return zip(self, with).map { s, w in
+            return s * w
+        }
+    }
+    
+}
+
+// MARK: add
+private extension CollectionType where Self.Generator.Element: protocol<Addable> {
+    
+    private func add<W: CollectionType where W.Generator.Element == Self.Generator.Element>
+        (array: W) -> [Self.Generator.Element] {
+        return zip(self, array).map { s, w in
+            return s + w
+        }
+    }
+    
+}
+
+// MARK: subtract
+private extension CollectionType where Self.Generator.Element: protocol<Substractable> {
+    
+    private func subtract<W: CollectionType where W.Generator.Element == Self.Generator.Element>
+        (array: W) -> [Self.Generator.Element] {
+        return zip(self, array).map { s, w in
+            return s - w
+        }
+    }
+    
+}
+
+// MARK: divide
+private extension CollectionType where Self.Generator.Element: protocol<Dividable> {
+    
+    private func divide<W: CollectionType where W.Generator.Element == Self.Generator.Element>
+        (with: W) -> [Self.Generator.Element] {
+        return zip(self, with).map { s, w in
+            return s / w // NO ZERO valu
+        }
+    }
+    
+}
