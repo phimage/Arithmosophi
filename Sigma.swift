@@ -159,6 +159,95 @@ public extension CollectionType where Self.Generator.Element: protocol<Averagabl
 // TODO: percentile
 // https://en.wikipedia.org/wiki/Percentile
 
+
+// MARK: linear regression
+// https://en.wikipedia.org/wiki/Linear_regression
+
+
+public enum LinearRegressionMethod {
+    case OLS
+    case Multiply
+    // case Accelerate (use upsurge?)
+}
+
+// Use with Double and fFloat (not Int)
+public extension CollectionType where Self.Generator.Element: protocol<Averagable, Initializable, Substractable, Multiplicable, Dividable> {
+
+    // @return (intercept, slope) where with = slope * self + intercept
+    public func linearRegression<W: CollectionType where W.Generator.Element == Self.Generator.Element>
+        (with: W, method: LinearRegressionMethod = .OLS)  -> (Self.Generator.Element, Self.Generator.Element)? {
+        let count = AveragableDivideType(self.count.toIntMax()) // AveragableDivideType...
+        if count < 2 { return nil }
+        let withCount = AveragableDivideType(with.count.toIntMax()) // AveragableDivideType...
+        guard count == withCount else {
+            return nil
+        }
+
+        let average = self.average
+        let withAverage = with.average
+        
+        var sum1 = Self.Generator.Element()
+        var sum2 = Self.Generator.Element()
+        switch method {
+        case .Multiply:
+            let m1 = multiply(with).average
+            sum1 = m1 - average * withAverage
+            let m2 = multiply(self).average
+            sum2 = m2 - average * average
+            break
+        case .OLS:
+            for (element, withElement) in zip(self, with) {
+                let elMinusAverage = (element - average)
+                sum1 += elMinusAverage * (withElement - withAverage)
+                sum2 += elMinusAverage * elMinusAverage
+            }
+            break
+        }
+
+        let slope = sum1 / sum2 // FIXME Int will failed here by dividing by zero (Int linear regression must return float result)
+        let intercept = withAverage - slope * average
+        return (intercept, slope)
+    }
+
+    public func linearRegressionClosure<W: CollectionType where W.Generator.Element == Self.Generator.Element>
+        (with: W, method: LinearRegressionMethod = .OLS)  -> (Self.Generator.Element -> Self.Generator.Element)? {
+        guard let (intercept, slope) = self.linearRegression(with) else {
+            return nil
+        }
+        // y = slope * x + intercept
+        return { intercept + slope * $0 }
+    }
+    
+    // Create a closure : slope * x + intercept with x closure parameters
+    public static func linearRegressionClosure(intercept: Self.Generator.Element, slope: Self.Generator.Element)  -> (Self.Generator.Element -> Self.Generator.Element) {
+        return { intercept + slope * $0 }
+    }
+
+    // https://en.wikipedia.org/wiki/Coefficient_of_determination
+    public func coefficientOfDetermination<W: CollectionType where W.Generator.Element == Self.Generator.Element>
+        (with: W, linearRegressionClosure: (Self.Generator.Element -> Self.Generator.Element)) -> Self.Generator.Element {
+
+        let withAverage = with.average
+        var sumSquareModel = Self.Generator.Element() // sum of squares of the deviations of the estimated values of the response variable of the model
+        var sumSquareTotal = Self.Generator.Element() // sum of squares of the deviations of the observed
+        
+        for (element, withElement) in zip(self, with) {
+            let predictedValue = linearRegressionClosure(element)
+            let sub1 = predictedValue - withAverage
+            sumSquareModel += sub1 * sub1
+            let sub2 = withElement - withAverage
+            sumSquareTotal += sub2 * sub2
+        }
+        return sumSquareModel / sumSquareTotal
+    }
+
+    public func coefficientOfDetermination<W: CollectionType where W.Generator.Element == Self.Generator.Element>
+        (with: W, intercept: Self.Generator.Element, slope: Self.Generator.Element) -> Self.Generator.Element {
+        return self.coefficientOfDetermination(with, linearRegressionClosure: Self.linearRegressionClosure(intercept, slope: slope))
+    }
+
+}
+
 // MARK:- collection operations
 
 // MARK: multiply

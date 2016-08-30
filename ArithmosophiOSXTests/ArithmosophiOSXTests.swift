@@ -274,8 +274,14 @@ class ArithmosophiOSXTests: XCTestCase {
     // MARK: - Population standard deviation
     
     func testPopulationStandardDeviation() {
-        if let result = [1, 12, 19.5, -5, 3, 8].standardDeviationPopulation{
+        if let result = [1, 12, 19.5, -5, 3, 8].standardDeviationPopulation {
             XCTAssertEqual(7.9184208583, round10(result))
+        } else {
+            XCTFail("no result")
+        }
+        
+        if let result = [2.0, 4.0, 4.0, 4.0, 5.0, 5.0, 7.0, 9.0].standardDeviationPopulation {
+            XCTAssertEqual(2.0, result)
         } else {
             XCTFail("no result")
         }
@@ -373,7 +379,84 @@ class ArithmosophiOSXTests: XCTestCase {
     }
     
  
-   
+    // MARK: - Linear regression
+    
+    func testLinearRegression() {
+        
+        let tests = [
+            (x: [1.0, 2.0, 3], y: [2.0, 3, 4], intercept: 1.0, slope: 1.0),
+            (x: [1.0, 2, 3], y: [2.0, 4, 6], intercept: 0.0, slope: 2.0),
+            (x: [2.0, 4, 6] , y: [1.0, 2, 3], intercept: 0.0, slope: 0.5),
+        ]
+        
+        for test in tests {
+            testLinearRegression(test, method: .OLS)
+        }
+        
+        // List of points
+        let data = [(0.1, 0.2), (338.8, 337.4), (118.1, 118.2),
+            (888.0, 884.6), (9.2, 10.1), (228.1, 226.5), (668.5, 666.3), (998.5, 996.3),
+            (449.1, 448.6), (778.9, 777.0), (559.2, 558.2), (0.3, 0.4), (0.1, 0.6), (778.1, 775.5),
+            (668.8, 666.9), (339.3, 338.0), (448.9, 447.5), (10.8, 11.6), (557.7, 556.0),
+            (228.3, 228.1), (998.0, 995.8), (888.8, 887.6), (119.6, 120.2), (0.3, 0.3),
+            (0.6, 0.3), (557.6, 556.8), (339.3, 339.1), (888.0, 887.2), (998.5, 999.0),
+            (778.9, 779.0), (10.2, 11.1), (117.6, 118.3), (228.9, 229.2), (668.4, 669.1),
+            (449.2, 448.9), (0.2, 0.5)]
+        
+        let x = data.map { $0.0 }
+        let y = data.map { $0.1 }
+ 
+        
+        if let (intercept, slope) = y.linearRegression(x, method: .Multiply) {
+            XCTAssertEqual(-0.262/*323073774029*/, round3(intercept))
+            XCTAssertEqual(1.0021168180/*204547*/, round10(slope))
+        } else {
+            XCTFail("no result")
+        }
+  
+    }
+
+    func testLinearRegression(data: (x: [Double], y: [Double], intercept: Double, slope: Double), method: LinearRegressionMethod) {
+        if let (intercept, slope) = data.x.linearRegression(data.y, method: method) {
+            XCTAssertEqual(data.intercept, intercept)
+            XCTAssertEqual(data.slope, slope)
+        } else {
+            XCTFail("no result")
+        }
+    }
+
+    func testLinearRegression_same() {
+        let array = [1, 2, 3, 4, 5]
+        if let (intercept, slope) = array.linearRegression(array) {
+            XCTAssertEqual(0, intercept)
+            XCTAssertEqual(1, slope)
+        } else {
+            XCTFail("no result")
+        }
+    }
+ 
+    func testLinearRegression_sameX() {
+        let x: Double = 12
+        if let (intercept, slope) = [1, 2, 3.5, 3.7, 8, 12].linearRegression([x, x, x, x, x, x]) {
+            XCTAssertEqual(x, intercept)
+            XCTAssertEqual(0, round10(slope))
+        } else {
+            XCTFail("no result")
+        }
+        
+    }
+    
+    func testLinearRegression_unequalSamples() {
+        let result = [1, 2, 3.5, 3.7, 8, 12].linearRegression([0.5])
+        
+        XCTAssertNil(result)
+    }
+    
+    func testLinearRegression_emptySamples() {
+        let result = [Double]().linearRegression([])
+        
+        XCTAssertNil(result)
+    }
 }
 
 func roundToPlaces(value: Double, places: Int) -> Double {
@@ -383,4 +466,8 @@ func roundToPlaces(value: Double, places: Int) -> Double {
 
 func round10(value: Double) -> Double {
     return roundToPlaces(value, places: 10)
+}
+
+func round3(value: Double) -> Double {
+    return roundToPlaces(value, places: 3)
 }
