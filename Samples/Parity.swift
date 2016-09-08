@@ -28,10 +28,10 @@ SOFTWARE.
 import Foundation
 
 public enum Parity: IntegerLiteralType, Equatable, Addable, Substractable, Multiplicable {
-    case Even, Odd
+    case even, odd
 
     public init(integerLiteral value: IntegerLiteralType) {
-        self = value % 2 == 0 ? .Even : .Odd
+        self = value % 2 == 0 ? .even : .odd
     }
 
 }
@@ -39,14 +39,14 @@ public enum Parity: IntegerLiteralType, Equatable, Addable, Substractable, Multi
 // MARK: Equatable
 public func == (left: Parity, right: Parity) -> Bool {
     switch (left, right) {
-    case (.Even, .Even), (.Odd, .Odd): return true
-    case (.Even, .Odd), (.Odd, .Even):  return false
+    case (.even, .even), (.odd, .odd): return true
+    case (.even, .odd), (.odd, .even):  return false
     }
 }
 
 // MARK: Addable
 public func + (left: Parity, right: Parity) -> Parity {
-    return left == right ? .Even : .Odd
+    return left == right ? .even : .odd
 }
 
 // MARK: Substractable
@@ -56,5 +56,5 @@ public func - (left: Parity, right: Parity) -> Parity {
 
 // MARK: Multiplicable
 public func * (left: Parity, right: Parity) -> Parity {
-    return left == .Odd && right == .Odd ? .Odd : .Even
+    return left == .odd && right == .odd ? .odd : .even
 }

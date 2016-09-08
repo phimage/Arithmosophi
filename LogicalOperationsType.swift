@@ -31,30 +31,30 @@ SOFTWARE.
 #endif
 
 
-// MARK: Logical
-
-
-public protocol Conjunctive {
-    func && (left: Self, @autoclosure right:  () throws -> Self) rethrows -> Self // AND
-}
-public protocol Disjunctive {
-    func || (left: Self, @autoclosure right:  () throws -> Self) rethrows -> Self // OR
-}
-
+// MARK: LogicalOperationsType
 public protocol LogicalOperationsType: Conjunctive, Disjunctive {
-    prefix func ! (value: Self) -> Self // NOT
+    static prefix func ! (value: Self) -> Self // NOT
 }
-
 extension Bool: LogicalOperationsType {}
 
-
-// MARK: missing operators
-infix operator ||= { associativity right precedence 90 }
-public func ||= (inout lhs: Bool, rhs: Bool) {
-    lhs = lhs || rhs
+// MARK: Conjunctive
+public protocol Conjunctive {
+    static func && (left: Self, right:  @autoclosure () throws -> Self) rethrows -> Self // AND
+}
+infix operator &&=
+extension Conjunctive {
+    public static func &&= (lhs: inout Self, rhs: Self) {
+        lhs = lhs && rhs
+    }
 }
 
-infix operator &&= { associativity right precedence 90 }
-public func &&= (inout lhs: Bool, rhs: Bool) {
-    lhs = lhs && rhs
+// MARK: Disjunctive
+public protocol Disjunctive {
+    static func || (left: Self, right:  @autoclosure () throws -> Self) rethrows -> Self // OR
+}
+infix operator ||=
+extension Disjunctive {
+    public static func ||= (lhs: inout Self, rhs: Self) {
+        lhs = lhs || rhs
+    }
 }

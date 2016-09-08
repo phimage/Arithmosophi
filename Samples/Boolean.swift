@@ -28,31 +28,31 @@ SOFTWARE.
 import Foundation
 
 
-public enum Boolean: LogicalOperationsType, Equatable {case True, False}
+public enum Boolean: LogicalOperationsType, Equatable {case `true`, `false`}
 // extends also BooleanLiteralConvertible and BooleanType
 
 public func == (left: Boolean, right: Boolean) -> Bool {
     switch (left, right) {
-    case (.False, .False), (.True, .True): return true
-    case (.False, .True), (.True, .False):  return false
+    case (.false, .false), (.true, .true): return true
+    case (.false, .true), (.true, .false):  return false
     }
 }
 
-public func && (left: Boolean, @autoclosure right:  () throws -> Boolean) rethrows -> Boolean {
+public func && (left: Boolean, right:  @autoclosure () throws -> Boolean) rethrows -> Boolean {
     switch left {
-    case .False: return .False
-    case .True:  return try right()
+    case .false: return .false
+    case .true:  return try right()
     }
 }
-public func || (left: Boolean, @autoclosure right:  () throws -> Boolean) rethrows -> Boolean {
+public func || (left: Boolean, right:  @autoclosure () throws -> Boolean) rethrows -> Boolean {
     switch left {
-    case .False: return try right()
-    case .True:  return .True
+    case .false: return try right()
+    case .true:  return .true
     }
 }
 public prefix func ! (value: Boolean ) -> Boolean {
     switch value {
-    case .False: return .True
-    case .True:  return .False
+    case .false: return .true
+    case .true:  return .false
     }
 }

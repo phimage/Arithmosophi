@@ -26,7 +26,7 @@ SOFTWARE.
 */
 import Foundation
 
-public final class Box<T where T:Addable, T:Equatable> : RawRepresentable {
+public final class Box<T> : RawRepresentable where T:Addable, T:Equatable {
     public typealias RawValue = T
 
     public var rawValue: T
@@ -40,10 +40,10 @@ public final class Box<T where T:Addable, T:Equatable> : RawRepresentable {
     }
 }
 
-public func +=<T where T:Addable> (inout box: Box<T>, addend: T) {
+public func +=<T> (box: inout Box<T>, addend: T) where T:Addable {
     box.rawValue = box.rawValue + addend
 }
-public func -=<T where T:Substractable> (inout box: Box<T>, addend: T) {
+public func -=<T> (box: inout Box<T>, addend: T) where T:Substractable {
     box.rawValue = box.rawValue - addend
 }
 

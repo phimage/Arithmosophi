@@ -37,7 +37,7 @@ SOFTWARE.
 public typealias AveragableDivideType = Int
 
 public protocol Averagable: Addable {
-    func / (lhs: Self, rhs: AveragableDivideType) -> Self
+    static func / (lhs: Self, rhs: AveragableDivideType) -> Self
 }
 
 // MARK: Implement protocols
@@ -69,32 +69,32 @@ public func / (lhs: UInt, rhs: AveragableDivideType) -> UInt { return lhs / UInt
 
 
 // generic operators on dividable & literal
-public func / <T where T:IntegerLiteralConvertible, T:Dividable>(lhs: T, rhs: T.IntegerLiteralType) -> T {
+public func / <T>(lhs: T, rhs: T.IntegerLiteralType) -> T where T:ExpressibleByIntegerLiteral, T:Dividable {
     let div: T = T(integerLiteral: rhs)
     return lhs / div
 }
 
-public func / <T where T:FloatLiteralConvertible, T:Dividable>(lhs: T, rhs: T.FloatLiteralType) -> T {
+public func / <T>(lhs: T, rhs: T.FloatLiteralType) -> T where T:ExpressibleByFloatLiteral, T:Dividable {
     let div: T = T(floatLiteral: rhs)
     return lhs / div
 }
 // MARK: utility functions
 
-public func averageOf<T: protocol<Averagable, Initializable>> (seq: [T]) -> T {
+public func averageOf<T: Averagable & Initializable> (_ seq: [T]) -> T {
     return sumOf(seq) / seq.count
 }
-public func averageOf<T: protocol<Averagable, Initializable>> (seq: T...) -> T {
+public func averageOf<T: Averagable & Initializable> (_ seq: T...) -> T {
     return averageOf(seq)
 }
 
 
 // MARK: CollectionType
-public extension CollectionType where Self.Generator.Element: protocol<Averagable, Initializable> {
+public extension Collection where Self.Iterator.Element: Averagable & Initializable {
 
-    public var average: Self.Generator.Element {
+    public var average: Self.Iterator.Element {
         let count = AveragableDivideType(self.count.toIntMax()) // Int64...
         if count == 0 {
-            return Self.Generator.Element()
+            return Self.Iterator.Element()
         }
         return self.sum / count
     }
@@ -102,14 +102,14 @@ public extension CollectionType where Self.Generator.Element: protocol<Averagabl
 }
 
 // MARK: median
-public extension CollectionType where Self.Generator.Element: protocol<Averagable, Comparable, Initializable> {
+public extension Collection where Self.Iterator.Element: Averagable & Comparable & Initializable {
     
-    public var median: Self.Generator.Element? {
+    public var median: Self.Iterator.Element? {
         let count = AveragableDivideType(self.count.toIntMax()) // Int64...
         if count == 0 {
             return nil
         }
-        let sorted = self.sort { (l, r) -> Bool in
+        let sorted = self.sorted { (l, r) -> Bool in
             return l < r
         }
         
@@ -123,12 +123,12 @@ public extension CollectionType where Self.Generator.Element: protocol<Averagabl
         }
     }
     
-    public var medianLow: Self.Generator.Element? {
+    public var medianLow: Self.Iterator.Element? {
         let count = AveragableDivideType(self.count.toIntMax()) // Int64...
         if count == 0 {
             return nil
         }
-        let sorted = self.sort { (l, r) -> Bool in
+        let sorted = self.sorted { (l, r) -> Bool in
             return l < r
         }
         
@@ -139,12 +139,12 @@ public extension CollectionType where Self.Generator.Element: protocol<Averagabl
         }
     }
     
-    public var medianHigh: Self.Generator.Element? {
+    public var medianHigh: Self.Iterator.Element? {
         let count = AveragableDivideType(self.count.toIntMax()) // Int64...
         if count == 0 {
             return nil
         }
-        let sorted = self.sort { (l, r) -> Bool in
+        let sorted = self.sorted { (l, r) -> Bool in
             return l < r
         }
         return sorted[Int(count / 2)]

@@ -38,16 +38,16 @@
 // MARK: variance
 // http://en.wikipedia.org/wiki/Variance
 
-public extension CollectionType where Self.Generator.Element: protocol<Averagable, Initializable, Substractable, Multiplicable> {
+public extension Collection where Self.Iterator.Element: Averagable & Initializable & Substractable & Multiplicable {
     
     // Return varianceSample: Σ( (Element - average)^2 ) / (count - 1)
     // https://en.wikipedia.org/wiki/Variance#Sample_variance
-    public var varianceSample: Self.Generator.Element? {
+    public var varianceSample: Self.Iterator.Element? {
         let count = AveragableDivideType(self.count.toIntMax()) // AveragableDivideType...
         if count < 2 { return nil }
         
         let avgerageValue = average
-        let n = self.reduce(Self.Generator.Element()) { total, value in
+        let n = self.reduce(Self.Iterator.Element()) { total, value in
             total + (avgerageValue - value) * (avgerageValue - value)
         }
         
@@ -56,12 +56,12 @@ public extension CollectionType where Self.Generator.Element: protocol<Averagabl
     
     // Return variancePopulation: Σ( (Element - average)^2 ) / count
     // https://en.wikipedia.org/wiki/Variance#Population_variance
-    public var variancePopulation: Self.Generator.Element?{
+    public var variancePopulation: Self.Iterator.Element?{
         let count = AveragableDivideType(self.count.toIntMax()) // AveragableDivideType...
         if count == 0 { return nil }
         
         let avgerageValue = average
-        let numerator = self.reduce(Self.Generator.Element()) { total, value in
+        let numerator = self.reduce(Self.Iterator.Element()) { total, value in
             total +  (avgerageValue - value) * (avgerageValue - value)
         }
         
@@ -70,32 +70,32 @@ public extension CollectionType where Self.Generator.Element: protocol<Averagabl
     
 }
 
-public extension CollectionType where Self.Generator.Element: protocol<Averagable, Initializable, Substractable, Multiplicable, Arithmos> {
+public extension Collection where Self.Iterator.Element: Averagable & Initializable & Substractable & Multiplicable & Arithmos {
     
-    public var standardDeviationSample: Self.Generator.Element? {
+    public var standardDeviationSample: Self.Iterator.Element? {
         return varianceSample?.sqrt() ?? nil
     }
     
-    public var standardDeviationPopulation: Self.Generator.Element? {
+    public var standardDeviationPopulation: Self.Iterator.Element? {
         return variancePopulation?.sqrt() ?? nil
     }
     
-    public var σSample: Self.Generator.Element? {
+    public var σSample: Self.Iterator.Element? {
         return standardDeviationSample
     }
     
-    public var σPopulation: Self.Generator.Element? {
+    public var σPopulation: Self.Iterator.Element? {
         return standardDeviationPopulation
     }
     
 }
 
 // MARK: covariance
-public extension CollectionType where Self.Generator.Element: protocol<Averagable, Initializable, Substractable, Multiplicable, Arithmos> {
+public extension Collection where Self.Iterator.Element: Averagable & Initializable & Substractable & Multiplicable & Arithmos {
     
     
-    public func covarianceSample<W: CollectionType where W.Generator.Element == Self.Generator.Element>
-        (with: W) -> Self.Generator.Element? {
+    public func covarianceSample<W: Collection>
+        (_ with: W) -> Self.Iterator.Element? where W.Iterator.Element == Self.Iterator.Element {
         let count = AveragableDivideType(self.count.toIntMax()) // AveragableDivideType...
         if count < 2 { return nil }
         let withCount = AveragableDivideType(with.count.toIntMax()) // AveragableDivideType...
@@ -106,7 +106,7 @@ public extension CollectionType where Self.Generator.Element: protocol<Averagabl
         let average = self.average
         let withAverage = with.average
         
-        var sum = Self.Generator.Element()
+        var sum = Self.Iterator.Element()
         for (element, withElement) in zip(self, with) {
             sum += (element - average) * (withElement - withAverage)
         }
@@ -114,8 +114,8 @@ public extension CollectionType where Self.Generator.Element: protocol<Averagabl
         return sum / (count - 1)
     }
     
-    public func covariancePopulation<W: CollectionType where W.Generator.Element == Self.Generator.Element>
-        (with: W) -> Self.Generator.Element? {
+    public func covariancePopulation<W: Collection>
+        (_ with: W) -> Self.Iterator.Element? where W.Iterator.Element == Self.Iterator.Element {
         let count = AveragableDivideType(self.count.toIntMax()) // AveragableDivideType...
         if count < 2 { return nil }
         let withCount = AveragableDivideType(with.count.toIntMax()) // AveragableDivideType...
@@ -126,7 +126,7 @@ public extension CollectionType where Self.Generator.Element: protocol<Averagabl
         let average = self.average
         let withAverage = with.average
         
-        var sum = Self.Generator.Element()
+        var sum = Self.Iterator.Element()
         for (element, withElement) in zip(self, with) {
             sum += (element - average) * (withElement - withAverage)
         }
@@ -137,16 +137,16 @@ public extension CollectionType where Self.Generator.Element: protocol<Averagabl
 }
 
 // MARK: Pearson product-moment correlation coefficient
-public extension CollectionType where Self.Generator.Element: protocol<Averagable, Initializable, Substractable, Multiplicable, Arithmos, Equatable, Dividable> {
+public extension Collection where Self.Iterator.Element: Averagable & Initializable & Substractable & Multiplicable & Arithmos & Equatable & Dividable {
     
     // http://en.wikipedia.org/wiki/Pearson_product-moment_correlation_coefficient
-    public func pearson<W: CollectionType where W.Generator.Element == Self.Generator.Element>
-        (with: W) -> Self.Generator.Element? {
+    public func pearson<W: Collection>
+        (_ with: W) -> Self.Iterator.Element? where W.Iterator.Element == Self.Iterator.Element {
         if let cov = self.covariancePopulation(with),
-            σself = self.standardDeviationPopulation,
-            σwith = with.standardDeviationPopulation {
+            let σself = self.standardDeviationPopulation,
+            let σwith = with.standardDeviationPopulation {
             
-            let zero = Self.Generator.Element()
+            let zero = Self.Iterator.Element()
             if σself == zero || σwith == zero {
                 return nil
             }
@@ -165,17 +165,17 @@ public extension CollectionType where Self.Generator.Element: protocol<Averagabl
 
 
 public enum LinearRegressionMethod {
-    case OLS
-    case Multiply
+    case ols
+    case multiply
     // case Accelerate (use upsurge?)
 }
 
 // Use with Double and fFloat (not Int)
-public extension CollectionType where Self.Generator.Element: protocol<Averagable, Initializable, Substractable, Multiplicable, Dividable> {
+public extension Collection where Self.Iterator.Element: Averagable & Initializable & Substractable & Multiplicable & Dividable {
 
     // @return (intercept, slope) where with = slope * self + intercept
-    public func linearRegression<W: CollectionType where W.Generator.Element == Self.Generator.Element>
-        (with: W, method: LinearRegressionMethod = .OLS)  -> (Self.Generator.Element, Self.Generator.Element)? {
+    public func linearRegression<W: Collection>
+        (_ with: W, method: LinearRegressionMethod = .ols)  -> (Self.Iterator.Element, Self.Iterator.Element)? where W.Iterator.Element == Self.Iterator.Element {
         let count = AveragableDivideType(self.count.toIntMax()) // AveragableDivideType...
         if count < 2 { return nil }
         let withCount = AveragableDivideType(with.count.toIntMax()) // AveragableDivideType...
@@ -186,16 +186,16 @@ public extension CollectionType where Self.Generator.Element: protocol<Averagabl
         let average = self.average
         let withAverage = with.average
         
-        var sum1 = Self.Generator.Element()
-        var sum2 = Self.Generator.Element()
+        var sum1 = Self.Iterator.Element()
+        var sum2 = Self.Iterator.Element()
         switch method {
-        case .Multiply:
+        case .multiply:
             let m1 = multiply(with).average
             sum1 = m1 - average * withAverage
             let m2 = multiply(self).average
             sum2 = m2 - average * average
             break
-        case .OLS:
+        case .ols:
             for (element, withElement) in zip(self, with) {
                 let elMinusAverage = (element - average)
                 sum1 += elMinusAverage * (withElement - withAverage)
@@ -209,8 +209,8 @@ public extension CollectionType where Self.Generator.Element: protocol<Averagabl
         return (intercept, slope)
     }
 
-    public func linearRegressionClosure<W: CollectionType where W.Generator.Element == Self.Generator.Element>
-        (with: W, method: LinearRegressionMethod = .OLS)  -> (Self.Generator.Element -> Self.Generator.Element)? {
+    public func linearRegressionClosure<W: Collection>
+        (_ with: W, method: LinearRegressionMethod = .ols)  -> ((Self.Iterator.Element) -> Self.Iterator.Element)? where W.Iterator.Element == Self.Iterator.Element {
         guard let (intercept, slope) = self.linearRegression(with) else {
             return nil
         }
@@ -219,17 +219,17 @@ public extension CollectionType where Self.Generator.Element: protocol<Averagabl
     }
     
     // Create a closure : slope * x + intercept with x closure parameters
-    public static func linearRegressionClosure(intercept: Self.Generator.Element, slope: Self.Generator.Element)  -> (Self.Generator.Element -> Self.Generator.Element) {
+    public static func linearRegressionClosure(_ intercept: Self.Iterator.Element, slope: Self.Iterator.Element)  -> ((Self.Iterator.Element) -> Self.Iterator.Element) {
         return { intercept + slope * $0 }
     }
 
     // https://en.wikipedia.org/wiki/Coefficient_of_determination
-    public func coefficientOfDetermination<W: CollectionType where W.Generator.Element == Self.Generator.Element>
-        (with: W, linearRegressionClosure: (Self.Generator.Element -> Self.Generator.Element)) -> Self.Generator.Element {
+    public func coefficientOfDetermination<W: Collection>
+        (_ with: W, linearRegressionClosure: ((Self.Iterator.Element) -> Self.Iterator.Element)) -> Self.Iterator.Element where W.Iterator.Element == Self.Iterator.Element {
 
         let withAverage = with.average
-        var sumSquareModel = Self.Generator.Element() // sum of squares of the deviations of the estimated values of the response variable of the model
-        var sumSquareTotal = Self.Generator.Element() // sum of squares of the deviations of the observed
+        var sumSquareModel = Self.Iterator.Element() // sum of squares of the deviations of the estimated values of the response variable of the model
+        var sumSquareTotal = Self.Iterator.Element() // sum of squares of the deviations of the observed
         
         for (element, withElement) in zip(self, with) {
             let predictedValue = linearRegressionClosure(element)
@@ -241,8 +241,8 @@ public extension CollectionType where Self.Generator.Element: protocol<Averagabl
         return sumSquareModel / sumSquareTotal
     }
 
-    public func coefficientOfDetermination<W: CollectionType where W.Generator.Element == Self.Generator.Element>
-        (with: W, intercept: Self.Generator.Element, slope: Self.Generator.Element) -> Self.Generator.Element {
+    public func coefficientOfDetermination<W: Collection>
+        (_ with: W, intercept: Self.Iterator.Element, slope: Self.Iterator.Element) -> Self.Iterator.Element where W.Iterator.Element == Self.Iterator.Element {
         return self.coefficientOfDetermination(with, linearRegressionClosure: Self.linearRegressionClosure(intercept, slope: slope))
     }
 
@@ -251,10 +251,10 @@ public extension CollectionType where Self.Generator.Element: protocol<Averagabl
 // MARK:- collection operations
 
 // MARK: multiply
-private extension CollectionType where Self.Generator.Element: protocol<Multiplicable> {
+private extension Collection where Self.Iterator.Element: Multiplicable {
     
-    private func multiply<W: CollectionType where W.Generator.Element == Self.Generator.Element>
-        (with: W) -> [Self.Generator.Element] {
+    func multiply<W: Collection>
+        (_ with: W) -> [Self.Iterator.Element] where W.Iterator.Element == Self.Iterator.Element {
         return zip(self, with).map { s, w in
             return s * w
         }
@@ -263,10 +263,10 @@ private extension CollectionType where Self.Generator.Element: protocol<Multipli
 }
 
 // MARK: add
-private extension CollectionType where Self.Generator.Element: protocol<Addable> {
+private extension Collection where Self.Iterator.Element: Addable {
     
-    private func add<W: CollectionType where W.Generator.Element == Self.Generator.Element>
-        (array: W) -> [Self.Generator.Element] {
+    func add<W: Collection>
+        (_ array: W) -> [Self.Iterator.Element] where W.Iterator.Element == Self.Iterator.Element {
         return zip(self, array).map { s, w in
             return s + w
         }
@@ -275,10 +275,10 @@ private extension CollectionType where Self.Generator.Element: protocol<Addable>
 }
 
 // MARK: subtract
-private extension CollectionType where Self.Generator.Element: protocol<Substractable> {
+private extension Collection where Self.Iterator.Element: Substractable {
     
-    private func subtract<W: CollectionType where W.Generator.Element == Self.Generator.Element>
-        (array: W) -> [Self.Generator.Element] {
+    func subtract<W: Collection>
+        (_ array: W) -> [Self.Iterator.Element] where W.Iterator.Element == Self.Iterator.Element {
         return zip(self, array).map { s, w in
             return s - w
         }
@@ -287,10 +287,10 @@ private extension CollectionType where Self.Generator.Element: protocol<Substrac
 }
 
 // MARK: divide
-private extension CollectionType where Self.Generator.Element: protocol<Dividable> {
+private extension Collection where Self.Iterator.Element: Dividable {
     
-    private func divide<W: CollectionType where W.Generator.Element == Self.Generator.Element>
-        (with: W) -> [Self.Generator.Element] {
+    func divide<W: Collection>
+        (_ with: W) -> [Self.Iterator.Element] where W.Iterator.Element == Self.Iterator.Element {
         return zip(self, with).map { s, w in
             return s / w // NO ZERO valu
         }

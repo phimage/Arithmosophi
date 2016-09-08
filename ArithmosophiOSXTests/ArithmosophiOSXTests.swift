@@ -38,7 +38,7 @@ class ArithmosophiOSXTests: XCTestCase {
     }
     func testSumString() {
         let value = aString.sum
-        let expected = aString.joinWithSeparator("")
+        let expected = aString.joined(separator: "")
         XCTAssertEqual(value, expected)
     }
     func testSumArray() {
@@ -58,10 +58,26 @@ class ArithmosophiOSXTests: XCTestCase {
         XCTAssertEqual(c3.real, c.real + c2.real)
         XCTAssertEqual(c3.imaginary, c.imaginary + c2.imaginary)
         
+        let c3p = c - c2
+        XCTAssertEqual(c3p.real, c.real - c2.real)
+        XCTAssertEqual(c3p.imaginary, c.imaginary - c2.imaginary)
         
-        let c4: Complex = 1 + 3.i
-        XCTAssertEqual(c4.real, 1)
-        XCTAssertEqual(c4.imaginary, 3)
+        let r4 = 1
+        let i4 = 3
+        let c4: Complex = r4 + i4.i
+        XCTAssertEqual(c4.real, r4)
+        XCTAssertEqual(c4.imaginary, i4)
+        
+        let c5 = c4 * 1.i
+        XCTAssertEqual(c5.real, -i4)
+        XCTAssertEqual(c5.imaginary, r4)
+        
+        let c6 = c5 * 1.i
+        XCTAssertEqual(c4, -c6)
+        
+        var c7 = c6
+        c7 += c6
+        XCTAssertEqual(c7, c6 + c6)
     }
     
     // MARK: - Average
@@ -381,16 +397,18 @@ class ArithmosophiOSXTests: XCTestCase {
  
     // MARK: - Linear regression
     
+    public typealias LinearRegressionTestData = (x: [Double], y: [Double], intercept: Double, slope: Double)
+    
     func testLinearRegression() {
         
-        let tests = [
+        let tests: [LinearRegressionTestData] = [
             (x: [1.0, 2.0, 3], y: [2.0, 3, 4], intercept: 1.0, slope: 1.0),
             (x: [1.0, 2, 3], y: [2.0, 4, 6], intercept: 0.0, slope: 2.0),
             (x: [2.0, 4, 6] , y: [1.0, 2, 3], intercept: 0.0, slope: 0.5),
         ]
         
         for test in tests {
-            testLinearRegression(test, method: .OLS)
+            testLinearRegression( test, method: .ols)
         }
         
         // List of points
@@ -407,7 +425,7 @@ class ArithmosophiOSXTests: XCTestCase {
         let y = data.map { $0.1 }
  
         
-        if let (intercept, slope) = y.linearRegression(x, method: .Multiply) {
+        if let (intercept, slope) = y.linearRegression(x, method: .multiply) {
             XCTAssertEqual(-0.262/*323073774029*/, round3(intercept))
             XCTAssertEqual(1.0021168180/*204547*/, round10(slope))
         } else {
@@ -416,7 +434,7 @@ class ArithmosophiOSXTests: XCTestCase {
   
     }
 
-    func testLinearRegression(data: (x: [Double], y: [Double], intercept: Double, slope: Double), method: LinearRegressionMethod) {
+    func testLinearRegression(_ data: LinearRegressionTestData, method: LinearRegressionMethod) {
         if let (intercept, slope) = data.x.linearRegression(data.y, method: method) {
             XCTAssertEqual(data.intercept, intercept)
             XCTAssertEqual(data.slope, slope)
@@ -459,15 +477,15 @@ class ArithmosophiOSXTests: XCTestCase {
     }
 }
 
-func roundToPlaces(value: Double, places: Int) -> Double {
+func roundToPlaces(_ value: Double, places: Int) -> Double {
     let divisor = pow(10.0, Double(places))
     return round(value * divisor) / divisor
 }
 
-func round10(value: Double) -> Double {
+func round10(_ value: Double) -> Double {
     return roundToPlaces(value, places: 10)
 }
 
-func round3(value: Double) -> Double {
+func round3(_ value: Double) -> Double {
     return roundToPlaces(value, places: 3)
 }

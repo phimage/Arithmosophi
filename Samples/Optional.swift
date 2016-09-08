@@ -29,30 +29,30 @@ import Foundation
 
 
 public enum Optional<T:Initializable> : LogicalOperationsType, Equatable, Initializable {
-    case None
-    case Some(T)
+    case none
+    case some(T)
 
     public init(_ value: T?) {
         if let v = value {
-            self = .Some(v)
+            self = .some(v)
         } else {
-            self = .None
+            self = .none
         }
     }
 
     init(_ value: T) {
-        self = .Some(value)
+        self = .some(value)
     }
 
     public init() {
-        self = .None
+        self = .none
     }
 
     public func unwrap() -> T {
         switch self {
-        case .Some(let value):
+        case .some(let value):
             return value
-        case .None:
+        case .none:
             fatalError("Unexpectedly found nil whie unwrapping an Optional value")
         }
     }
@@ -60,40 +60,40 @@ public enum Optional<T:Initializable> : LogicalOperationsType, Equatable, Initia
 
 public func == <T: Equatable>(left: Optional<T>, right: Optional<T>) -> Bool {
     switch (left, right) {
-    case (.None, .None): return true
-    case (.None, .Some), (.Some, .None):  return false
-    case (.Some(let x), .Some(let y)): return x == y
+    case (.none, .none): return true
+    case (.none, .some), (.some, .none):  return false
+    case (.some(let x), .some(let y)): return x == y
     }
 }
 
 public func == <T>(left: Optional<T>, right: Optional<T>) -> Bool {
     switch (left, right) {
-    case (.None, .None): return true
-    case (.None, .Some), (.Some, .None):  return false
-    case (.Some, .Some): return true
+    case (.none, .none): return true
+    case (.none, .some), (.some, .none):  return false
+    case (.some, .some): return true
     }
 }
 
-public func && <T>(left: Optional<T>, @autoclosure right:  () throws -> Optional<T>) rethrows -> Optional<T> {
+public func && <T>(left: Optional<T>, right:  @autoclosure () throws -> Optional<T>) rethrows -> Optional<T> {
     switch left {
-    case .None: return .None
-    case .Some:  return try right()
+    case .none: return .none
+    case .some:  return try right()
     }
 }
-public func || <T>(left: Optional<T>, @autoclosure right:  () throws -> Optional<T>) rethrows -> Optional<T> {
+public func || <T>(left: Optional<T>, right:  @autoclosure () throws -> Optional<T>) rethrows -> Optional<T> {
     switch left {
-    case .None: return try right()
-    case .Some:  return left
+    case .none: return try right()
+    case .some:  return left
     }
 }
 public prefix func ! <T: Initializable>(value: Optional<T> ) -> Optional<T> {
     switch value {
-    case .None: return .Some(T())
-    case .Some:  return .None
+    case .none: return .some(T())
+    case .some:  return .none
     }
 }
 
-public func ||= <T>(inout lhs: T?, rhs: T) {
+public func ||= <T>(lhs: inout T?, rhs: T) {
     if lhs == nil {
         lhs = rhs
     }

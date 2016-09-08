@@ -74,7 +74,7 @@ public struct Complex<T:ArithmeticType> {
         }
     }
 
-    public func combine(rhs: Complex, combineBehavior: (T, T) -> T) -> Complex<T> {
+    public func combine(_ rhs: Complex, combineBehavior: (T, T) -> T) -> Complex<T> {
         let realPart = combineBehavior(self.real, rhs.real)
         let imaginaryPart = combineBehavior(self.imaginary, rhs.imaginary)
         return Complex(real: realPart, imaginary: imaginaryPart)
@@ -202,36 +202,6 @@ public prefix func -<T: ArithmeticType>(instance: Complex<T>) -> Complex<T> {
     return Complex(real: -instance.real, imaginary: -instance.imaginary)
 }
 
-// MARK Incrementable
-extension Complex: Incrementable {}
-public prefix func ++ <T: ArithmeticType>(inout x: Complex<T>) -> Complex<T> {
-    x.real++
-    x.imaginary++
-    return x
-}
-public postfix func ++ <T: ArithmeticType>(inout x: Complex<T>) -> Complex<T> {
-    let real = x.real
-    let imaginary = x.imaginary
-    x.real++
-    x.imaginary++
-    return Complex<T>(real: real, imaginary: imaginary)
-}
-
-// MARK Decrementable
-extension Complex: Decrementable {}
-public prefix func -- <T: ArithmeticType>(inout x: Complex<T>) -> Complex<T> {
-    x.real--
-    x.imaginary--
-    return x
-}
-public postfix func -- <T: ArithmeticType>(inout x: Complex<T>) -> Complex<T> {
-    let real = x.real
-    let imaginary = x.imaginary
-    x.real--
-    x.imaginary--
-    return Complex(real: real, imaginary: imaginary)
-}
-
 // MARK Modulable
 extension Complex: Modulable {}
 public func % <T: Modulable>(lhs: Complex<T>, rhs: Complex<T>) -> Complex<T> {
@@ -244,19 +214,32 @@ public func % <T: Modulable>(lhs: Complex<T>, rhs:T) -> Complex<T> {
 public func % <T: Modulable>(lhs:T, rhs: Complex<T>) -> Complex<T> {
     return Complex<T>(real: lhs, imaginary: T()) % rhs
 }
-public func %= <T: Modulable>(inout lhs: Complex<T>, rhs: Complex<T>) {
+public func %= <T: Modulable>(lhs: inout Complex<T>, rhs: Complex<T>) {
     lhs = lhs % rhs
 }
-public func %= <T: Modulable>(inout lhs: Complex<T>, rhs:T) {
+public func %= <T: Modulable>(lhs: inout Complex<T>, rhs:T) {
     lhs = lhs % rhs
 }
 
+// MARK Equatable
+extension Complex: Equatable {}
+public func == <T: Equatable>(lhs: Complex<T>, rhs: Complex<T>) -> Bool {
+    return lhs.real == rhs.real && lhs.imaginary == rhs.imaginary
+}
+
+// MARK Hashable
+/*extension Complex: Hashable where T: Hashable {
+    public var hashValue: Int {
+        return self.real.hashValue + self.imaginary.hashValue
+    }
+}*/
+
 // MARK: CGPoint
 public protocol Complexable {
-    associatedtype Type: ArithmeticType
-    var complex: Complex<Type> {get}
+    associatedtype AssociatedType: ArithmeticType
+    var complex: Complex<AssociatedType> {get}
     
-    init(complex: Complex<Type>)
+    init(complex: Complex<AssociatedType>)
 }
 #if !os(Linux)
 

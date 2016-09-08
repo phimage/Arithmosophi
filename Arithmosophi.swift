@@ -38,48 +38,39 @@ SOFTWARE.
 // MARK: Protocols
 
 public protocol Addable {
-    func + (lhs: Self, rhs: Self) -> Self
-    func += (inout lhs: Self, rhs: Self)
+    static func + (lhs: Self, rhs: Self) -> Self
+    static func += (lhs: inout Self, rhs: Self)
 }
-public func += <T: Addable>(inout lhs: T, rhs: T) {
+public func += <T: Addable>(lhs: inout T, rhs: T) {
     lhs = lhs + rhs
 }
 public protocol Substractable {
-    func - (lhs: Self, rhs: Self) -> Self
-    func -= (inout lhs: Self, rhs: Self)
+    static func - (lhs: Self, rhs: Self) -> Self
+    static func -= (lhs: inout Self, rhs: Self)
 }
-public func -= <T: Substractable>(inout lhs: T, rhs: T) {
+public func -= <T: Substractable>(lhs: inout T, rhs: T) {
     lhs = lhs - rhs
 }
 public protocol Negatable {
-    prefix func - (instance: Self) -> Self
+    static prefix func - (instance: Self) -> Self
 }
 public protocol Multiplicable {
-    func * (lhs: Self, rhs: Self) -> Self
+    static func * (lhs: Self, rhs: Self) -> Self
 }
 public protocol Dividable {
-    func / (lhs: Self, rhs: Self) -> Self
+    static func / (lhs: Self, rhs: Self) -> Self
 }
 public protocol Modulable {
-    func % (lhs: Self, rhs: Self) -> Self
+    static func % (lhs: Self, rhs: Self) -> Self
 }
-public protocol Incrementable {
-    prefix func ++ (inout value: Self) -> Self
-    postfix func ++ (inout value: Self) -> Self
-}
-public protocol Decrementable {
-    prefix func -- (inout value: Self) -> Self
-    postfix func -- (inout value: Self) -> Self
-}
-
 public protocol AddableWithOverflow {
-    func &+ (lhs: Self, rhs: Self) -> Self
+    static func &+ (lhs: Self, rhs: Self) -> Self
 }
 public protocol SubstractableWithOverflow {
-    func &- (lhs: Self, rhs: Self) -> Self
+    static func &- (lhs: Self, rhs: Self) -> Self
 }
 public protocol MultiplicableWithOverflow {
-    func &* (lhs: Self, rhs: Self) -> Self
+    static func &* (lhs: Self, rhs: Self) -> Self
 }
 
 
@@ -100,8 +91,9 @@ public protocol LatticeType: Comparable {
 
 // MARK: combined protocols
 
-public protocol Additive: Addable, Substractable, Incrementable, Decrementable {}
+public protocol Additive: Addable, Substractable {}
 public protocol Multiplicative: Multiplicable, Dividable, Modulable {}
+// public protocol IntegerArithmetic: Additive, Multiplicative{}
 
 public protocol AdditiveWithOverflow: Additive, AddableWithOverflow, SubstractableWithOverflow {}
 public protocol OverflowOperable: MultiplicableWithOverflow, AddableWithOverflow, SubstractableWithOverflow {}
@@ -129,10 +121,12 @@ extension String: Initializable, Addable {}
 extension Array: Initializable, Addable {}
 extension Bool: Initializable {}
 
-public func += <T> (inout left: Array<T>, right: Array<T>) {
+// Array addable
+public func += <T> (left: inout Array<T>, right: Array<T>) {
     left = left + right
 }
 
+// lattice impl
 extension Bool : LatticeType {
     public static var min: Bool {
         return false
@@ -171,65 +165,51 @@ extension Double : LatticeType {
 
 
 // MARK: utility functions
-public func sumOf<S: SequenceType where S.Generator.Element: Addable> (seq: S, initialValue: S.Generator.Element) -> S.Generator.Element {
+public func sumOf<S: Sequence> (_ seq: S, initialValue: S.Iterator.Element) -> S.Iterator.Element where S.Iterator.Element: Addable {
     return seq.reduce(initialValue) { $0 + $1 }
 }
-private func sumOf<S: SequenceType where S.Generator.Element: protocol<Addable, IntegerLiteralConvertible>> (seq: S) -> S.Generator.Element {
-    let initialValue: S.Generator.Element  = 0
+private func sumOf<S: Sequence> (_ seq: S) -> S.Iterator.Element where S.Iterator.Element: Addable & ExpressibleByIntegerLiteral {
+    let initialValue: S.Iterator.Element  = 0
     return sumOf(seq, initialValue: initialValue)
 }
-public func sumOf<S: SequenceType where S.Generator.Element: protocol<Addable, Initializable>> (seq: S) -> S.Generator.Element {
-    let initialValue: S.Generator.Element  = S.Generator.Element()
+public func sumOf<S: Sequence> (_ seq: S) -> S.Iterator.Element where S.Iterator.Element: Addable & Initializable {
+    let initialValue: S.Iterator.Element  = S.Iterator.Element()
     return sumOf(seq, initialValue: initialValue)
 }
-public func sumOf<T where T: protocol<Addable, Initializable>> (seq: T...) -> T {
+public func sumOf<T> (_ seq: T...) -> T where T: Addable & Initializable {
     return sumOf(seq)
 }
 
-private func productOf<S: SequenceType where S.Generator.Element: protocol<Multiplicable, IntegerLiteralConvertible>> (seq: S) -> S.Generator.Element {
-    let initialValue: S.Generator.Element  = 1
-    return productOf(seq, initialValue: initialValue)
-}
-public func productOf<S: SequenceType where S.Generator.Element: protocol<Multiplicable, Initializable, Incrementable>> (seq: S) -> S.Generator.Element {
-    var initialValue: S.Generator.Element  = S.Generator.Element()
-    initialValue++
+private func productOf<S: Sequence> (_ seq: S) -> S.Iterator.Element where S.Iterator.Element: Multiplicable & ExpressibleByIntegerLiteral {
+    let initialValue: S.Iterator.Element  = 1
     return productOf(seq, initialValue: initialValue)
 }
 
-public func productOf<S: SequenceType where S.Generator.Element: Multiplicable> (seq: S, initialValue: S.Generator.Element) -> S.Generator.Element {
+public func productOf<S: Sequence> (_ seq: S, initialValue: S.Iterator.Element) -> S.Iterator.Element where S.Iterator.Element: Multiplicable {
     return seq.reduce (initialValue) { $0 * $1 }
 }
 
 // MARK: CollectionType
-private extension SequenceType where Self.Generator.Element: protocol<Addable, IntegerLiteralConvertible> {
+private extension Sequence where Self.Iterator.Element: Addable & ExpressibleByIntegerLiteral { // If public ambigous for ExpressibleByIntegerLiteral type
 
-    private var sum: Self.Generator.Element {
-        let initialValue: Self.Generator.Element  = 0
-        return self.reduce(initialValue, combine: +)
+    private var sum: Self.Iterator.Element {
+        let initialValue: Self.Iterator.Element  = 0
+        return self.reduce(initialValue, +)
     }
 
 }
-extension SequenceType where Self.Generator.Element: protocol<Addable, Initializable> {
+extension Sequence where Self.Iterator.Element: Addable & Initializable {
 
-    public var sum: Self.Generator.Element {
-        return self.reduce(Self.Generator.Element(), combine: +)
+    public var sum: Self.Iterator.Element {
+        return self.reduce(Self.Iterator.Element(), +)
     }
 
 }
-private extension SequenceType where Self.Generator.Element: protocol<Multiplicable, IntegerLiteralConvertible> {
+public extension Sequence where Self.Iterator.Element: Multiplicable & ExpressibleByIntegerLiteral {
 
-    private var product: Self.Generator.Element {
-        let initialValue: Self.Generator.Element  = 1
-        return self.reduce(initialValue, combine: *)
-    }
-
-}
-extension SequenceType where Self.Generator.Element: protocol<Multiplicable, Initializable, Incrementable> {
-
-    public var product: Self.Generator.Element {
-        var initialValue: Self.Generator.Element = Self.Generator.Element()
-        initialValue++
-        return self.reduce(initialValue, combine: *)
+    public var product: Self.Iterator.Element {
+        let initialValue: Self.Iterator.Element  = 1
+        return self.reduce(initialValue, *)
     }
 
 }
