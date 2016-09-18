@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Arithmosophi Sample.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>Arithmosophi.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -58,6 +63,11 @@
 			<true/>
 		</dict>
 		<key>C47004981B30560700EB0C80</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C4B1FE731D8B45E200B61C97</key>
 		<dict>
 			<key>primary</key>
 			<true/>

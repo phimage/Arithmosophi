@@ -26,6 +26,7 @@ SOFTWARE.
 */
 
 import Foundation
+import Arithmosophi
 
 public enum Parity: IntegerLiteralType, Equatable, Addable, Substractable, Multiplicable {
     case even, odd

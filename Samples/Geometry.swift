@@ -26,6 +26,7 @@ SOFTWARE.
 */
 
 // examples
+import Arithmosophi
 
 open class Geometry {
 
@@ -119,7 +120,8 @@ open class Geometry {
         return value * (i2 - i1) + i1
     }
     open class func map<T>(_ value: T, _ a1: T, _ a2: T, _ b1: T, _ b2: T) -> T where T: Addable, T: Substractable, T: Multiplicable, T: Dividable {
-        return b1 + ((b2 - b1) * (value - a1)) / (a2 - a1)
+        let v = ((b2 - b1) * (value - a1))
+        return b1 + v / (a2 - a1)
     }
 
     open class func interpolate<T>(x1: T, y1: T, x2: T, y2: T, t: T) -> (x: T, y: T) where T: Substractable, T: Multiplicable, T: Addable {

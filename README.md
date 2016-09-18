@@ -23,7 +23,7 @@ protocol Addable {
 [13, 2.4, 3, 4].varianceSample
 ```
 
-- As you might guess `Substractable` define `-` operator, `Multiplicatable` define `*` operator, etc..., all defined in [Arithmosophi.swift](Arithmosophi.swift)
+- As you might guess `Substractable` define `-` operator, `Multiplicatable` define `*` operator, etc..., all defined in [Arithmosophi.swift](Sources/Arithmosophi.swift)
 
 ## Contents ##
 - [Generic functions](#generic-functions)
@@ -32,6 +32,8 @@ protocol Addable {
   - [Median](#median)
   - [Variance](#variance)
   - [Standard deviation](#standard-deviation)
+  - [Skewness](#skewness)
+  - [Kurtosis](#kurtosis)
   - [Covariance](#covariance)
 - [Object attributes](#object-attributes)
 - [Logical operations](#logical-operations)
@@ -64,7 +66,7 @@ This framework contains some useful extensions on `CollectionType`
 ```
 
 ### Average ###
-_with [MesosOros.swift](MesosOros.swift)_
+_with [MesosOros.swift](Sources/MesosOros.swift)_
 
 Computes [arithmetic average/mean](http://en.wikipedia.org/wiki/Arithmetic_mean)
 ```swift
@@ -80,7 +82,7 @@ All arithmetic type conform to this protocol and you can get an average for a `C
 P.S. You can conform to this protocol and `Addable` to make a custom average.
 
 ### Median ###
-_with [MesosOros.swift](MesosOros.swift)_
+_with [MesosOros.swift](Sources/MesosOros.swift)_
 
 Get the [median value](http://en.wikipedia.org/wiki/Median) from the array
 
@@ -98,7 +100,7 @@ Get the [median value](http://en.wikipedia.org/wiki/Median) from the array
 ```
 
 ### Variance ###
-_with [Sigma.swift](Sigma.swift)_
+_with [Sigma.swift](Sources/Sigma.swift)_
 
 Computes [variance](http://en.wikipedia.org/wiki/Variance).
 
@@ -114,7 +116,7 @@ Computes [variance](http://en.wikipedia.org/wiki/Variance).
 ```
 
 ### Standard deviation ###
-_with [Sigma.swift](Sigma.swift)_
+_with [Sigma.swift](Sources/Sigma.swift)_
 
 Computes [standard deviation](http://en.wikipedia.org/wiki/Standard_deviation).
 
@@ -127,8 +129,26 @@ Computes [standard deviation](http://en.wikipedia.org/wiki/Standard_deviation).
 [[1.0, 11, 19.5, 4, 12, -7].standardDeviationPopulation
 ```
 
+### Skewness ###
+_with [Sigma.swift](Sources/Sigma.swift)_
+
+Computes [skewness](https://en.wikipedia.org/wiki/Skewness).
+
+```swift
+[1.0, 11, 19.5, 4, 12, -7].skewness // or .moment.skewness
+```
+
+### Kurtosis ###
+_with [Sigma.swift](Sources/Sigma.swift)_
+
+Computes [kurtosis](https://en.wikipedia.org/wiki/Kurtosis).
+
+```swift
+[1.0, 11, 19.5, 4, 12, -7].kurtosis // or .moment.kurtosis
+```
+
 ### Covariance ###
-_with [Sigma.swift](Sigma.swift)_
+_with [Sigma.swift](Sources/Sigma.swift)_
 
 Computes [covariance](http://en.wikipedia.org/wiki/Covariance) with another `CollectionType`
 
@@ -147,7 +167,7 @@ Computes [covariance](http://en.wikipedia.org/wiki/Covariance) with another `Col
 ```
 
 ## Complex ##
-_with [Complex.swift](Complex.swift)_
+_with [Complex.swift](Sources/Complex.swift)_
 `Complex` is a struct of two `ArithmeticType`, the real and the imaginary component
 
 ```swift
@@ -201,7 +221,7 @@ func +=<T where T:Addable, T:Initializable> (inout box: Box<T>, addend: T) {
 ```
 
 ## Logical operations  ##
-[`LogicalOperationsType`](LogicalOperationsType.swift) is a missing protocol for `Bool` inspired from `BitwiseOperationsType` (or `IntegerArithmeticType`)
+[`LogicalOperationsType`](Sources/LogicalOperationsType.swift) is a missing protocol for `Bool` inspired from `BitwiseOperationsType` (or `IntegerArithmeticType`)
 
 The purpose is the same, implement functions without knowing the base type
 
@@ -228,7 +248,7 @@ Take a look at a more complex enum [Optional](Samples/Optional.swift) which impl
 ## Geometry ##
 with `Arithmos`(number) & `Statheros`(constant)
 
-[`Arithmos`](Arithmos.swift) and [`Statheros`](Statheros.swift) add respectively functions and  mathematical constants for `Double`, `Float` and `CGFloat`, allowing to implement generic functions without taking care of type
+[`Arithmos`](Sources/Arithmos.swift) and [`Statheros`](Sources/Statheros.swift) add respectively functions and  mathematical constants for `Double`, `Float` and `CGFloat`, allowing to implement generic functions without taking care of type
 
 ```swift
 func distance<T: Arithmos>(#x: T, y: T) -> T {

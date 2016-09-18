@@ -35,7 +35,7 @@ SOFTWARE.
 #endif
 #endif
 
-public protocol Arithmos {
+public protocol Arithmos: Comparable {
 
     func abs() -> Self
     func floor () -> Self
@@ -46,10 +46,11 @@ public protocol Arithmos {
     func sqrt() -> Self
     func pow(_ value: Self) -> Self
 
-    func cos() -> Self
     func exp() -> Self
     func log() -> Self
+
     func sin() -> Self
+    func cos() -> Self
     func hypot(_ value: Self) -> Self
     func atan2(_ value: Self) -> Self
 
@@ -57,7 +58,7 @@ public protocol Arithmos {
     static func random(_ min: Self, max: Self) -> Self
 
     func clamp (_ min: Self, _ max: Self) -> Self
-    func clamp (_ range: ClosedRange<Int>) -> Self
+    func clamp (_ range: ClosedRange<Self>) -> Self
 
 
     init(_ double: Double)
@@ -79,9 +80,10 @@ extension Double: Arithmos {
     public func sqrt() -> Double { return Glibc.sqrt(self) }
     public func pow(value: Double) -> Double { return Glibc.pow(self, value) }
     
-    public func cos() -> Double { return Glibc.cos(self) }
     public func exp() -> Double { return Glibc.exp(self) }
     public func log() -> Double { return Glibc.log(self) }
+
+    public func cos() -> Double { return Glibc.cos(self) }
     public func sin() -> Double { return Glibc.sin(self) }
     public func hypot(value: Double) -> Double { return Glibc.hypot(self, value) }
     public func atan2(value: Double) -> Double { return Glibc.atan2(self, value) }
@@ -117,8 +119,8 @@ extension Double: Arithmos {
         return Swift.max(min, Swift.min(max, self))
     }
 
-    public func clamp (_ range: ClosedRange<Int>) -> Double {
-        return Swift.max(Double(range.lowerBound), Swift.min(Double(range.upperBound), self))
+    public func clamp (_ range: ClosedRange<Double>) -> Double {
+        return Swift.max(range.lowerBound, Swift.min(range.upperBound, self))
     }
 }
 
@@ -134,9 +136,10 @@ extension Float: Arithmos {
     public func sqrt() -> Float { return Glibc.sqrt(self) }
     public func pow(value: Float) -> Float { return Glibc.pow(self, value) }
     
-    public func cos() -> Float { return Glibc.cos(self) }
     public func exp() -> Float { return Glibc.exp(self) }
     public func log() -> Float { return Glibc.log(self) }
+
+    public func cos() -> Float { return Glibc.cos(self) }
     public func sin() -> Float { return Glibc.sin(self) }
     public func hypot(value: Float) -> Float { return Glibc.hypot(self, value) }
     public func atan2(value: Float) -> Float { return Glibc.atan2(self, value) }
@@ -152,9 +155,10 @@ extension Float: Arithmos {
     public func sqrt() -> Float { return Darwin.sqrt(self) }
     public func pow(_ value: Float) -> Float { return Darwin.pow(self, value) }
 
-    public func cos() -> Float { return Darwin.cos(self) }
     public func exp() -> Float { return Darwin.exp(self) }
     public func log() -> Float { return Darwin.log(self) }
+
+    public func cos() -> Float { return Darwin.cos(self) }
     public func sin() -> Float { return Darwin.sin(self) }
     public func hypot(_ value: Float) -> Float { return Darwin.hypot(self, value) }
     public func atan2(_ value: Float) -> Float { return Darwin.atan2(self, value) }
@@ -173,8 +177,8 @@ extension Float: Arithmos {
         return Swift.max(min, Swift.min(max, self))
     }
 
-    public func clamp (_ range: ClosedRange<Int>) -> Float {
-        return Swift.max(Float(range.lowerBound), Swift.min(Float(range.upperBound), self))
+    public func clamp (_ range: ClosedRange<Float>) -> Float {
+        return Swift.max(range.lowerBound, Swift.min(range.upperBound, self))
     }
 }
 
@@ -190,9 +194,10 @@ extension CGFloat: Arithmos {
     public func sqrt() -> CGFloat { return CoreGraphics.sqrt(self) }
     public func pow(_ value: CGFloat) -> CGFloat { return CoreGraphics.pow(self, value) }
 
-    public func cos() -> CGFloat { return CoreGraphics.cos(self) }
     public func exp() -> CGFloat { return CoreGraphics.exp(self) }
     public func log() -> CGFloat { return CoreGraphics.log(self) }
+
+    public func cos() -> CGFloat { return CoreGraphics.cos(self) }
     public func sin() -> CGFloat { return CoreGraphics.sin(self) }
     public func hypot(_ value: CGFloat) -> CGFloat { return CoreGraphics.hypot(self, value) }
     public func atan2(_ value: CGFloat) -> CGFloat { return CoreGraphics.atan2(self, value) }
@@ -210,8 +215,36 @@ extension CGFloat: Arithmos {
         return Swift.max(min, Swift.min(max, self))
     }
 
-    public func clamp (_ range: ClosedRange<Int>) -> CGFloat {
-        return Swift.max(CGFloat(range.lowerBound), Swift.min(CGFloat(range.upperBound), self))
+    public func clamp (_ range: ClosedRange<CGFloat>) -> CGFloat {
+        return Swift.max(range.lowerBound, Swift.min(range.upperBound, self))
     }
 }
 #endif
+
+
+public extension Sequence where Self.Iterator.Element: Arithmos {
+    
+    public func abs() -> [Self.Iterator.Element] { return self.map{$0.abs()} }
+    public func floor() -> [Self.Iterator.Element] { return self.map{$0.floor()} }
+    public func ceil() -> [Self.Iterator.Element] { return self.map{$0.ceil()} }
+    public func round() -> [Self.Iterator.Element] { return self.map{$0.round()} }
+    public func fract() -> [Self.Iterator.Element] { return self.map{$0.fract()} }
+
+    public func sqrt() -> [Self.Iterator.Element] { return self.map{$0.sqrt()} }
+    public func pow(_ value: Self.Iterator.Element) -> [Self.Iterator.Element] { return self.map{$0.pow(value)} }
+
+    public func exp() -> [Self.Iterator.Element] { return self.map{$0.exp()} }
+    public func log() -> [Self.Iterator.Element] { return self.map{$0.log()} }
+    
+    public func cos() -> [Self.Iterator.Element] { return self.map{$0.cos()} }
+    public func sin() -> [Self.Iterator.Element] { return self.map{$0.sin()} }
+    public func hypot(_ value: Self.Iterator.Element) -> [Self.Iterator.Element] { return self.map{$0.hypot(value)} }
+    public func atan2(_ value: Self.Iterator.Element) -> [Self.Iterator.Element] { return self.map{$0.atan2(value)} }
+    
+    
+    
+    public func clamp(_ min: Self.Iterator.Element, _ max: Self.Iterator.Element) -> [Self.Iterator.Element] { return self.map{$0.clamp(min, max)} }
+    public func clamp(_ range: ClosedRange<Self.Iterator.Element>) -> [Self.Iterator.Element] { return self.map{$0.clamp(range)} }
+}
+
+

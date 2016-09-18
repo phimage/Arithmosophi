@@ -38,6 +38,12 @@
 // MARK: variance
 // http://en.wikipedia.org/wiki/Variance
 
+
+public enum VarianceMode {
+    case sample
+    case population
+}
+
 public extension Collection where Self.Iterator.Element: Averagable & Initializable & Substractable & Multiplicable {
     
     // Return varianceSample: Σ( (Element - average)^2 ) / (count - 1)
@@ -68,32 +74,141 @@ public extension Collection where Self.Iterator.Element: Averagable & Initializa
         return numerator / count
     }
     
+    public func variance(mode: VarianceMode) ->  Self.Iterator.Element? {
+        switch(mode) {
+        case .sample: return varianceSample
+        case .population: return variancePopulation
+        }
+    }
+    
 }
 
 public extension Collection where Self.Iterator.Element: Averagable & Initializable & Substractable & Multiplicable & Arithmos {
-    
+
     public var standardDeviationSample: Self.Iterator.Element? {
         return varianceSample?.sqrt() ?? nil
     }
-    
+
     public var standardDeviationPopulation: Self.Iterator.Element? {
         return variancePopulation?.sqrt() ?? nil
     }
     
+    public func standardDeviation(mode: VarianceMode) ->  Self.Iterator.Element? {
+        switch(mode) {
+        case .sample: return standardDeviationSample
+        case .population: return standardDeviationPopulation
+        }
+    }
+
     public var σSample: Self.Iterator.Element? {
         return standardDeviationSample
     }
-    
+
     public var σPopulation: Self.Iterator.Element? {
         return standardDeviationPopulation
     }
+
+}
+
+// MARK: Moment, kurtosis, skewness
+public struct Moment<T: Averagable & ExpressibleByIntegerLiteral & Substractable & Multiplicable & Arithmos & Equatable & Dividable> {
+
+    public private(set) var M0: T = 0
+    public private(set) var M1: T = 0
+    public private(set) var M2: T = 0
+    public private(set) var M3: T = 0
+    public private(set) var M4: T = 0
     
+    init?(_ col: [T]) {
+        let count = AveragableDivideType(col.count.toIntMax()) // AveragableDivideType...
+        if count == 0 { return nil }
+
+        M0 = T(Double(count))
+        var n: T = 0
+        for x in col {
+            let n1 = n
+            n += 1
+            let delta = x - M1
+            let delta_n = delta / n
+            let delta_n2 = delta_n * delta_n
+            let term1 = delta * delta_n * n1
+            M1 += delta_n
+            let t4 = 6 * delta_n2 * M2 - 4 * delta_n * M3
+            M4 += term1 * delta_n2 * (n*n - 3*n + 3) + t4
+            M3 += term1 * delta_n * (n - 2) - 3 * delta_n * M2
+            M2 += term1
+        }
+    }
+    
+    // https://en.wikipedia.org/wiki/Kurtosis#Excess_kurtosis
+    public var excessKurtosis: T {
+        return kurtosis - 3
+    }
+
+    //https://en.wikipedia.org/wiki/Kurtosis
+    public var kurtosis: T {
+        return (M0 * M4) / (M2 * M2)
+    }
+    
+    // https://en.wikipedia.org/wiki/Skewness
+    public var skewness: T {
+        let p: T = 3 / 2
+        return M0.sqrt() * M3 / M2.pow(p)
+    }
+    
+    public var average: T {
+        return M1
+    }
+    
+    public var varianceSample: T {
+        return M2 / (M0 - 1)
+    }
+    
+    public var variancePopulation: T{
+        return M2 / M0
+    }
+
+    public var standardDeviationSample: T {
+        return varianceSample.sqrt()
+    }
+    
+    public var standardDeviationPopulation: T {
+        return variancePopulation.sqrt()
+    }
+}
+
+public extension Collection where Self.Iterator.Element: Averagable & ExpressibleByIntegerLiteral & Substractable & Multiplicable & Arithmos & Equatable & Dividable {
+    
+    //https://en.wikipedia.org/wiki/Kurtosis
+    public var kurtosis: Self.Iterator.Element? {
+        return moment?.kurtosis
+    }
+    
+    // https://en.wikipedia.org/wiki/Skewness
+    public var skewness: Self.Iterator.Element? {
+        return moment?.skewness
+    }
+    
+    // https://en.wikipedia.org/wiki/Moment_(mathematics)
+    public var moment: Moment<Self.Iterator.Element>? {
+        return Moment(Array(self))
+    }
+
 }
 
 // MARK: covariance
 public extension Collection where Self.Iterator.Element: Averagable & Initializable & Substractable & Multiplicable & Arithmos {
-    
-    
+
+    public func covariance<W: Collection>
+        (_ with: W, type: VarianceMode) -> Self.Iterator.Element? where W.Iterator.Element == Self.Iterator.Element {
+        switch(type) {
+        case .sample:
+            return covarianceSample(with)
+        case .population:
+            return covariancePopulation(with)
+        }
+    }
+
     public func covarianceSample<W: Collection>
         (_ with: W) -> Self.Iterator.Element? where W.Iterator.Element == Self.Iterator.Element {
         let count = AveragableDivideType(self.count.toIntMax()) // AveragableDivideType...
@@ -132,6 +247,14 @@ public extension Collection where Self.Iterator.Element: Averagable & Initializa
         }
         
         return sum / count
+    }
+    
+    public func covariance<W: Collection>
+        (_ with: W, mode: VarianceMode) -> Self.Iterator.Element? where W.Iterator.Element == Self.Iterator.Element {
+        switch(mode) {
+        case .sample: return covarianceSample(with)
+        case .population: return covariancePopulation(with)
+        }
     }
 
 }

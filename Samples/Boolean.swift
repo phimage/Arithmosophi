@@ -26,6 +26,7 @@ SOFTWARE.
 */
 
 import Foundation
+import Arithmosophi
 
 
 public enum Boolean: LogicalOperationsType, Equatable {case `true`, `false`}

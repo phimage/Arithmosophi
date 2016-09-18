@@ -26,7 +26,7 @@ SOFTWARE.
 */
 
 import Foundation
-
+import Arithmosophi
 
 public enum Optional<T:Initializable> : LogicalOperationsType, Equatable, Initializable {
     case none

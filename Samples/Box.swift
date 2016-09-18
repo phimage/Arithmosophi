@@ -25,6 +25,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 import Foundation
+import Arithmosophi
 
 public final class Box<T> : RawRepresentable where T:Addable, T:Equatable {
     public typealias RawValue = T

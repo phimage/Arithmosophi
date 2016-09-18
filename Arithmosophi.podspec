@@ -30,34 +30,34 @@ Pod::Spec.new do |s|
   s.default_subspec = 'All'
 
   s.subspec "Core" do  |sp|
-    sp.source_files = "Arithmosophi.swift"
+    sp.source_files = "Sources/Arithmosophi.swift"
   end
 
   s.subspec "Logical" do  |sp|
-    sp.source_files = ['LogicalOperationsType.swift']
+    sp.source_files = ['Sources/LogicalOperationsType.swift']
   end
 
   s.subspec "Arithmos" do  |sp|
-    sp.source_files = ['Arithmos.swift']
+    sp.source_files = ['Sources/Arithmos.swift']
   end
 
   s.subspec "Statheros" do  |sp|
-    sp.source_files = ['Statheros.swift']
+    sp.source_files = ['Sources/Statheros.swift']
   end
 
   s.subspec "Complex" do  |sp|
-    sp.source_files = "Complex.swift"
+    sp.source_files = "Sources/Complex.swift"
     sp.dependency 'Arithmosophi/Core'
     sp.dependency 'Arithmosophi/Arithmos'
   end
 
   s.subspec "MesosOros" do  |sp|
-    sp.source_files = ['MesosOros.swift']
+    sp.source_files = ['Sources/MesosOros.swift']
     sp.dependency 'Arithmosophi/Core'
   end
 
   s.subspec "Sigma" do  |sp|
-    sp.source_files = ['Sigma.swift']
+    sp.source_files = ['Sources/Sigma.swift']
     sp.dependency 'Arithmosophi/MesosOros'
     sp.dependency 'Arithmosophi/Arithmos'
   end
