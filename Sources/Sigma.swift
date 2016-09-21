@@ -371,6 +371,56 @@ public extension Collection where Self.Iterator.Element: Averagable & Initializa
 
 }
 
+// MARK: geometric mean
+public extension Collection where Self.Iterator.Element: Addable & Arithmos & Dividable & Multiplicable & ExpressibleByIntegerLiteral {
+    
+    public var geometricMean: Self.Iterator.Element? {
+        let count = AveragableDivideType(self.count.toIntMax()) // Int64...
+        if count == 0 {
+            return 0
+        }
+        
+        let zero: Self.Iterator.Element  = 0
+        var result = zero
+        var n = zero
+        for value in self {
+            result = result * value
+            n = n + 1
+        }
+        return result.pow(1 / n)
+    }
+
+}
+
+public extension Collection where Self.Iterator.Element: Hashable {
+
+    // Most frequent value in data set
+    // https://en.wikipedia.org/wiki/Mode_(statistics)
+    public var mode: [Self.Iterator.Element] {
+        var counter = Dictionary<Self.Iterator.Element, Int>()
+        var mode = Array<Self.Iterator.Element>()
+        var max = 0
+        for value in self {
+            if let c = counter[value] {
+                counter[value] = c + 1
+            } else {
+                counter[value] = 0
+            }
+
+            let c = counter[value]!
+            if (c == max) {
+                mode.append(value)
+            }
+            else if (c > max) {
+                max = c
+                mode = [value]
+            }
+        }
+        return mode
+    }
+
+}
+
 // MARK:- collection operations
 
 // MARK: multiply

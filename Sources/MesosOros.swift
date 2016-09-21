@@ -88,9 +88,10 @@ public func averageOf<T: Averagable & Initializable> (_ seq: T...) -> T {
 }
 
 
-// MARK: CollectionType
+// MARK: average/mean
 public extension Collection where Self.Iterator.Element: Averagable & Initializable {
 
+    // The arithmetic mean
     public var average: Self.Iterator.Element {
         let count = AveragableDivideType(self.count.toIntMax()) // Int64...
         if count == 0 {
@@ -98,7 +99,35 @@ public extension Collection where Self.Iterator.Element: Averagable & Initializa
         }
         return self.sum / count
     }
+    
+    public var arithmeticMean: Self.Iterator.Element {
+        return average
+    }
 
+}
+
+public extension Collection where Self.Iterator.Element: Addable & Dividable & Comparable & ExpressibleByIntegerLiteral {
+    
+    public var harmonicMean : Self.Iterator.Element? {
+        let count = AveragableDivideType(self.count.toIntMax()) // Int64...
+        if count == 0 {
+            return 0
+        }
+        
+        let zero: Self.Iterator.Element  = 0
+        var result = zero
+        var n = zero
+        for value in self {
+            if value == zero {
+                return nil // forbidden
+            }
+            let i = 1 / value
+            result = result + i
+            n = n + 1
+        }
+        return n / result
+    }
+    
 }
 
 // MARK: median
