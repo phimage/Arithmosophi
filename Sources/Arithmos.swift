@@ -60,13 +60,11 @@ public protocol Arithmos: Comparable {
     func clamp (_ min: Self, _ max: Self) -> Self
     func clamp (_ range: ClosedRange<Self>) -> Self
 
-
     init(_ double: Double)
-    
+
     var isFinite: Bool {get}
     var isInfinite: Bool {get}
 }
-
 
 extension Double: Arithmos {
 
@@ -76,10 +74,10 @@ extension Double: Arithmos {
     public func ceil () -> Double { return Glibc.ceil(self) }
     public func round () -> Double { return Glibc.round(self) }
     public func fract() -> Double { return self - self.floor() }
-    
+
     public func sqrt() -> Double { return Glibc.sqrt(self) }
     public func pow(value: Double) -> Double { return Glibc.pow(self, value) }
-    
+
     public func exp() -> Double { return Glibc.exp(self) }
     public func log() -> Double { return Glibc.log(self) }
 
@@ -125,17 +123,17 @@ extension Double: Arithmos {
 }
 
 extension Float: Arithmos {
-    
+
     #if os(Linux)
     public func abs() -> Float { return Glibc.fabs(self) }
     public func floor () -> Float { return Glibc.floor(self) }
     public func ceil () -> Float { return Glibc.ceil(self) }
     public func round () -> Float { return Glibc.round(self) }
     public func fract() -> Float { return self - self.floor() }
-    
+
     public func sqrt() -> Float { return Glibc.sqrt(self) }
     public func pow(value: Float) -> Float { return Glibc.pow(self, value) }
-    
+
     public func exp() -> Float { return Glibc.exp(self) }
     public func log() -> Float { return Glibc.log(self) }
 
@@ -143,7 +141,7 @@ extension Float: Arithmos {
     public func sin() -> Float { return Glibc.sin(self) }
     public func hypot(value: Float) -> Float { return Glibc.hypot(self, value) }
     public func atan2(value: Float) -> Float { return Glibc.atan2(self, value) }
-    
+
     #else
 
     public func abs() -> Float { return Darwin.fabs(self) }
@@ -221,30 +219,25 @@ extension CGFloat: Arithmos {
 }
 #endif
 
-
 public extension Sequence where Self.Iterator.Element: Arithmos {
-    
-    public func abs() -> [Self.Iterator.Element] { return self.map{$0.abs()} }
-    public func floor() -> [Self.Iterator.Element] { return self.map{$0.floor()} }
-    public func ceil() -> [Self.Iterator.Element] { return self.map{$0.ceil()} }
-    public func round() -> [Self.Iterator.Element] { return self.map{$0.round()} }
-    public func fract() -> [Self.Iterator.Element] { return self.map{$0.fract()} }
 
-    public func sqrt() -> [Self.Iterator.Element] { return self.map{$0.sqrt()} }
-    public func pow(_ value: Self.Iterator.Element) -> [Self.Iterator.Element] { return self.map{$0.pow(value)} }
+    public func abs() -> [Self.Iterator.Element] { return self.map {$0.abs()} }
+    public func floor() -> [Self.Iterator.Element] { return self.map {$0.floor()} }
+    public func ceil() -> [Self.Iterator.Element] { return self.map {$0.ceil()} }
+    public func round() -> [Self.Iterator.Element] { return self.map {$0.round()} }
+    public func fract() -> [Self.Iterator.Element] { return self.map {$0.fract()} }
 
-    public func exp() -> [Self.Iterator.Element] { return self.map{$0.exp()} }
-    public func log() -> [Self.Iterator.Element] { return self.map{$0.log()} }
-    
-    public func cos() -> [Self.Iterator.Element] { return self.map{$0.cos()} }
-    public func sin() -> [Self.Iterator.Element] { return self.map{$0.sin()} }
-    public func hypot(_ value: Self.Iterator.Element) -> [Self.Iterator.Element] { return self.map{$0.hypot(value)} }
-    public func atan2(_ value: Self.Iterator.Element) -> [Self.Iterator.Element] { return self.map{$0.atan2(value)} }
-    
-    
-    
-    public func clamp(_ min: Self.Iterator.Element, _ max: Self.Iterator.Element) -> [Self.Iterator.Element] { return self.map{$0.clamp(min, max)} }
-    public func clamp(_ range: ClosedRange<Self.Iterator.Element>) -> [Self.Iterator.Element] { return self.map{$0.clamp(range)} }
+    public func sqrt() -> [Self.Iterator.Element] { return self.map {$0.sqrt()} }
+    public func pow(_ value: Self.Iterator.Element) -> [Self.Iterator.Element] { return self.map {$0.pow(value)} }
+
+    public func exp() -> [Self.Iterator.Element] { return self.map {$0.exp()} }
+    public func log() -> [Self.Iterator.Element] { return self.map {$0.log()} }
+
+    public func cos() -> [Self.Iterator.Element] { return self.map {$0.cos()} }
+    public func sin() -> [Self.Iterator.Element] { return self.map {$0.sin()} }
+    public func hypot(_ value: Self.Iterator.Element) -> [Self.Iterator.Element] { return self.map {$0.hypot(value)} }
+    public func atan2(_ value: Self.Iterator.Element) -> [Self.Iterator.Element] { return self.map {$0.atan2(value)} }
+
+    public func clamp(_ min: Self.Iterator.Element, _ max: Self.Iterator.Element) -> [Self.Iterator.Element] { return self.map {$0.clamp(min, max)} }
+    public func clamp(_ range: ClosedRange<Self.Iterator.Element>) -> [Self.Iterator.Element] { return self.map {$0.clamp(range)} }
 }
-
-

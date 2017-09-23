@@ -28,7 +28,7 @@ SOFTWARE.
 import Foundation
 import Arithmosophi
 
-public enum Optional<T:Initializable> : LogicalOperationsType, Equatable, Initializable {
+public enum OptionalEnum<T: Initializable> : LogicalOperationsType, Equatable, Initializable {
     case none
     case some(T)
 
@@ -58,7 +58,7 @@ public enum Optional<T:Initializable> : LogicalOperationsType, Equatable, Initia
     }
 }
 
-public func == <T: Equatable>(left: Optional<T>, right: Optional<T>) -> Bool {
+public func == <T: Equatable>(left: OptionalEnum<T>, right: OptionalEnum<T>) -> Bool {
     switch (left, right) {
     case (.none, .none): return true
     case (.none, .some), (.some, .none):  return false
@@ -66,7 +66,7 @@ public func == <T: Equatable>(left: Optional<T>, right: Optional<T>) -> Bool {
     }
 }
 
-public func == <T>(left: Optional<T>, right: Optional<T>) -> Bool {
+public func == <T>(left: OptionalEnum<T>, right: OptionalEnum<T>) -> Bool {
     switch (left, right) {
     case (.none, .none): return true
     case (.none, .some), (.some, .none):  return false
@@ -74,26 +74,26 @@ public func == <T>(left: Optional<T>, right: Optional<T>) -> Bool {
     }
 }
 
-public func && <T>(left: Optional<T>, right:  @autoclosure () throws -> Optional<T>) rethrows -> Optional<T> {
+public func && <T>(left: OptionalEnum<T>, right:  @autoclosure () throws -> OptionalEnum<T>) rethrows -> OptionalEnum<T> {
     switch left {
     case .none: return .none
     case .some:  return try right()
     }
 }
-public func || <T>(left: Optional<T>, right:  @autoclosure () throws -> Optional<T>) rethrows -> Optional<T> {
+public func || <T>(left: OptionalEnum<T>, right:  @autoclosure () throws -> OptionalEnum<T>) rethrows -> OptionalEnum<T> {
     switch left {
     case .none: return try right()
     case .some:  return left
     }
 }
-public prefix func ! <T: Initializable>(value: Optional<T> ) -> Optional<T> {
+public prefix func ! <T>(value: OptionalEnum<T>) -> OptionalEnum<T> {
     switch value {
     case .none: return .some(T())
     case .some:  return .none
     }
 }
 
-public func ||= <T>(lhs: inout T?, rhs: T) {
+public func ||= <T>(lhs: inout OptionalEnum<T>?, rhs: OptionalEnum<T>) {
     if lhs == nil {
         lhs = rhs
     }

@@ -42,6 +42,7 @@ public protocol Addable {
     static func += (lhs: inout Self, rhs: Self)
 }
 public func += <T: Addable>(lhs: inout T, rhs: T) {
+    //swiftlint:disable:next shorthand_operator
     lhs = lhs + rhs
 }
 public protocol Substractable {
@@ -49,6 +50,7 @@ public protocol Substractable {
     static func -= (lhs: inout Self, rhs: Self)
 }
 public func -= <T: Substractable>(lhs: inout T, rhs: T) {
+    //swiftlint:disable:next shorthand_operator
     lhs = lhs - rhs
 }
 public protocol Negatable {
@@ -73,7 +75,6 @@ public protocol MultiplicableWithOverflow {
     static func &* (lhs: Self, rhs: Self) -> Self
 }
 
-
 public protocol Initializable {
     init() // get a zero
 }
@@ -92,7 +93,7 @@ public protocol LatticeType: Comparable {
 // MARK: combined protocols
 
 public protocol Additive: Addable, Substractable {}
-public protocol Multiplicative: Multiplicable, Dividable, Modulable {}
+public protocol Multiplicative: Multiplicable, Dividable/*, Modulable*/ {}
 // public protocol IntegerArithmetic: Additive, Multiplicative{}
 
 public protocol AdditiveWithOverflow: Additive, AddableWithOverflow, SubstractableWithOverflow {}
@@ -122,7 +123,8 @@ extension Array: Initializable, Addable {}
 extension Bool: Initializable {}
 
 // Array addable
-public func += <T> (left: inout Array<T>, right: Array<T>) {
+public func += <T> (left: inout [T], right: [T]) {
+    // swiftlint:disable:next shorthand_operator
     left = left + right
 }
 
@@ -145,24 +147,33 @@ public func < (left: Bool, right: Bool) -> Bool {
 
 extension Float : LatticeType {
     public static var min: Float {
-        return FLT_MIN
+        return .leastNormalMagnitude
     }
 
     public static var max: Float {
-        return FLT_MAX
+        return .greatestFiniteMagnitude
     }
 }
 
 extension Double : LatticeType {
     public static var min: Double {
-        return DBL_MIN
+        return .leastNormalMagnitude
     }
 
     public static var max: Double {
-        return DBL_MAX
+        return .greatestFiniteMagnitude
     }
 }
 
+extension CGFloat : LatticeType {
+    public static var min: CGFloat {
+        return .leastNormalMagnitude
+    }
+
+    public static var max: CGFloat {
+        return .greatestFiniteMagnitude
+    }
+}
 
 // MARK: utility functions
 public func sumOf<S: Sequence> (_ seq: S, initialValue: S.Iterator.Element) -> S.Iterator.Element where S.Iterator.Element: Addable {
@@ -210,6 +221,22 @@ public extension Sequence where Self.Iterator.Element: Multiplicable & Expressib
     public var product: Self.Iterator.Element {
         let initialValue: Self.Iterator.Element  = 1
         return self.reduce(initialValue, *)
+    }
+
+}
+extension Sequence where Self.Iterator.Element: Addable & Multiplicable & Initializable & Comparable {
+
+    // https://en.wikipedia.org/wiki/Riemann_sum
+    public func riemannSum(range: Range<Self.Iterator.Element>, interval: Self.Iterator.Element, function: (Self.Iterator.Element) -> Self.Iterator.Element) -> Self.Iterator.Element {
+        var sum: Self.Iterator.Element = Self.Iterator.Element()
+        var lower = range.lowerBound
+        let upper = range.upperBound
+        while lower <= upper {
+            let value = function(lower)
+            sum += value * interval
+            lower += interval
+        }
+        return sum
     }
 
 }

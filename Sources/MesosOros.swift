@@ -67,7 +67,6 @@ public func / (lhs: Int64, rhs: AveragableDivideType) -> Int64 { return lhs / In
 extension UInt: Averagable {}
 public func / (lhs: UInt, rhs: AveragableDivideType) -> UInt { return lhs / UInt(rhs) }
 
-
 // generic operators on dividable & literal
 public func / <T>(lhs: T, rhs: T.IntegerLiteralType) -> T where T:ExpressibleByIntegerLiteral, T:Dividable {
     let div: T = T(integerLiteral: rhs)
@@ -87,19 +86,18 @@ public func averageOf<T: Averagable & Initializable> (_ seq: T...) -> T {
     return averageOf(seq)
 }
 
-
 // MARK: average/mean
 public extension Collection where Self.Iterator.Element: Averagable & Initializable {
 
     // The arithmetic mean
     public var average: Self.Iterator.Element {
-        let count = AveragableDivideType(self.count.toIntMax()) // Int64...
-        if count == 0 {
+        if self.count == 0 {
             return Self.Iterator.Element()
         }
+        let count = AveragableDivideType(Int64(self.count)) // XXX check swift 4 conversion
         return self.sum / count
     }
-    
+
     public var arithmeticMean: Self.Iterator.Element {
         return average
     }
@@ -107,13 +105,12 @@ public extension Collection where Self.Iterator.Element: Averagable & Initializa
 }
 
 public extension Collection where Self.Iterator.Element: Addable & Dividable & Comparable & ExpressibleByIntegerLiteral {
-    
-    public var harmonicMean : Self.Iterator.Element? {
-        let count = AveragableDivideType(self.count.toIntMax()) // Int64...
-        if count == 0 {
+
+    public var harmonicMean: Self.Iterator.Element? {
+        if self.count == 0 {
             return 0
         }
-        
+
         let zero: Self.Iterator.Element  = 0
         var result = zero
         var n = zero
@@ -122,27 +119,26 @@ public extension Collection where Self.Iterator.Element: Addable & Dividable & C
                 return nil // forbidden
             }
             let i = 1 / value
-            result = result + i
-            n = n + 1
+            result += i
+            n += 1
         }
         return n / result
     }
-    
+
 }
 
 // MARK: median
 public extension Collection where Self.Iterator.Element: Averagable & Comparable & Initializable {
-    
+
     public var median: Self.Iterator.Element? {
-        let count = AveragableDivideType(self.count.toIntMax()) // Int64...
-        if count == 0 {
+        if self.count == 0 {
             return nil
         }
         let sorted = self.sorted { (l, r) -> Bool in
             return l < r
         }
-        
-        if count % 2 == 0 {
+
+        if self.count % 2 == 0 {
             let leftIndex = Int(count / 2 - 1)
             let leftValue = sorted[leftIndex]
             let rightValue = sorted[leftIndex + 1]
@@ -151,31 +147,29 @@ public extension Collection where Self.Iterator.Element: Averagable & Comparable
             return sorted[Int(count / 2)]
         }
     }
-    
+
     public var medianLow: Self.Iterator.Element? {
-        let count = AveragableDivideType(self.count.toIntMax()) // Int64...
-        if count == 0 {
+        if self.count == 0 {
             return nil
         }
         let sorted = self.sorted { (l, r) -> Bool in
             return l < r
         }
-        
-        if count % 2 == 0 {
-            return sorted[Int(count / 2) - 1]
+
+        if self.count % 2 == 0 {
+            return sorted[Int(self.count / 2) - 1]
         } else {
-            return sorted[Int(count / 2)]
+            return sorted[Int(self.count / 2)]
         }
     }
-    
+
     public var medianHigh: Self.Iterator.Element? {
-        let count = AveragableDivideType(self.count.toIntMax()) // Int64...
-        if count == 0 {
+        if self.count == 0 {
             return nil
         }
         let sorted = self.sorted { (l, r) -> Bool in
             return l < r
         }
-        return sorted[Int(count / 2)]
+        return sorted[Int(self.count / 2)]
     }
 }

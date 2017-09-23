@@ -28,7 +28,6 @@ SOFTWARE.
 import Foundation
 import Arithmosophi
 
-
 public extension Geometry {
 
     public class func easeOutFast<T>(_ time: T) -> T where T: Multiplicable & Substractable & Arithmos & ExpressibleByIntegerLiteral {

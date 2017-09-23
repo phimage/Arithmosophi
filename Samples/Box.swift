@@ -41,21 +41,21 @@ public final class Box<T> : RawRepresentable where T:Addable, T:Equatable {
     }
 }
 
-public func +=<T> (box: inout Box<T>, addend: T) where T:Addable {
-    box.rawValue = box.rawValue + addend
+public func +=<T> (box: inout Box<T>, addend: T) {
+    box.rawValue += addend
 }
 public func -=<T> (box: inout Box<T>, addend: T) where T:Substractable {
-    box.rawValue = box.rawValue - addend
+    box.rawValue -= addend
 }
 
 // Equatable
 extension Box : Equatable {}
-public func == <T: Equatable> (lhs: Box<T>, rhs: Box<T>) -> Bool {
+public func == <T> (lhs: Box<T>, rhs: Box<T>) -> Bool {
     return lhs.rawValue == rhs.rawValue
 }
 
 // Addable
 extension Box : Addable {}
-public func + <T: Addable> (lhs: Box<T>, rhs: Box<T>) -> Box<T> {
+public func + <T> (lhs: Box<T>, rhs: Box<T>) -> Box<T> {
     return Box(value: lhs.rawValue + rhs.rawValue)
 }

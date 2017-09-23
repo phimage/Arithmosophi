@@ -30,7 +30,6 @@ SOFTWARE.
     import Darwin
 #endif
 
-
 // MARK: LogicalOperationsType
 public protocol LogicalOperationsType: Conjunctive, Disjunctive {
     static prefix func ! (value: Self) -> Self // NOT
