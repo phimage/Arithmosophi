@@ -74,6 +74,22 @@ public protocol SubstractableWithOverflow {
 public protocol MultiplicableWithOverflow {
     static func &* (lhs: Self, rhs: Self) -> Self
 }
+public protocol Shiftable {
+    static func >> <RHS>(lhs: Self, rhs: RHS) -> Self where RHS : BinaryInteger
+    static func << <RHS>(lhs: Self, rhs: RHS) -> Self where RHS : BinaryInteger
+}
+public protocol XorOperable {
+    static func ^ (lhs: Self, rhs: Self) -> Self
+}
+public protocol AndOperable {
+    static func & (lhs: Self, rhs: Self) -> Self
+}
+public protocol OrOperable {
+    static func | (lhs: Self, rhs: Self) -> Self
+}
+public protocol InverseOperable {
+    prefix static func ~ (x: Self) -> Self
+}
 
 public protocol Initializable {
     init() // get a zero
@@ -96,8 +112,10 @@ public protocol Additive: Addable, Substractable {}
 public protocol Multiplicative: Multiplicable, Dividable/*, Modulable*/ {}
 // public protocol IntegerArithmetic: Additive, Multiplicative{}
 
+public protocol LogicalOperable: XorOperable, AndOperable, InverseOperable, OrOperable {}
+
 public protocol AdditiveWithOverflow: Additive, AddableWithOverflow, SubstractableWithOverflow {}
-public protocol OverflowOperable: MultiplicableWithOverflow, AddableWithOverflow, SubstractableWithOverflow {}
+public protocol OverflowOperable: MultiplicableWithOverflow, AddableWithOverflow, SubstractableWithOverflow, LogicalOperable, Shiftable {}
 
 public protocol UnsignedArithmeticType: Initializable, Additive, Multiplicative, LatticeType {}
 public protocol ArithmeticType: UnsignedArithmeticType, Negatable {}
@@ -200,6 +218,48 @@ public func productOf<S: Sequence> (_ seq: S, initialValue: S.Iterator.Element) 
     return seq.reduce (initialValue) { $0 * $1 }
 }
 
+extension UnsignedArithmeticType where Self: OverflowOperable, Self: ExpressibleByIntegerLiteral {
+    public func gcd(with value: Self) -> Self {
+        let zero = Self()
+        if self == zero { return value }
+        if value == zero { return self }
+
+        let one: Self = 1
+        var a = self
+        var b = value
+        var shift = 0
+        while ((a | b) & one) == zero {
+            a = a >> 1
+            b = b >> 1
+            // swiftlint:disable:next shorthand_operator
+            shift = shift + 1
+        }
+        while (a & one) == zero {
+            a = a >> 1
+        }
+        repeat {
+            while (b & one) == zero {
+                b = b >> 1
+            }
+            if a > b {
+                swap(&a, &b)
+            }
+            // swiftlint:disable:next shorthand_operator
+            b = b - a
+        } while b != zero
+        return a << shift
+    }
+
+    /// Last common multiple
+    @_transparent public func lcm(with b: Self) -> Self {
+        let zero = Self()
+        let a = self
+        if a == zero || b == zero { return zero }
+
+        return a / a.gcd(with: b) * b
+    }
+}
+
 // MARK: CollectionType
 private extension Sequence where Self.Iterator.Element: Addable & ExpressibleByIntegerLiteral { // If public ambigous for ExpressibleByIntegerLiteral type
 
@@ -224,6 +284,17 @@ public extension Sequence where Self.Iterator.Element: Multiplicable & Expressib
     }
 
 }
+
+extension Sequence where Self.Iterator.Element: UnsignedArithmeticType & OverflowOperable & ExpressibleByIntegerLiteral {
+
+    public var gcd: Self.Iterator.Element {
+        return self.reduce(Self.Iterator.Element()) { (result, value) -> Self.Iterator.Element in
+            return result.gcd(with: value)
+        }
+    }
+
+}
+
 extension Sequence where Self.Iterator.Element: Addable & Multiplicable & Initializable & Comparable {
 
     // https://en.wikipedia.org/wiki/Riemann_sum

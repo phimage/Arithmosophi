@@ -51,7 +51,7 @@ public protocol Statheros {
 
     static var SQRT2: Self {get}
 
-    static var E: Self {get}
+    static var e: Self {get}
     static var LOG2E: Self {get}
     static var LOG10E: Self {get}
     static var LN2: Self {get}
@@ -76,7 +76,7 @@ extension Double: Statheros {
 
     public  static var SQRT2: Double = 2.squareRoot()
 
-    public static var E = M_E
+    public static var e = M_E
     public static var LOG2E = M_LOG2E
     public static var LOG10E = M_LOG10E
     public static var LN2 = M_LN2
@@ -101,7 +101,7 @@ extension Float: Statheros {
 
     public  static var SQRT2 = Float(2.squareRoot())
 
-    public static var E = Float(M_E)
+    public static var e = Float(M_E)
     public static var LOG2E = Float(M_LOG2E)
     public static var LOG10E = Float(M_LOG10E)
     public static var LN2 = Float(M_LN2)
@@ -127,7 +127,7 @@ extension Float: Statheros {
 
         public  static var SQRT2 = CGFloat(2.squareRoot())
 
-        public static var E = CGFloat(M_E)
+        public static var e = CGFloat(M_E)
         public static var LOG2E = CGFloat(M_LOG2E)
         public static var LOG10E = CGFloat(M_LOG10E)
         public static var LN2 = CGFloat(M_LN2)

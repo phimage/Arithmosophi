@@ -82,6 +82,31 @@ public struct Complex<T: ArithmeticType> {
     public var description: String {
         return "\(self.real), \(self.imaginary)i"
     }
+
+    public func map(_ function: (T, T) -> (T, T)) -> Complex<T> {
+        let result = function(self.real, self.imaginary)
+        return Complex(real: result.0, imaginary: result.1)
+    }
+
+    public func map(_ function: (T) -> T) -> Complex<T> {
+        return Complex(real: function(self.real), imaginary: function(self.imaginary))
+    }
+
+}
+
+extension ArithmeticType {
+    var complex: Complex<Self> {
+        return Complex(real: self, imaginary: Self())
+    }
+}
+
+extension Complex where T: Arithmos {
+
+    public func sqrt() -> Complex<T> {
+        return map { value in
+            return value.sqrt()
+        }
+    }
 }
 
 extension Complex where T: Arithmos {

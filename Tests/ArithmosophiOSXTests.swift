@@ -78,6 +78,9 @@ class ArithmosophiOSXTests: XCTestCase {
         var c7 = c6
         c7 += c6
         XCTAssertEqual(c7, c6 + c6)
+
+        let sqrt = Complex(real: 4, imaginary: 9).sqrt()
+        XCTAssertEqual(sqrt, Complex(real: 2, imaginary: 3))
     }
 
     // MARK: - Average
@@ -101,6 +104,27 @@ class ArithmosophiOSXTests: XCTestCase {
 
         result =   [1, 2, 3, 4, 5].average
         XCTAssertEqual(3, result)
+    }
+
+    // MARK: - Median
+
+    func testGcd() {
+        XCTAssertEqual(3.gcd(with: 0), 3)
+        XCTAssertEqual(0.gcd(with: 3), 3)
+
+        XCTAssertEqual(3.gcd(with: 4), 1)
+        XCTAssertEqual(3.gcd(with: 1), 1)
+        XCTAssertEqual(34.gcd(with: 1), 1)
+        XCTAssertEqual(4.gcd(with: 2), 2)
+        XCTAssertEqual(2.gcd(with: 4), 2)
+        XCTAssertEqual(4.gcd(with: 4), 4)
+        XCTAssertEqual(3.gcd(with: 3), 3)
+        XCTAssertEqual(1024.gcd(with: 4), 4)
+
+        XCTAssertEqual([0, 5, 4].gcd, 1)
+        XCTAssertEqual([0, 5].gcd, 5)
+        XCTAssertEqual([2, 4, 8, 16, 32, 64, 128].gcd, 2)
+        XCTAssertEqual([4, 8, 16, 32, 64, 128].gcd, 4)
     }
 
     // MARK: - Median

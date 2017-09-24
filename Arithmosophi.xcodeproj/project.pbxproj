@@ -49,7 +49,6 @@
 		C4BD0FAD1B32DE8400787E0F /* LogicalOperationsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4478C381B31911800194715 /* LogicalOperationsType.swift */; };
 		C4BD0FAF1B32DF4500787E0F /* Arithmos.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47004861B30530D00EB0C80 /* Arithmos.swift */; };
 		C4BD0FB01B32DF4500787E0F /* Arithmos.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47004861B30530D00EB0C80 /* Arithmos.swift */; };
-		C4E20DFF1C046774000655FA /* Complex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E20DFE1C046774000655FA /* Complex.swift */; };
 		C4E20E001C046774000655FA /* Complex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E20DFE1C046774000655FA /* Complex.swift */; };
 /* End PBXBuildFile section */
 
@@ -303,8 +302,8 @@
 				C4B1FE871D8B45E300B61C97 /* Info.plist */,
 				C4BD0FB81B32FE8600787E0F /* Box.swift */,
 				C4BD0FB51B32FAF400787E0F /* Boolean.swift */,
-				C4BD0FB11B32F9E500787E0F /* Optional.swift */,
 				C4A151901B383EDE00C81C91 /* Parity.swift */,
+				C4BD0FB11B32F9E500787E0F /* Optional.swift */,
 				C47004841B30514800EB0C80 /* Geometry.swift */,
 				C4478C361B318FFC00194715 /* Geometry+Animation.swift */,
 			);
@@ -585,7 +584,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint autocorrect\nelse\n  echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		C43F37A61C15BC7400C0915D /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -653,7 +652,6 @@
 				C4BD0FB01B32DF4500787E0F /* Arithmos.swift in Sources */,
 				C47004771B304D6900EB0C80 /* Arithmosophi.swift in Sources */,
 				C47004751B304D5600EB0C80 /* Statheros.swift in Sources */,
-				C4E20DFF1C046774000655FA /* Complex.swift in Sources */,
 				C496F15C1D49648D008A2637 /* Sigma.swift in Sources */,
 				C4687F061B4535D00063EC05 /* MesosOros.swift in Sources */,
 				C4478C391B31911800194715 /* LogicalOperationsType.swift in Sources */,
