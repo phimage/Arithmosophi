@@ -27,7 +27,7 @@ SOFTWARE.
 import Foundation
 import Arithmosophi
 
-public final class Box<T> : RawRepresentable where T:Addable, T:Equatable {
+public final class Box<T> : RawRepresentable where T: Addable, T: Equatable {
     public typealias RawValue = T
 
     public var rawValue: T
@@ -44,18 +44,18 @@ public final class Box<T> : RawRepresentable where T:Addable, T:Equatable {
 public func +=<T> (box: inout Box<T>, addend: T) {
     box.rawValue += addend
 }
-public func -=<T> (box: inout Box<T>, addend: T) where T:Substractable {
+public func -=<T> (box: inout Box<T>, addend: T) where T: Substractable {
     box.rawValue -= addend
 }
 
 // Equatable
-extension Box : Equatable {}
+extension Box: Equatable {}
 public func == <T> (lhs: Box<T>, rhs: Box<T>) -> Bool {
     return lhs.rawValue == rhs.rawValue
 }
 
 // Addable
-extension Box : Addable {}
+extension Box: Addable {}
 public func + <T> (lhs: Box<T>, rhs: Box<T>) -> Box<T> {
     return Box(value: lhs.rawValue + rhs.rawValue)
 }

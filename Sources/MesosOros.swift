@@ -67,16 +67,22 @@ public func / (lhs: Int64, rhs: AveragableDivideType) -> Int64 { return lhs / In
 extension UInt: Averagable {}
 public func / (lhs: UInt, rhs: AveragableDivideType) -> UInt { return lhs / UInt(rhs) }
 
-// generic operators on dividable & literal
-public func / <T>(lhs: T, rhs: T.IntegerLiteralType) -> T where T:ExpressibleByIntegerLiteral, T:Dividable {
-    let div: T = T(integerLiteral: rhs)
+// generic operators on dividable & Int & Double
+public protocol ExpressibleByInt {
+    init(_ v: Int)
+}
+public func / <T>(lhs: T, rhs: Int) -> T where T: ExpressibleByInt, T: Dividable {
+    let div: T = T(rhs)
+    return lhs / div
+}
+public protocol ExpressibleByDouble {
+    init(_ v: Double)
+}
+public func / <T>(lhs: T, rhs: Double) -> T where T: ExpressibleByDouble, T: Dividable {
+    let div: T = T(rhs)
     return lhs / div
 }
 
-public func / <T>(lhs: T, rhs: T.FloatLiteralType) -> T where T:ExpressibleByFloatLiteral, T:Dividable {
-    let div: T = T(floatLiteral: rhs)
-    return lhs / div
-}
 // MARK: utility functions
 
 public func averageOf<T: Averagable & Initializable> (_ seq: [T]) -> T {

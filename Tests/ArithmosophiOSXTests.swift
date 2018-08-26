@@ -209,8 +209,8 @@ class ArithmosophiOSXTests: XCTestCase {
     }
 
     func testMedianHigh_oneItem() {
-        if let result = [8.0].medianHigh {
-            XCTAssertEqual(8.0, result)
+        if let result = [Double(8.0)].medianHigh {
+            XCTAssertEqual(8.0, Double(result))
         } else {
             XCTFail("no result")
         }
@@ -299,7 +299,7 @@ class ArithmosophiOSXTests: XCTestCase {
     }
 
     func testSampleStandardDeviation_whenOne() {
-        let result = [1.0].standardDeviationSample
+        let result = [Double(1.0)].standardDeviationSample
         XCTAssertNil(result)
     }
 
@@ -358,7 +358,7 @@ class ArithmosophiOSXTests: XCTestCase {
     }
 
     func testSampleCovariance_whenGivenSingleSetOfValues() {
-        let result = [1.2].covarianceSample([0.5])
+        let result = [Double(1.2)].covarianceSample([0.5])
 
         XCTAssertNil(result )
     }

@@ -80,7 +80,8 @@ public struct Complex<T: ArithmeticType> {
     }
 
     public var description: String {
-        return "\(self.real), \(self.imaginary)i"
+        let zero = T()
+        return self.imaginary < zero ? "\(self.real)-\(-self.imaginary)i" : "\(self.real)+\(self.imaginary)i"
     }
 
     public func map(_ function: (T, T) -> (T, T)) -> Complex<T> {
@@ -204,7 +205,7 @@ public func * <T>(lhs: Complex<T>, rhs: Complex<T>) -> Complex<T> {
     let productOfImaginaries = rhs.imaginary * lhs.imaginary
     let realPart = productOfReals - productOfImaginaries
     let imaginaryPart = ((lhs.real + lhs.imaginary) * (rhs.real + rhs.imaginary)) - productOfReals - productOfImaginaries
-    return Complex(real:realPart, imaginary:imaginaryPart)
+    return Complex(real: realPart, imaginary: imaginaryPart)
 }
 
 // MARK: Dividable
@@ -277,8 +278,7 @@ public protocol Complexable {
         }
 
         public init(complex: ComplexCGFloat) {
-            self.x = complex.real
-            self.y = complex.imaginary
+            self.init(x: complex.real, y: complex.imaginary)
         }
     }
 

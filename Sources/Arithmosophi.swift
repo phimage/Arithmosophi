@@ -75,8 +75,8 @@ public protocol MultiplicableWithOverflow {
     static func &* (lhs: Self, rhs: Self) -> Self
 }
 public protocol Shiftable {
-    static func >> <RHS>(lhs: Self, rhs: RHS) -> Self where RHS : BinaryInteger
-    static func << <RHS>(lhs: Self, rhs: RHS) -> Self where RHS : BinaryInteger
+    static func >> <RHS>(lhs: Self, rhs: RHS) -> Self where RHS: BinaryInteger
+    static func << <RHS>(lhs: Self, rhs: RHS) -> Self where RHS: BinaryInteger
 }
 public protocol XorOperable {
     static func ^ (lhs: Self, rhs: Self) -> Self
@@ -147,7 +147,7 @@ public func += <T> (left: inout [T], right: [T]) {
 }
 
 // lattice impl
-extension Bool : LatticeType {
+extension Bool: LatticeType {
     public static var min: Bool {
         return false
     }
@@ -163,7 +163,7 @@ public func < (left: Bool, right: Bool) -> Bool {
     return left
 }
 
-extension Float : LatticeType {
+extension Float: LatticeType {
     public static var min: Float {
         return .leastNormalMagnitude
     }
@@ -173,7 +173,7 @@ extension Float : LatticeType {
     }
 }
 
-extension Double : LatticeType {
+extension Double: LatticeType {
     public static var min: Double {
         return .leastNormalMagnitude
     }
@@ -183,7 +183,7 @@ extension Double : LatticeType {
     }
 }
 
-extension CGFloat : LatticeType {
+extension CGFloat: LatticeType {
     public static var min: CGFloat {
         return .leastNormalMagnitude
     }
