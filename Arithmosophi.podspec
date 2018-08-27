@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.name         = "Arithmosophi"
-  s.version      = "4.0.0"
+  s.version      = "4.1.0"
   s.summary      = "A set of protocols for Arithmetic and Logic"
   s.description  = <<-DESC
                    Arithmosophi is a set of missing protocols that simplify
@@ -17,8 +17,8 @@ Pod::Spec.new do |s|
   s.author             = { "phimage" => "eric.marchand.n7@gmail.com" }
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.ios.deployment_target = '8.0'
-  s.osx.deployment_target = '10.9'
+  s.ios.deployment_target = '9.0'
+  s.osx.deployment_target = '10.10'
   s.watchos.deployment_target = '2.0'
   s.tvos.deployment_target = '9.0'
 
@@ -76,8 +76,5 @@ Pod::Spec.new do |s|
     sp.dependency 'Arithmosophi/MesosOros'
     sp.dependency 'Arithmosophi/Sigma'
   end
-
-  # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.resource  = "logo.png"
-
+ 
 end
