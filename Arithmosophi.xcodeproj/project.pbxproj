@@ -115,6 +115,7 @@
 		C4BD0FB51B32FAF400787E0F /* Boolean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Boolean.swift; sourceTree = "<group>"; };
 		C4BD0FB81B32FE8600787E0F /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		C4E20DFE1C046774000655FA /* Complex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Complex.swift; sourceTree = "<group>"; };
+		E1D4850B213376A0001A3D97 /* Arithmosophi.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Arithmosophi.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E1DBFB11213371310097E66C /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		E1DBFB12213371320097E66C /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -205,6 +206,7 @@
 				E1DBFB11213371310097E66C /* logo.png */,
 				C40F9F351B3BFDC900641947 /* README.md */,
 				C4B1FE721D8B3FAD00B61C97 /* Sources */,
+				E1D4850A21337667001A3D97 /* Playgrounds */,
 				C4BD0FB31B32FA8400787E0F /* Samples */,
 				C433BBAA1F7618730046D5B1 /* Xcode */,
 				C470049D1B30560700EB0C80 /* Tests */,
@@ -277,6 +279,14 @@
 				C4A151901B383EDE00C81C91 /* Parity.swift */,
 			);
 			path = Samples;
+			sourceTree = "<group>";
+		};
+		E1D4850A21337667001A3D97 /* Playgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				E1D4850B213376A0001A3D97 /* Arithmosophi.playground */,
+			);
+			path = Playgrounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

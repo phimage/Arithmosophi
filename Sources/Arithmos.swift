@@ -35,6 +35,18 @@ SOFTWARE.
 #endif
 #endif
 
+public func fract(_ x: Double) -> Double {
+    return x - x.floor()
+}
+
+public func fract(_ x: Float) -> Float {
+    return x - x.floor()
+}
+
+public func fract(_ x: CGFloat) -> CGFloat {
+    return x - x.floor()
+}
+
 /// Protocol to add some commons function to Double, CGFloat and Float
 public protocol Arithmos: Comparable {
 
@@ -69,15 +81,17 @@ public protocol Arithmos: Comparable {
     func atan2(_ value: Self) -> Self
     func hypot(_ value: Self) -> Self
 
-    func reciproque() -> Self
+    func reciprocal() -> Self
     func erf() -> Self
     func erfc() -> Self
 
     static func random(_ max: Self) -> Self
-    static func random(_ min: Self, max: Self) -> Self
+    static func random(_ min: Self, _ max: Self) -> Self
+    static func random(_ range: ClosedRange<Self>) -> Self
 
-    func clamp (_ min: Self, _ max: Self) -> Self
-    func clamp (_ range: ClosedRange<Self>) -> Self
+    func clamp(_ max: Self) -> Self
+    func clamp(_ min: Self, _ max: Self) -> Self
+    func clamp(_ range: ClosedRange<Self>) -> Self
 
     init(_ double: Double)
 
@@ -157,24 +171,29 @@ extension Double: Arithmos {
     @_transparent public func atan() -> Double { return Darwin.atan(self) }
     #endif
 
-    @_transparent public func reciproque() -> Double {
+    @_transparent public func reciprocal() -> Double {
         return 1 / self
     }
 
     public static func random(_ max: Double) -> Double {
-        return random(0, max: max)
+        return random(0, max)
     }
-    public static func random(_ min: Double, max: Double) -> Double {
+    public static func random(_ min: Double, _ max: Double) -> Double {
         let diff = max - min
         let rand = Double(arc4random() % (UInt32(RAND_MAX) + 1))
         return ((rand / Double(RAND_MAX)) * diff) + min
     }
-
-    public func clamp (_ min: Double, _ max: Double) -> Double {
-        return Swift.max(min, Swift.min(max, self))
+    public static func random(_ range: ClosedRange<Double>) -> Double {
+        return random(range.lowerBound, range.upperBound)
     }
 
-    public func clamp (_ range: ClosedRange<Double>) -> Double {
+    public func clamp(_ max: Double) -> Double {
+        return clamp(0.0, max)
+    }
+    public func clamp(_ min: Double, _ max: Double) -> Double {
+        return Swift.max(min, Swift.min(max, self))
+    }
+    public func clamp(_ range: ClosedRange<Double>) -> Double {
         return Swift.max(range.lowerBound, Swift.min(range.upperBound, self))
     }
 }
@@ -252,23 +271,29 @@ extension Float: Arithmos {
     @_transparent public func atan() -> Float { return Darwin.atanf(self) }
     #endif
 
-    public func reciproque() -> Float {
+    public func reciprocal() -> Float {
         return 1 / self
     }
+
     public static func random(_ max: Float) -> Float {
-        return random(0, max: max)
+        return random(0, max)
     }
-    public static func random(_ min: Float, max: Float) -> Float {
+    public static func random(_ min: Float, _ max: Float) -> Float {
         let diff = max - min
         let rand = Float(arc4random() % (UInt32(RAND_MAX) + 1))
         return ((rand / Float(RAND_MAX)) * diff) + min
     }
-
-    public func clamp (_ min: Float, _ max: Float) -> Float {
-        return Swift.max(min, Swift.min(max, self))
+    public static func random(_ range: ClosedRange<Float>) -> Float {
+        return random(range.lowerBound, range.upperBound)
     }
 
-    public func clamp (_ range: ClosedRange<Float>) -> Float {
+    public func clamp(_ max: Float) -> Float {
+        return clamp(Float(0.0), max)
+    }
+    public func clamp(_ min: Float, _ max: Float) -> Float {
+        return Swift.max(min, Swift.min(max, self))
+    }
+    public func clamp(_ range: ClosedRange<Float>) -> Float {
         return Swift.max(range.lowerBound, Swift.min(range.upperBound, self))
     }
 }
@@ -310,23 +335,29 @@ extension CGFloat: Arithmos {
     @_transparent public func asin() -> CGFloat { return CoreGraphics.asin(self) }
     @_transparent public func atan() -> CGFloat { return CoreGraphics.atan(self) }
 
-    public func reciproque() -> CGFloat {
+    public func reciprocal() -> CGFloat {
         return 1 / self
     }
+
     public static func random(_ max: CGFloat) -> CGFloat {
-        return random(0, max: max)
+        return random(0, max)
     }
-    public static func random(_ min: CGFloat, max: CGFloat) -> CGFloat {
+    public static func random(_ min: CGFloat, _ max: CGFloat) -> CGFloat {
         let diff = max - min
         let rand = CGFloat(arc4random() % (UInt32(RAND_MAX) + 1))
         return ((rand / CGFloat(RAND_MAX)) * diff) + min
     }
-
-    public func clamp (_ min: CGFloat, _ max: CGFloat) -> CGFloat {
-        return Swift.max(min, Swift.min(max, self))
+    public static func random(_ range: ClosedRange<CGFloat>) -> CGFloat {
+        return random(range.lowerBound, range.upperBound)
     }
 
-    public func clamp (_ range: ClosedRange<CGFloat>) -> CGFloat {
+    public func clamp(_ max: CGFloat) -> CGFloat {
+        return clamp(CGFloat(0.0), max)
+    }
+    public func clamp(_ min: CGFloat, _ max: CGFloat) -> CGFloat {
+        return Swift.max(min, Swift.min(max, self))
+    }
+    public func clamp(_ range: ClosedRange<CGFloat>) -> CGFloat {
         return Swift.max(range.lowerBound, Swift.min(range.upperBound, self))
     }
 }
