@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Timeline
+   version = "3.0">
+   <TimelineItems>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=37&amp;CharacterRangeLoc=135&amp;EndingColumnNumber=14&amp;EndingLineNumber=4&amp;StartingColumnNumber=4&amp;StartingLineNumber=3&amp;Timestamp=557027283.207906"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=20&amp;CharacterRangeLoc=173&amp;EndingColumnNumber=18&amp;EndingLineNumber=5&amp;StartingColumnNumber=15&amp;StartingLineNumber=4&amp;Timestamp=557027283.208016"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=21&amp;CharacterRangeLoc=212&amp;EndingColumnNumber=19&amp;EndingLineNumber=6&amp;StartingColumnNumber=37&amp;StartingLineNumber=5&amp;Timestamp=557027283.208093"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=27&amp;CharacterRangeLoc=274&amp;EndingColumnNumber=22&amp;EndingLineNumber=7&amp;StartingColumnNumber=60&amp;StartingLineNumber=6&amp;Timestamp=557027283.208165"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=513&amp;CharacterRangeLoc=343&amp;EndingColumnNumber=11&amp;EndingLineNumber=18&amp;StartingColumnNumber=64&amp;StartingLineNumber=7&amp;Timestamp=557027283.2082371"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=58&amp;CharacterRangeLoc=1477&amp;EndingColumnNumber=7&amp;EndingLineNumber=37&amp;StartingColumnNumber=61&amp;StartingLineNumber=34&amp;Timestamp=557027283.20831"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=25&amp;CharacterRangeLoc=1546&amp;EndingColumnNumber=19&amp;EndingLineNumber=38&amp;StartingColumnNumber=18&amp;StartingLineNumber=37&amp;Timestamp=557027283.208391"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=36&amp;CharacterRangeLoc=1588&amp;EndingColumnNumber=27&amp;EndingLineNumber=39&amp;StartingColumnNumber=36&amp;StartingLineNumber=38&amp;Timestamp=557027283.208461"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=16&amp;CharacterRangeLoc=159&amp;EndingColumnNumber=0&amp;EndingLineNumber=5&amp;StartingColumnNumber=1&amp;StartingLineNumber=4&amp;Timestamp=557027283.208534"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=20&amp;CharacterRangeLoc=176&amp;EndingColumnNumber=21&amp;EndingLineNumber=5&amp;StartingColumnNumber=1&amp;StartingLineNumber=5&amp;Timestamp=557027283.208606"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=24&amp;CharacterRangeLoc=215&amp;EndingColumnNumber=25&amp;EndingLineNumber=6&amp;StartingColumnNumber=1&amp;StartingLineNumber=6&amp;Timestamp=557027283.2086771"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=27&amp;CharacterRangeLoc=277&amp;EndingColumnNumber=25&amp;EndingLineNumber=7&amp;StartingColumnNumber=63&amp;StartingLineNumber=6&amp;Timestamp=557027283.208746"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=33&amp;CharacterRangeLoc=836&amp;EndingColumnNumber=24&amp;EndingLineNumber=18&amp;StartingColumnNumber=62&amp;StartingLineNumber=17&amp;Timestamp=557027283.208818"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=60&amp;CharacterRangeLoc=1483&amp;EndingColumnNumber=15&amp;EndingLineNumber=37&amp;StartingColumnNumber=67&amp;StartingLineNumber=34&amp;Timestamp=557027283.208892"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=25&amp;CharacterRangeLoc=1549&amp;EndingColumnNumber=22&amp;EndingLineNumber=38&amp;StartingColumnNumber=21&amp;StartingLineNumber=37&amp;Timestamp=557027283.208961"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=36&amp;CharacterRangeLoc=1591&amp;EndingColumnNumber=30&amp;EndingLineNumber=39&amp;StartingColumnNumber=39&amp;StartingLineNumber=38&amp;Timestamp=557027283.2090369"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=33&amp;CharacterRangeLoc=1650&amp;EndingColumnNumber=13&amp;EndingLineNumber=41&amp;StartingColumnNumber=22&amp;StartingLineNumber=40&amp;Timestamp=557027283.209107"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=41&amp;CharacterRangeLoc=1693&amp;EndingColumnNumber=4&amp;EndingLineNumber=43&amp;StartingColumnNumber=23&amp;StartingLineNumber=41&amp;Timestamp=557027283.20918"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=45&amp;CharacterRangeLoc=1739&amp;EndingColumnNumber=12&amp;EndingLineNumber=44&amp;StartingColumnNumber=9&amp;StartingLineNumber=43&amp;Timestamp=557027283.209253"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=50&amp;CharacterRangeLoc=1790&amp;EndingColumnNumber=22&amp;EndingLineNumber=45&amp;StartingColumnNumber=18&amp;StartingLineNumber=44&amp;Timestamp=557027283.209324"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=54&amp;CharacterRangeLoc=1840&amp;EndingColumnNumber=25&amp;EndingLineNumber=46&amp;StartingColumnNumber=22&amp;StartingLineNumber=45&amp;Timestamp=557027283.209394"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=35&amp;CharacterRangeLoc=1904&amp;EndingColumnNumber=15&amp;EndingLineNumber=47&amp;StartingColumnNumber=35&amp;StartingLineNumber=46&amp;Timestamp=557027283.209464"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=35&amp;CharacterRangeLoc=1961&amp;EndingColumnNumber=13&amp;EndingLineNumber=48&amp;StartingColumnNumber=37&amp;StartingLineNumber=47&amp;Timestamp=557027283.209532"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=72&amp;CharacterRangeLoc=2032&amp;EndingColumnNumber=62&amp;EndingLineNumber=49&amp;StartingColumnNumber=49&amp;StartingLineNumber=48&amp;Timestamp=557027283.209601"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=59&amp;CharacterRangeLoc=2105&amp;EndingColumnNumber=53&amp;EndingLineNumber=50&amp;StartingColumnNumber=63&amp;StartingLineNumber=49&amp;Timestamp=557027283.2096699"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=30&amp;CharacterRangeLoc=280&amp;EndingColumnNumber=31&amp;EndingLineNumber=7&amp;StartingColumnNumber=1&amp;StartingLineNumber=7&amp;Timestamp=557027283.20974"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=90&amp;CharacterRangeLoc=837&amp;EndingColumnNumber=2&amp;EndingLineNumber=19&amp;StartingColumnNumber=63&amp;StartingLineNumber=17&amp;Timestamp=557027283.2098089"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=20&amp;CharacterRangeLoc=1524&amp;EndingColumnNumber=16&amp;EndingLineNumber=37&amp;StartingColumnNumber=13&amp;StartingLineNumber=36&amp;Timestamp=557027283.209884"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=20&amp;CharacterRangeLoc=1552&amp;EndingColumnNumber=20&amp;EndingLineNumber=38&amp;StartingColumnNumber=0&amp;StartingLineNumber=38&amp;Timestamp=557027283.209954"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=33&amp;CharacterRangeLoc=1597&amp;EndingColumnNumber=2&amp;EndingLineNumber=40&amp;StartingColumnNumber=0&amp;StartingLineNumber=39&amp;Timestamp=557027283.210023"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=33&amp;CharacterRangeLoc=1654&amp;EndingColumnNumber=17&amp;EndingLineNumber=41&amp;StartingColumnNumber=26&amp;StartingLineNumber=40&amp;Timestamp=557027283.2100919"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=45&amp;CharacterRangeLoc=1699&amp;EndingColumnNumber=14&amp;EndingLineNumber=43&amp;StartingColumnNumber=29&amp;StartingLineNumber=41&amp;Timestamp=557027283.210193"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=50&amp;CharacterRangeLoc=1745&amp;EndingColumnNumber=23&amp;EndingLineNumber=44&amp;StartingColumnNumber=15&amp;StartingLineNumber=43&amp;Timestamp=557027283.210282"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=50&amp;CharacterRangeLoc=1793&amp;EndingColumnNumber=25&amp;EndingLineNumber=45&amp;StartingColumnNumber=21&amp;StartingLineNumber=44&amp;Timestamp=557027283.210368"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=35&amp;CharacterRangeLoc=1851&amp;EndingColumnNumber=17&amp;EndingLineNumber=46&amp;StartingColumnNumber=33&amp;StartingLineNumber=45&amp;Timestamp=557027283.210479"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=35&amp;CharacterRangeLoc=1910&amp;EndingColumnNumber=21&amp;EndingLineNumber=47&amp;StartingColumnNumber=41&amp;StartingLineNumber=46&amp;Timestamp=557027283.210547"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=35&amp;CharacterRangeLoc=1969&amp;EndingColumnNumber=21&amp;EndingLineNumber=48&amp;StartingColumnNumber=45&amp;StartingLineNumber=47&amp;Timestamp=557027283.210616"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=72&amp;CharacterRangeLoc=2038&amp;EndingColumnNumber=68&amp;EndingLineNumber=49&amp;StartingColumnNumber=55&amp;StartingLineNumber=48&amp;Timestamp=557027283.2106839"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=59&amp;CharacterRangeLoc=2111&amp;EndingColumnNumber=59&amp;EndingLineNumber=50&amp;StartingColumnNumber=0&amp;StartingLineNumber=50&amp;Timestamp=557027283.210758"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=19&amp;CharacterRangeLoc=2330&amp;EndingColumnNumber=5&amp;EndingLineNumber=55&amp;StartingColumnNumber=6&amp;StartingLineNumber=54&amp;Timestamp=557027283.2108279"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=6&amp;CharacterRangeLoc=2275&amp;EndingColumnNumber=15&amp;EndingLineNumber=53&amp;StartingColumnNumber=9&amp;StartingLineNumber=53&amp;Timestamp=557027283.2108999"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=7&amp;CharacterRangeLoc=2197&amp;EndingColumnNumber=20&amp;EndingLineNumber=51&amp;StartingColumnNumber=13&amp;StartingLineNumber=51&amp;Timestamp=557027283.210972"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=7&amp;CharacterRangeLoc=2250&amp;EndingColumnNumber=13&amp;EndingLineNumber=52&amp;StartingColumnNumber=6&amp;StartingLineNumber=52&amp;Timestamp=557027283.211042"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=18&amp;CharacterRangeLoc=2331&amp;EndingColumnNumber=5&amp;EndingLineNumber=55&amp;StartingColumnNumber=7&amp;StartingLineNumber=54&amp;Timestamp=557027283.211109"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=58&amp;CharacterRangeLoc=377&amp;EndingColumnNumber=0&amp;EndingLineNumber=10&amp;StartingColumnNumber=3&amp;StartingLineNumber=9&amp;Timestamp=557027283.211181"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=78&amp;CharacterRangeLoc=474&amp;EndingColumnNumber=32&amp;EndingLineNumber=12&amp;StartingColumnNumber=39&amp;StartingLineNumber=10&amp;Timestamp=557027283.211249"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=125&amp;CharacterRangeLoc=553&amp;EndingColumnNumber=72&amp;EndingLineNumber=15&amp;StartingColumnNumber=33&amp;StartingLineNumber=12&amp;Timestamp=557027283.211318"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=150&amp;CharacterRangeLoc=679&amp;EndingColumnNumber=55&amp;EndingLineNumber=17&amp;StartingColumnNumber=73&amp;StartingLineNumber=15&amp;Timestamp=557027283.211387"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=73&amp;CharacterRangeLoc=436&amp;EndingColumnNumber=0&amp;EndingLineNumber=11&amp;StartingColumnNumber=1&amp;StartingLineNumber=10&amp;Timestamp=557027283.2114559"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=37&amp;CharacterRangeLoc=523&amp;EndingColumnNumber=0&amp;EndingLineNumber=13&amp;StartingColumnNumber=3&amp;StartingLineNumber=12&amp;Timestamp=557027283.211525"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=94&amp;CharacterRangeLoc=613&amp;EndingColumnNumber=25&amp;EndingLineNumber=16&amp;StartingColumnNumber=7&amp;StartingLineNumber=15&amp;Timestamp=557027283.2115951"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=44&amp;CharacterRangeLoc=561&amp;EndingColumnNumber=0&amp;EndingLineNumber=14&amp;StartingColumnNumber=1&amp;StartingLineNumber=13&amp;Timestamp=557027283.211664"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=91&amp;CharacterRangeLoc=687&amp;EndingColumnNumber=4&amp;EndingLineNumber=17&amp;StartingColumnNumber=5&amp;StartingLineNumber=16&amp;Timestamp=557027283.211733"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=79&amp;CharacterRangeLoc=850&amp;EndingColumnNumber=4&amp;EndingLineNumber=19&amp;StartingColumnNumber=5&amp;StartingLineNumber=18&amp;Timestamp=557027283.2118011"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=20&amp;CharacterRangeLoc=1526&amp;EndingColumnNumber=18&amp;EndingLineNumber=37&amp;StartingColumnNumber=15&amp;StartingLineNumber=36&amp;Timestamp=557027283.211869"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=25&amp;CharacterRangeLoc=1571&amp;EndingColumnNumber=44&amp;EndingLineNumber=38&amp;StartingColumnNumber=19&amp;StartingLineNumber=38&amp;Timestamp=557027283.211938"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=36&amp;CharacterRangeLoc=1602&amp;EndingColumnNumber=10&amp;EndingLineNumber=40&amp;StartingColumnNumber=5&amp;StartingLineNumber=39&amp;Timestamp=557027283.212005"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=33&amp;CharacterRangeLoc=1644&amp;EndingColumnNumber=7&amp;EndingLineNumber=41&amp;StartingColumnNumber=16&amp;StartingLineNumber=40&amp;Timestamp=557027283.212074"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=41&amp;CharacterRangeLoc=1704&amp;EndingColumnNumber=15&amp;EndingLineNumber=43&amp;StartingColumnNumber=34&amp;StartingLineNumber=41&amp;Timestamp=557027283.212141"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=45&amp;CharacterRangeLoc=1746&amp;EndingColumnNumber=19&amp;EndingLineNumber=44&amp;StartingColumnNumber=16&amp;StartingLineNumber=43&amp;Timestamp=557027283.2122101"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=50&amp;CharacterRangeLoc=1792&amp;EndingColumnNumber=24&amp;EndingLineNumber=45&amp;StartingColumnNumber=20&amp;StartingLineNumber=44&amp;Timestamp=557027283.212279"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=54&amp;CharacterRangeLoc=1843&amp;EndingColumnNumber=28&amp;EndingLineNumber=46&amp;StartingColumnNumber=25&amp;StartingLineNumber=45&amp;Timestamp=557027283.212346"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=35&amp;CharacterRangeLoc=1898&amp;EndingColumnNumber=9&amp;EndingLineNumber=47&amp;StartingColumnNumber=29&amp;StartingLineNumber=46&amp;Timestamp=557027283.212419"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=35&amp;CharacterRangeLoc=1957&amp;EndingColumnNumber=9&amp;EndingLineNumber=48&amp;StartingColumnNumber=33&amp;StartingLineNumber=47&amp;Timestamp=557027283.21249"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=68&amp;CharacterRangeLoc=2016&amp;EndingColumnNumber=42&amp;EndingLineNumber=49&amp;StartingColumnNumber=33&amp;StartingLineNumber=48&amp;Timestamp=557027283.212558"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=72&amp;CharacterRangeLoc=2085&amp;EndingColumnNumber=46&amp;EndingLineNumber=50&amp;StartingColumnNumber=43&amp;StartingLineNumber=49&amp;Timestamp=557027283.212626"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=59&amp;CharacterRangeLoc=2158&amp;EndingColumnNumber=33&amp;EndingLineNumber=51&amp;StartingColumnNumber=47&amp;StartingLineNumber=50&amp;Timestamp=557027283.212693"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=7&amp;CharacterRangeLoc=2244&amp;EndingColumnNumber=7&amp;EndingLineNumber=52&amp;StartingColumnNumber=0&amp;StartingLineNumber=52&amp;Timestamp=557027283.212761"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=20&amp;CharacterRangeLoc=2297&amp;EndingColumnNumber=51&amp;EndingLineNumber=53&amp;StartingColumnNumber=31&amp;StartingLineNumber=53&amp;Timestamp=557027283.212831"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=19&amp;CharacterRangeLoc=2318&amp;EndingColumnNumber=13&amp;EndingLineNumber=54&amp;StartingColumnNumber=52&amp;StartingLineNumber=53&amp;Timestamp=557027283.2129"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=18&amp;CharacterRangeLoc=2378&amp;EndingColumnNumber=52&amp;EndingLineNumber=55&amp;StartingColumnNumber=34&amp;StartingLineNumber=55&amp;Timestamp=557027283.2129689"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=20&amp;CharacterRangeLoc=2297&amp;EndingColumnNumber=51&amp;EndingLineNumber=53&amp;StartingColumnNumber=31&amp;StartingLineNumber=53&amp;Timestamp=557027283.2130359"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=19&amp;CharacterRangeLoc=2298&amp;EndingColumnNumber=51&amp;EndingLineNumber=53&amp;StartingColumnNumber=32&amp;StartingLineNumber=53&amp;Timestamp=557027283.213105"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=42&amp;CharacterRangeLoc=966&amp;EndingColumnNumber=4&amp;EndingLineNumber=21&amp;StartingColumnNumber=5&amp;StartingLineNumber=20&amp;Timestamp=557027283.213174"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=33&amp;CharacterRangeLoc=932&amp;EndingColumnNumber=4&amp;EndingLineNumber=20&amp;StartingColumnNumber=7&amp;StartingLineNumber=19&amp;Timestamp=557027283.2132421"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=33&amp;CharacterRangeLoc=1011&amp;EndingColumnNumber=4&amp;EndingLineNumber=22&amp;StartingColumnNumber=7&amp;StartingLineNumber=21&amp;Timestamp=557027283.213311"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=42&amp;CharacterRangeLoc=1045&amp;EndingColumnNumber=4&amp;EndingLineNumber=23&amp;StartingColumnNumber=5&amp;StartingLineNumber=22&amp;Timestamp=557027283.213379"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=91&amp;CharacterRangeLoc=1088&amp;EndingColumnNumber=24&amp;EndingLineNumber=24&amp;StartingColumnNumber=5&amp;StartingLineNumber=23&amp;Timestamp=557027283.213461"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=71&amp;CharacterRangeLoc=1084&amp;EndingColumnNumber=0&amp;EndingLineNumber=24&amp;StartingColumnNumber=1&amp;StartingLineNumber=23&amp;Timestamp=557027283.213536"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=65&amp;CharacterRangeLoc=1156&amp;EndingColumnNumber=0&amp;EndingLineNumber=25&amp;StartingColumnNumber=1&amp;StartingLineNumber=24&amp;Timestamp=557027283.213671"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=10&amp;CharacterRangeLoc=510&amp;EndingColumnNumber=0&amp;EndingLineNumber=12&amp;StartingColumnNumber=1&amp;StartingLineNumber=11&amp;Timestamp=557027283.213763"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=64&amp;CharacterRangeLoc=1343&amp;EndingColumnNumber=58&amp;EndingLineNumber=33&amp;StartingColumnNumber=18&amp;StartingLineNumber=32&amp;Timestamp=557027283.2138391"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=64&amp;CharacterRangeLoc=1343&amp;EndingColumnNumber=58&amp;EndingLineNumber=33&amp;StartingColumnNumber=18&amp;StartingLineNumber=32&amp;Timestamp=557027283.2139111"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=76&amp;CharacterRangeLoc=1407&amp;EndingColumnNumber=67&amp;EndingLineNumber=34&amp;StartingColumnNumber=58&amp;StartingLineNumber=33&amp;Timestamp=557027283.21398"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=76&amp;CharacterRangeLoc=1408&amp;EndingColumnNumber=68&amp;EndingLineNumber=34&amp;StartingColumnNumber=59&amp;StartingLineNumber=33&amp;Timestamp=557027283.214049"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=16&amp;CharacterRangeLoc=1503&amp;EndingColumnNumber=8&amp;EndingLineNumber=36&amp;StartingColumnNumber=10&amp;StartingLineNumber=35&amp;Timestamp=557027283.214119"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=5&amp;CharacterRangeLoc=1262&amp;EndingColumnNumber=10&amp;EndingLineNumber=26&amp;StartingColumnNumber=5&amp;StartingLineNumber=26&amp;Timestamp=557027283.214201"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=5&amp;CharacterRangeLoc=1282&amp;EndingColumnNumber=6&amp;EndingLineNumber=27&amp;StartingColumnNumber=1&amp;StartingLineNumber=27&amp;Timestamp=557027283.214329"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=5&amp;CharacterRangeLoc=1298&amp;EndingColumnNumber=0&amp;EndingLineNumber=29&amp;StartingColumnNumber=1&amp;StartingLineNumber=28&amp;Timestamp=557027283.214398"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=5&amp;CharacterRangeLoc=1304&amp;EndingColumnNumber=6&amp;EndingLineNumber=29&amp;StartingColumnNumber=1&amp;StartingLineNumber=29&amp;Timestamp=557027283.214468"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=5&amp;CharacterRangeLoc=1319&amp;EndingColumnNumber=0&amp;EndingLineNumber=31&amp;StartingColumnNumber=1&amp;StartingLineNumber=30&amp;Timestamp=557027283.214538"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=91&amp;CharacterRangeLoc=683&amp;EndingColumnNumber=0&amp;EndingLineNumber=17&amp;StartingColumnNumber=1&amp;StartingLineNumber=16&amp;Timestamp=557027283.214608"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=79&amp;CharacterRangeLoc=846&amp;EndingColumnNumber=0&amp;EndingLineNumber=19&amp;StartingColumnNumber=1&amp;StartingLineNumber=18&amp;Timestamp=557027283.214676"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=42&amp;CharacterRangeLoc=962&amp;EndingColumnNumber=0&amp;EndingLineNumber=21&amp;StartingColumnNumber=1&amp;StartingLineNumber=20&amp;Timestamp=557027283.214744"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=42&amp;CharacterRangeLoc=1041&amp;EndingColumnNumber=0&amp;EndingLineNumber=23&amp;StartingColumnNumber=1&amp;StartingLineNumber=22&amp;Timestamp=557027283.214811"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=76&amp;CharacterRangeLoc=1417&amp;EndingColumnNumber=0&amp;EndingLineNumber=35&amp;StartingColumnNumber=1&amp;StartingLineNumber=34&amp;Timestamp=557027283.21488"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=16&amp;CharacterRangeLoc=1512&amp;EndingColumnNumber=0&amp;EndingLineNumber=37&amp;StartingColumnNumber=1&amp;StartingLineNumber=36&amp;Timestamp=557027283.214949"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=20&amp;CharacterRangeLoc=1553&amp;EndingColumnNumber=21&amp;EndingLineNumber=38&amp;StartingColumnNumber=1&amp;StartingLineNumber=38&amp;Timestamp=557027283.215018"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=25&amp;CharacterRangeLoc=1598&amp;EndingColumnNumber=26&amp;EndingLineNumber=39&amp;StartingColumnNumber=1&amp;StartingLineNumber=39&amp;Timestamp=557027283.215086"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=36&amp;CharacterRangeLoc=1629&amp;EndingColumnNumber=37&amp;EndingLineNumber=40&amp;StartingColumnNumber=1&amp;StartingLineNumber=40&amp;Timestamp=557027283.21517"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=33&amp;CharacterRangeLoc=1671&amp;EndingColumnNumber=34&amp;EndingLineNumber=41&amp;StartingColumnNumber=1&amp;StartingLineNumber=41&amp;Timestamp=557027283.215248"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=41&amp;CharacterRangeLoc=1731&amp;EndingColumnNumber=0&amp;EndingLineNumber=44&amp;StartingColumnNumber=1&amp;StartingLineNumber=43&amp;Timestamp=557027283.215323"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=45&amp;CharacterRangeLoc=1773&amp;EndingColumnNumber=0&amp;EndingLineNumber=45&amp;StartingColumnNumber=1&amp;StartingLineNumber=44&amp;Timestamp=557027283.215394"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=50&amp;CharacterRangeLoc=1819&amp;EndingColumnNumber=0&amp;EndingLineNumber=46&amp;StartingColumnNumber=1&amp;StartingLineNumber=45&amp;Timestamp=557027283.215469"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=54&amp;CharacterRangeLoc=1870&amp;EndingColumnNumber=0&amp;EndingLineNumber=47&amp;StartingColumnNumber=1&amp;StartingLineNumber=46&amp;Timestamp=557027283.215541"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=35&amp;CharacterRangeLoc=1925&amp;EndingColumnNumber=36&amp;EndingLineNumber=47&amp;StartingColumnNumber=1&amp;StartingLineNumber=47&amp;Timestamp=557027283.215614"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=35&amp;CharacterRangeLoc=1984&amp;EndingColumnNumber=36&amp;EndingLineNumber=48&amp;StartingColumnNumber=1&amp;StartingLineNumber=48&amp;Timestamp=557027283.215687"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=68&amp;CharacterRangeLoc=2043&amp;EndingColumnNumber=0&amp;EndingLineNumber=50&amp;StartingColumnNumber=1&amp;StartingLineNumber=49&amp;Timestamp=557027283.215762"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=72&amp;CharacterRangeLoc=2112&amp;EndingColumnNumber=0&amp;EndingLineNumber=51&amp;StartingColumnNumber=1&amp;StartingLineNumber=50&amp;Timestamp=557027283.215843"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=59&amp;CharacterRangeLoc=2185&amp;EndingColumnNumber=0&amp;EndingLineNumber=52&amp;StartingColumnNumber=1&amp;StartingLineNumber=51&amp;Timestamp=557027283.215922"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=7&amp;CharacterRangeLoc=2271&amp;EndingColumnNumber=12&amp;EndingLineNumber=53&amp;StartingColumnNumber=5&amp;StartingLineNumber=53&amp;Timestamp=557027283.216001"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=19&amp;CharacterRangeLoc=2325&amp;EndingColumnNumber=0&amp;EndingLineNumber=55&amp;StartingColumnNumber=1&amp;StartingLineNumber=54&amp;Timestamp=557027283.216105"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=6&amp;CharacterRangeLoc=2349&amp;EndingColumnNumber=11&amp;EndingLineNumber=55&amp;StartingColumnNumber=5&amp;StartingLineNumber=55&amp;Timestamp=557027283.216187"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/kellyroach/Fork/phimage/Arithmosophi/Playgrounds/Arithmosophi.playground#CharacterRangeLen=18&amp;CharacterRangeLoc=2405&amp;EndingColumnNumber=0&amp;EndingLineNumber=57&amp;StartingColumnNumber=1&amp;StartingLineNumber=56&amp;Timestamp=557027283.216262"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+   </TimelineItems>
+</Timeline>

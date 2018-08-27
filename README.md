@@ -255,7 +255,7 @@ func distance<T: Arithmos>(#x: T, y: T) -> T {
 	return x.hypot(y)
 }
 
-func radiansFromDegrees<T where T: Multiplicable, T:Dividable, T: Arithmos, T: Statheros>(degrees: T) -> T {
+func radiansFromDegrees<T where T: Multiplicable, Dividable, T: Arithmos, T: Statheros>(degrees: T) -> T {
 	return degrees * T.PI / T(180.0)
 }
 ```

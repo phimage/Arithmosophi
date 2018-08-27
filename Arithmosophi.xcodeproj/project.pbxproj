@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C43F37A81C15BCE100C0915D /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = C43F37A71C15BCE100C0915D /* .swiftlint.yml */; };
 		C43F37B11C15C10B00C0915D /* ArithmosophiWatchOS.h in Headers */ = {isa = PBXBuildFile; fileRef = C43F37B01C15C10B00C0915D /* ArithmosophiWatchOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C43F37BE1C15C12A00C0915D /* ArithmosophiTVOS.h in Headers */ = {isa = PBXBuildFile; fileRef = C43F37BD1C15C12A00C0915D /* ArithmosophiTVOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C43F37C31C15C13600C0915D /* Arithmosophi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47004761B304D6900EB0C80 /* Arithmosophi.swift */; };
@@ -38,7 +37,6 @@
 		C496F15E1D496DA7008A2637 /* Sigma.swift in Sources */ = {isa = PBXBuildFile; fileRef = C496F15B1D49648D008A2637 /* Sigma.swift */; };
 		C496F15F1D496DA7008A2637 /* Sigma.swift in Sources */ = {isa = PBXBuildFile; fileRef = C496F15B1D49648D008A2637 /* Sigma.swift */; };
 		C4B1FE7E1D8B45E200B61C97 /* Arithmosophi.h in Headers */ = {isa = PBXBuildFile; fileRef = C470045D1B304CE200EB0C80 /* Arithmosophi.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C4B1FE801D8B45E200B61C97 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = C43F37A71C15BCE100C0915D /* .swiftlint.yml */; };
 		C4B1FE881D8B45F400B61C97 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BD0FB81B32FE8600787E0F /* Box.swift */; };
 		C4B1FE891D8B45F400B61C97 /* Boolean.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BD0FB51B32FAF400787E0F /* Boolean.swift */; };
 		C4B1FE8A1D8B45F400B61C97 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BD0FB11B32F9E500787E0F /* Optional.swift */; };
@@ -50,6 +48,7 @@
 		C4BD0FAF1B32DF4500787E0F /* Arithmos.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47004861B30530D00EB0C80 /* Arithmos.swift */; };
 		C4BD0FB01B32DF4500787E0F /* Arithmos.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47004861B30530D00EB0C80 /* Arithmos.swift */; };
 		C4E20E001C046774000655FA /* Complex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E20DFE1C046774000655FA /* Complex.swift */; };
+		E1DBFB102133703E0097E66C /* Complex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E20DFE1C046774000655FA /* Complex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -112,11 +111,13 @@
 		C496F15B1D49648D008A2637 /* Sigma.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sigma.swift; sourceTree = "<group>"; };
 		C4A151901B383EDE00C81C91 /* Parity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parity.swift; sourceTree = "<group>"; };
 		C4B1FE861D8B45E200B61C97 /* ArithmosophiSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ArithmosophiSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C4B1FE871D8B45E300B61C97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = /Users/phimage/Dev/Arithmosophi/Samples/Info.plist; sourceTree = "<absolute>"; };
 		C4BD0FB11B32F9E500787E0F /* Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 		C4BD0FB51B32FAF400787E0F /* Boolean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Boolean.swift; sourceTree = "<group>"; };
 		C4BD0FB81B32FE8600787E0F /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		C4E20DFE1C046774000655FA /* Complex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Complex.swift; sourceTree = "<group>"; };
+		E1D4850B213376A0001A3D97 /* Arithmosophi.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Arithmosophi.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		E1DBFB11213371310097E66C /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		E1DBFB12213371320097E66C /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,16 +168,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C40F9F341B3BFDB600641947 /* Files */ = {
-			isa = PBXGroup;
-			children = (
-				C43F37A71C15BCE100C0915D /* .swiftlint.yml */,
-				C40F9F361B3BFDD300641947 /* Arithmosophi.podspec */,
-				C40F9F351B3BFDC900641947 /* README.md */,
-			);
-			name = Files;
-			sourceTree = "<group>";
-		};
 		C433BBAA1F7618730046D5B1 /* Xcode */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,12 +200,17 @@
 		C470044E1B304CE200EB0C80 = {
 			isa = PBXGroup;
 			children = (
+				C43F37A71C15BCE100C0915D /* .swiftlint.yml */,
+				C40F9F361B3BFDD300641947 /* Arithmosophi.podspec */,
+				E1DBFB12213371320097E66C /* LICENSE */,
+				E1DBFB11213371310097E66C /* logo.png */,
+				C40F9F351B3BFDC900641947 /* README.md */,
 				C4B1FE721D8B3FAD00B61C97 /* Sources */,
+				E1D4850A21337667001A3D97 /* Playgrounds */,
 				C4BD0FB31B32FA8400787E0F /* Samples */,
 				C433BBAA1F7618730046D5B1 /* Xcode */,
 				C470049D1B30560700EB0C80 /* Tests */,
 				C47004591B304CE200EB0C80 /* Products */,
-				C40F9F341B3BFDB600641947 /* Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -235,63 +231,39 @@
 			isa = PBXGroup;
 			children = (
 				C470045D1B304CE200EB0C80 /* Arithmosophi.h */,
-				C470045B1B304CE200EB0C80 /* Supporting Files */,
-			);
-			path = iOS;
-			sourceTree = "<group>";
-		};
-		C470045B1B304CE200EB0C80 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
 				C470045C1B304CE200EB0C80 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = iOS;
 			sourceTree = "<group>";
 		};
 		C47004901B30560700EB0C80 /* OSX */ = {
 			isa = PBXGroup;
 			children = (
 				C47004931B30560700EB0C80 /* ArithmosophiOSX.h */,
-				C47004911B30560700EB0C80 /* Supporting Files */,
-			);
-			path = OSX;
-			sourceTree = "<group>";
-		};
-		C47004911B30560700EB0C80 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
 				C47004921B30560700EB0C80 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = OSX;
 			sourceTree = "<group>";
 		};
 		C470049D1B30560700EB0C80 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				C470049F1B30560700EB0C80 /* Info.plist */,
 				C47004A01B30560700EB0C80 /* ArithmosophiOSXTests.swift */,
-				C470049E1B30560700EB0C80 /* Supporting Files */,
 			);
 			path = Tests;
-			sourceTree = "<group>";
-		};
-		C470049E1B30560700EB0C80 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				C470049F1B30560700EB0C80 /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		C4B1FE721D8B3FAD00B61C97 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				C47004761B304D6900EB0C80 /* Arithmosophi.swift */,
-				C4478C381B31911800194715 /* LogicalOperationsType.swift */,
 				C47004861B30530D00EB0C80 /* Arithmos.swift */,
-				C47004741B304D5600EB0C80 /* Statheros.swift */,
+				C47004761B304D6900EB0C80 /* Arithmosophi.swift */,
+				C4E20DFE1C046774000655FA /* Complex.swift */,
+				C4478C381B31911800194715 /* LogicalOperationsType.swift */,
 				C4687F021B452FB80063EC05 /* MesosOros.swift */,
 				C496F15B1D49648D008A2637 /* Sigma.swift */,
-				C4E20DFE1C046774000655FA /* Complex.swift */,
+				C47004741B304D5600EB0C80 /* Statheros.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -299,15 +271,22 @@
 		C4BD0FB31B32FA8400787E0F /* Samples */ = {
 			isa = PBXGroup;
 			children = (
-				C4B1FE871D8B45E300B61C97 /* Info.plist */,
-				C4BD0FB81B32FE8600787E0F /* Box.swift */,
 				C4BD0FB51B32FAF400787E0F /* Boolean.swift */,
-				C4A151901B383EDE00C81C91 /* Parity.swift */,
-				C4BD0FB11B32F9E500787E0F /* Optional.swift */,
+				C4BD0FB81B32FE8600787E0F /* Box.swift */,
 				C47004841B30514800EB0C80 /* Geometry.swift */,
 				C4478C361B318FFC00194715 /* Geometry+Animation.swift */,
+				C4BD0FB11B32F9E500787E0F /* Optional.swift */,
+				C4A151901B383EDE00C81C91 /* Parity.swift */,
 			);
 			path = Samples;
+			sourceTree = "<group>";
+		};
+		E1D4850A21337667001A3D97 /* Playgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				E1D4850B213376A0001A3D97 /* Arithmosophi.playground */,
+			);
+			path = Playgrounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -477,7 +456,7 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = phimage;
 				TargetAttributes = {
 					C43F37AD1C15C10B00C0915D = {
@@ -543,7 +522,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C43F37A81C15BCE100C0915D /* .swiftlint.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,7 +543,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4B1FE801D8B45E200B61C97 /* .swiftlint.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -652,6 +629,7 @@
 				C4BD0FB01B32DF4500787E0F /* Arithmos.swift in Sources */,
 				C47004771B304D6900EB0C80 /* Arithmosophi.swift in Sources */,
 				C47004751B304D5600EB0C80 /* Statheros.swift in Sources */,
+				E1DBFB102133703E0097E66C /* Complex.swift in Sources */,
 				C496F15C1D49648D008A2637 /* Sigma.swift in Sources */,
 				C4687F061B4535D00063EC05 /* MesosOros.swift in Sources */,
 				C4478C391B31911800194715 /* LogicalOperationsType.swift in Sources */,
@@ -804,12 +782,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -838,7 +818,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -861,12 +841,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -888,7 +870,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

@@ -90,20 +90,20 @@ open class Geometry {
     open class func scale<T: Multiplicable>(dx: T, dy: T, sx: T, sy: T) -> (dx: T, dy: T) { return (dx: dx * sx, dy: dy * sy) }
     open class func scale<T: Multiplicable>(dx: T, dy: T, dz: T, sx: T, sy: T, sz: T) -> (dx: T, dy: T, dz: T) { return (dx: dx * sx, dy: dy * sy, dz: dz * sz) }
 
-    open class func scaleForAspectFit<T>(dxContent: T, dyContent: T, dxArea: T, dyArea: T) -> T where T:Dividable, T:Comparable {
+    open class func scaleForAspectFit<T>(dxContent: T, dyContent: T, dxArea: T, dyArea: T) -> T where T: Dividable, T: Comparable {
         return Swift.min(dxArea / dxContent, dyArea / dyContent)
     }
 
-    open class func scaleForAspectFill<T>(dxContent: T, dyContent: T, dxArea: T, dyArea: T) -> T where T:Dividable, T:Comparable {
+    open class func scaleForAspectFill<T>(dxContent: T, dyContent: T, dxArea: T, dyArea: T) -> T where T: Dividable, T: Comparable {
         return Swift.min(dxArea / dxContent, dyArea / dyContent)
     }
 
-    open class func aspectFit<T>(dxContent: T, dyContent: T, dxArea: T, dyArea: T) -> (dx: T, dy: T) where T:Dividable, T:Multiplicable, T:Comparable {
+    open class func aspectFit<T>(dxContent: T, dyContent: T, dxArea: T, dyArea: T) -> (dx: T, dy: T) where T: Dividable, T: Multiplicable, T: Comparable {
         let s = scaleForAspectFit(dxContent: dxContent, dyContent: dyContent, dxArea: dxArea, dyArea: dyArea)
         return scale(dx: dxContent, dy: dyContent, s: s)
     }
 
-    open class func aspectFill<T>(dxContent: T, dyContent: T, dxArea: T, dyArea: T) -> (dx: T, dy: T) where T:Dividable, T:Multiplicable, T:Comparable {
+    open class func aspectFill<T>(dxContent: T, dyContent: T, dxArea: T, dyArea: T) -> (dx: T, dy: T) where T: Dividable, T: Multiplicable, T: Comparable {
         let s = scaleForAspectFill(dxContent: dxContent, dyContent: dyContent, dxArea: dxArea, dyArea: dyArea)
         return scale(dx: dxContent, dy: dyContent, s: s)
     }

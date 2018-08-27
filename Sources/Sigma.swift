@@ -277,8 +277,9 @@ public extension Collection where Self.Iterator.Element: Averagable & Initializa
     }
 }
 
-// TODO: percentile
+// MARK: percentile
 // https://en.wikipedia.org/wiki/Percentile
+// NOT IMPLEMENTED YET
 
 // MARK: linear regression
 // https://en.wikipedia.org/wiki/Linear_regression
@@ -315,17 +316,15 @@ public extension Collection where Self.Iterator.Element: Averagable & Initializa
             sum1 = m1 - average * withAverage
             let m2 = multiply(self).average
             sum2 = m2 - average * average
-            break
         case .ols:
             for (element, withElement) in zip(self, with) {
                 let elMinusAverage = (element - average)
                 sum1 += elMinusAverage * (withElement - withAverage)
                 sum2 += elMinusAverage * elMinusAverage
             }
-            break
         }
 
-        let slope = sum1 / sum2 // FIXME Int will failed here by dividing by zero (Int linear regression must return float result)
+        let slope = sum1 / sum2 // ISSUE Int will failed here by dividing by zero (Int linear regression must return float result)
         let intercept = withAverage - slope * average
         return (intercept, slope)
     }
