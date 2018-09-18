@@ -168,6 +168,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48FA10BB2151137500BC000C /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				C43F37A71C15BCE100C0915D /* .swiftlint.yml */,
+				C40F9F361B3BFDD300641947 /* Arithmosophi.podspec */,
+				E1DBFB12213371320097E66C /* LICENSE */,
+				E1DBFB11213371310097E66C /* logo.png */,
+				C40F9F351B3BFDC900641947 /* README.md */,
+			);
+			name = Files;
+			sourceTree = "<group>";
+		};
 		C433BBAA1F7618730046D5B1 /* Xcode */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,11 +212,7 @@
 		C470044E1B304CE200EB0C80 = {
 			isa = PBXGroup;
 			children = (
-				C43F37A71C15BCE100C0915D /* .swiftlint.yml */,
-				C40F9F361B3BFDD300641947 /* Arithmosophi.podspec */,
-				E1DBFB12213371320097E66C /* LICENSE */,
-				E1DBFB11213371310097E66C /* logo.png */,
-				C40F9F351B3BFDC900641947 /* README.md */,
+				48FA10BB2151137500BC000C /* Files */,
 				C4B1FE721D8B3FAD00B61C97 /* Sources */,
 				E1D4850A21337667001A3D97 /* Playgrounds */,
 				C4BD0FB31B32FA8400787E0F /* Samples */,
@@ -561,7 +569,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint autocorrect\nelse\n  echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint autocorrect\nelse\n  echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		C43F37A61C15BC7400C0915D /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -589,7 +597,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -699,7 +707,7 @@
 				PRODUCT_NAME = Arithmosophi;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -721,7 +729,7 @@
 				PRODUCT_NAME = Arithmosophi;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -743,7 +751,7 @@
 				PRODUCT_NAME = Arithmosophi;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -764,7 +772,7 @@
 				PRODUCT_NAME = Arithmosophi;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -898,7 +906,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -918,7 +926,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -944,7 +952,7 @@
 				PRODUCT_NAME = Arithmosophi;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -965,7 +973,7 @@
 				PRODUCT_NAME = Arithmosophi;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -988,7 +996,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "tv.phimage.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1006,7 +1014,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "tv.phimage.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -1026,7 +1034,7 @@
 				PRODUCT_NAME = ArithmosophiSample;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1045,7 +1053,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "tv.phimage.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = ArithmosophiSample;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

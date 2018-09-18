@@ -118,7 +118,7 @@ extension Complex where T: Arithmos {
 
     public var abs: T {
         get {
-            return  real.hypot(imaginary)
+            return real.hypot(imaginary)
         }
         set(r) {
             let f = r / abs

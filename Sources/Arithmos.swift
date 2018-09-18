@@ -236,7 +236,11 @@ extension Float: Arithmos {
 
     #else
 
+    #if swift(>=4.2)
+    @_transparent public func abs() -> Float { return Darwin.fabsf(self) }
+    #else
     @_transparent public func abs() -> Float { return Darwin.fabs(self) }
+    #endif
     @_transparent public func floor () -> Float { return Darwin.floor(self) }
     @_transparent public func ceil () -> Float { return Darwin.ceil(self) }
     @_transparent public func round () -> Float { return Darwin.round(self) }
@@ -301,7 +305,11 @@ extension Float: Arithmos {
 #if !os(Linux)
 extension CGFloat: Arithmos {
 
+    #if swift(>=4.2)
+    @_transparent public func abs() -> CGFloat { return CGFloat(Darwin.fabs(Double(self))) }
+    #else
     @_transparent public func abs() -> CGFloat { return CoreGraphics.fabs(self) }
+    #endif
     @_transparent public func floor () -> CGFloat { return CoreGraphics.floor(self) }
     @_transparent public func ceil () -> CGFloat { return CoreGraphics.ceil(self) }
     @_transparent public func round () -> CGFloat { return CoreGraphics.round(self) }
