@@ -29,6 +29,10 @@ let package = Package(
   products: [
     .library(
       name: "Arithmosophi",
+      targets: ["Arithmosophi"]),
+    .library(
+      name: "ArithmosophiDynamic",
+      type: .dynamic,
       targets: ["Arithmosophi"])
   ],
   targets: [
