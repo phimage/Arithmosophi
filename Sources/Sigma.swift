@@ -47,7 +47,7 @@ public extension Collection where Self.Iterator.Element: Averagable & Initializa
 
     // Return varianceSample: Σ( (Element - average)^2 ) / (count - 1)
     // https://en.wikipedia.org/wiki/Variance#Sample_variance
-    public var varianceSample: Self.Iterator.Element? {
+  var varianceSample: Self.Iterator.Element? {
         if self.count < 2 { return nil }
 
         let avgerageValue = average
@@ -61,7 +61,7 @@ public extension Collection where Self.Iterator.Element: Averagable & Initializa
 
     // Return variancePopulation: Σ( (Element - average)^2 ) / count
     // https://en.wikipedia.org/wiki/Variance#Population_variance
-    public var variancePopulation: Self.Iterator.Element? {
+  var variancePopulation: Self.Iterator.Element? {
         if self.count == 0 { return nil }
 
         let avgerageValue = average
@@ -73,7 +73,7 @@ public extension Collection where Self.Iterator.Element: Averagable & Initializa
         return numerator / count
     }
 
-    public func variance(mode: VarianceMode) ->  Self.Iterator.Element? {
+  func variance(mode: VarianceMode) ->  Self.Iterator.Element? {
         switch mode {
         case .sample: return varianceSample
         case .population: return variancePopulation
@@ -84,26 +84,26 @@ public extension Collection where Self.Iterator.Element: Averagable & Initializa
 
 public extension Collection where Self.Iterator.Element: Averagable & Initializable & Substractable & Multiplicable & Arithmos {
 
-    public var standardDeviationSample: Self.Iterator.Element? {
+  var standardDeviationSample: Self.Iterator.Element? {
         return varianceSample?.sqrt() ?? nil
     }
 
-    public var standardDeviationPopulation: Self.Iterator.Element? {
+  var standardDeviationPopulation: Self.Iterator.Element? {
         return variancePopulation?.sqrt() ?? nil
     }
 
-    public func standardDeviation(mode: VarianceMode) ->  Self.Iterator.Element? {
+  func standardDeviation(mode: VarianceMode) ->  Self.Iterator.Element? {
         switch mode {
         case .sample: return standardDeviationSample
         case .population: return standardDeviationPopulation
         }
     }
 
-    public var σSample: Self.Iterator.Element? {
+  var σSample: Self.Iterator.Element? {
         return standardDeviationSample
     }
 
-    public var σPopulation: Self.Iterator.Element? {
+  var σPopulation: Self.Iterator.Element? {
         return standardDeviationPopulation
     }
 
@@ -135,7 +135,7 @@ public struct Moment<T: Averagable & ExpressibleByIntegerLiteral & Substractable
             let t3 = (n*n - 3*n + 3)
             let t5 = term1 * delta_n2 * t3
             M4 += t5 + t4
-            M3 += term1 * delta_n * (n - 2) - 3 * delta_n * M2
+            M3 += (term1 * delta_n * (n - 2)) as T - (3 * delta_n * M2) as T
             M2 += term1
         }
     }
@@ -180,17 +180,17 @@ public struct Moment<T: Averagable & ExpressibleByIntegerLiteral & Substractable
 public extension Collection where Self.Iterator.Element: Averagable & ExpressibleByIntegerLiteral & Substractable & Multiplicable & Arithmos & Equatable & Dividable {
 
     //https://en.wikipedia.org/wiki/Kurtosis
-    public var kurtosis: Self.Iterator.Element? {
+  var kurtosis: Self.Iterator.Element? {
         return moment?.kurtosis
     }
 
     // https://en.wikipedia.org/wiki/Skewness
-    public var skewness: Self.Iterator.Element? {
+  var skewness: Self.Iterator.Element? {
         return moment?.skewness
     }
 
     // https://en.wikipedia.org/wiki/Moment_(mathematics)
-    public var moment: Moment<Self.Iterator.Element>? {
+  var moment: Moment<Self.Iterator.Element>? {
         return Moment(Array(self))
     }
 
@@ -199,7 +199,7 @@ public extension Collection where Self.Iterator.Element: Averagable & Expressibl
 // MARK: covariance
 public extension Collection where Self.Iterator.Element: Averagable & Initializable & Substractable & Multiplicable & Arithmos {
 
-    public func covariance<W: Collection>
+  func covariance<W: Collection>
         (_ with: W, type: VarianceMode) -> Self.Iterator.Element? where W.Iterator.Element == Self.Iterator.Element {
         switch type {
         case .sample:
@@ -209,7 +209,7 @@ public extension Collection where Self.Iterator.Element: Averagable & Initializa
         }
     }
 
-    public func covarianceSample<W: Collection>
+  func covarianceSample<W: Collection>
         (_ with: W) -> Self.Iterator.Element? where W.Iterator.Element == Self.Iterator.Element {
         if self.count < 2 { return nil }
         guard self.count == with.count else {
@@ -228,7 +228,7 @@ public extension Collection where Self.Iterator.Element: Averagable & Initializa
         return sum / (count - 1)
     }
 
-    public func covariancePopulation<W: Collection>
+  func covariancePopulation<W: Collection>
         (_ with: W) -> Self.Iterator.Element? where W.Iterator.Element == Self.Iterator.Element {
         if self.count < 2 { return nil }
         guard self.count == with.count else {
@@ -247,7 +247,7 @@ public extension Collection where Self.Iterator.Element: Averagable & Initializa
         return sum / count
     }
 
-    public func covariance<W: Collection>
+  func covariance<W: Collection>
         (_ with: W, mode: VarianceMode) -> Self.Iterator.Element? where W.Iterator.Element == Self.Iterator.Element {
         switch mode {
         case .sample: return covarianceSample(with)
@@ -261,7 +261,7 @@ public extension Collection where Self.Iterator.Element: Averagable & Initializa
 public extension Collection where Self.Iterator.Element: Averagable & Initializable & Substractable & Multiplicable & Arithmos & Equatable & Dividable {
 
     // http://en.wikipedia.org/wiki/Pearson_product-moment_correlation_coefficient
-    public func pearson<W: Collection>
+  func pearson<W: Collection>
         (_ with: W) -> Self.Iterator.Element? where W.Iterator.Element == Self.Iterator.Element {
         if let cov = self.covariancePopulation(with),
             let σself = self.standardDeviationPopulation,
@@ -294,7 +294,7 @@ public enum LinearRegressionMethod {
 public extension Collection where Self.Iterator.Element: Averagable & Initializable & Substractable & Multiplicable & Dividable {
 
     // @return (intercept, slope) where with = slope * self + intercept
-    public func linearRegression<W: Collection>
+  func linearRegression<W: Collection>
         (_ with: W, method: LinearRegressionMethod = .ols)  -> (Self.Iterator.Element, Self.Iterator.Element)? where W.Iterator.Element == Self.Iterator.Element {
 
         guard self.count > 1 else {
@@ -329,7 +329,7 @@ public extension Collection where Self.Iterator.Element: Averagable & Initializa
         return (intercept, slope)
     }
 
-    public func linearRegressionClosure<W: Collection>
+  func linearRegressionClosure<W: Collection>
         (_ with: W, method: LinearRegressionMethod = .ols)  -> ((Self.Iterator.Element) -> Self.Iterator.Element)? where W.Iterator.Element == Self.Iterator.Element {
         guard let (intercept, slope) = self.linearRegression(with) else {
             return nil
@@ -339,12 +339,12 @@ public extension Collection where Self.Iterator.Element: Averagable & Initializa
     }
 
     // Create a closure : slope * x + intercept with x closure parameters
-    public static func linearRegressionClosure(_ intercept: Self.Iterator.Element, slope: Self.Iterator.Element)  -> ((Self.Iterator.Element) -> Self.Iterator.Element) {
+  static func linearRegressionClosure(_ intercept: Self.Iterator.Element, slope: Self.Iterator.Element)  -> ((Self.Iterator.Element) -> Self.Iterator.Element) {
         return { intercept + slope * $0 }
     }
 
     // https://en.wikipedia.org/wiki/Coefficient_of_determination
-    public func coefficientOfDetermination<W: Collection>
+  func coefficientOfDetermination<W: Collection>
         (_ with: W, linearRegressionClosure: ((Self.Iterator.Element) -> Self.Iterator.Element)) -> Self.Iterator.Element where W.Iterator.Element == Self.Iterator.Element {
 
         let withAverage = with.average
@@ -361,7 +361,7 @@ public extension Collection where Self.Iterator.Element: Averagable & Initializa
         return sumSquareModel / sumSquareTotal
     }
 
-    public func coefficientOfDetermination<W: Collection>
+  func coefficientOfDetermination<W: Collection>
         (_ with: W, intercept: Self.Iterator.Element, slope: Self.Iterator.Element) -> Self.Iterator.Element where W.Iterator.Element == Self.Iterator.Element {
         return self.coefficientOfDetermination(with, linearRegressionClosure: Self.linearRegressionClosure(intercept, slope: slope))
     }
@@ -371,7 +371,7 @@ public extension Collection where Self.Iterator.Element: Averagable & Initializa
 // MARK: geometric mean
 public extension Sequence where Self.Element: Addable & Arithmos & Dividable & Multiplicable & ExpressibleByIntegerLiteral {
 
-    public var geometricMean: Self.Element? {
+  var geometricMean: Self.Element? {
         let zero: Self.Element  = 0
         var result = zero
         var n = zero
@@ -394,7 +394,7 @@ public extension Collection where Self.Element: Hashable {
 
     // Most frequent value in data set
     // https://en.wikipedia.org/wiki/Mode_(statistics)
-    public var mode: [Self.Element] {
+  var mode: [Self.Element] {
         var counter = [HashableElement: Int]()
         var mode = [HashableElement]()
         var max = 0

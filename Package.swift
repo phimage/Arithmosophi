@@ -1,3 +1,5 @@
+// swift-tools-version:5.3
+// The swift-tools-version declares the minimum version of Swift required to build this package.
 // Package.swift
 /*
  The MIT License (MIT)
@@ -22,5 +24,22 @@
 import PackageDescription
 
 let package = Package(
-  name: “Aritmosophi”
+  name: "Arithmosophi",
+  platforms: [.iOS(.v9), .watchOS(.v2), .macOS(.v10_10), .tvOS(.v9)],
+  products: [
+    .library(
+      name: "Arithmosophi",
+      targets: ["Arithmosophi"])
+  ],
+  targets: [
+    .target(
+      name: "Arithmosophi",
+      path: "Sources"
+    ),
+    .testTarget(
+      name: "ArithmosophiTests",
+      dependencies: ["Arithmosophi"],
+      path: "Tests"
+    )
+  ]
 )

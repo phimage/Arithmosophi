@@ -215,7 +215,7 @@ private func productOf<S: Sequence> (_ seq: S) -> S.Iterator.Element where S.Ite
 }
 
 public func productOf<S: Sequence> (_ seq: S, initialValue: S.Iterator.Element) -> S.Iterator.Element where S.Iterator.Element: Multiplicable {
-    return seq.reduce (initialValue) { $0 * $1 }
+    return seq.reduce(initialValue) { $0 * $1 }
 }
 
 extension UnsignedArithmeticType where Self: OverflowOperable, Self: ExpressibleByIntegerLiteral {
@@ -278,7 +278,7 @@ extension Sequence where Self.Iterator.Element: Addable & Initializable {
 }
 public extension Sequence where Self.Iterator.Element: Multiplicable & ExpressibleByIntegerLiteral {
 
-    public var product: Self.Iterator.Element {
+  var product: Self.Iterator.Element {
         let initialValue: Self.Iterator.Element  = 1
         return self.reduce(initialValue, *)
     }
