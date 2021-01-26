@@ -27,7 +27,7 @@ SOFTWARE.
 import Foundation
 import Arithmosophi
 
-public final class Box<T> : RawRepresentable where T: Addable, T: Equatable {
+public final class Box<T>: RawRepresentable where T: Addable, T: Equatable {
     public typealias RawValue = T
 
     public var rawValue: T

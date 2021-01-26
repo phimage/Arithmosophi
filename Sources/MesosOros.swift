@@ -96,7 +96,7 @@ public func averageOf<T: Averagable & Initializable> (_ seq: T...) -> T {
 public extension Collection where Self.Iterator.Element: Averagable & Initializable {
 
     // The arithmetic mean
-    public var average: Self.Iterator.Element {
+    var average: Self.Iterator.Element {
         if self.count == 0 {
             return Self.Iterator.Element()
         }
@@ -104,7 +104,7 @@ public extension Collection where Self.Iterator.Element: Averagable & Initializa
         return self.sum / count
     }
 
-    public var arithmeticMean: Self.Iterator.Element {
+    var arithmeticMean: Self.Iterator.Element {
         return average
     }
 
@@ -112,7 +112,7 @@ public extension Collection where Self.Iterator.Element: Averagable & Initializa
 
 public extension Collection where Self.Iterator.Element: Addable & Dividable & Comparable & ExpressibleByIntegerLiteral {
 
-    public var harmonicMean: Self.Iterator.Element? {
+    var harmonicMean: Self.Iterator.Element? {
         if self.count == 0 {
             return 0
         }
@@ -136,7 +136,7 @@ public extension Collection where Self.Iterator.Element: Addable & Dividable & C
 // MARK: median
 public extension Collection where Self.Iterator.Element: Averagable & Comparable & Initializable {
 
-    public var median: Self.Iterator.Element? {
+    var median: Self.Iterator.Element? {
         if self.count == 0 {
             return nil
         }
@@ -154,7 +154,7 @@ public extension Collection where Self.Iterator.Element: Averagable & Comparable
         }
     }
 
-    public var medianLow: Self.Iterator.Element? {
+    var medianLow: Self.Iterator.Element? {
         if self.count == 0 {
             return nil
         }
@@ -169,7 +169,7 @@ public extension Collection where Self.Iterator.Element: Averagable & Comparable
         }
     }
 
-    public var medianHigh: Self.Iterator.Element? {
+    var medianHigh: Self.Iterator.Element? {
         if self.count == 0 {
             return nil
         }

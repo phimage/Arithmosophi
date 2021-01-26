@@ -163,7 +163,7 @@ extension Complex: Additive, Initializable {}
 
 public extension ArithmeticType {
     // self * 1.0i
-    public var i: Complex<Self> {
+    var i: Complex<Self> {
         return Complex(real: Self()/*zero*/, imaginary: self)
     }
 }

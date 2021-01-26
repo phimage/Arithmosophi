@@ -373,25 +373,25 @@ extension CGFloat: Arithmos {
 
 public extension Sequence where Self.Iterator.Element: Arithmos {
 
-    public func abs() -> [Self.Iterator.Element] { return self.map {$0.abs()} }
-    public func floor() -> [Self.Iterator.Element] { return self.map {$0.floor()} }
-    public func ceil() -> [Self.Iterator.Element] { return self.map {$0.ceil()} }
-    public func round() -> [Self.Iterator.Element] { return self.map {$0.round()} }
-    public func fract() -> [Self.Iterator.Element] { return self.map {$0.fract()} }
+    func abs() -> [Self.Iterator.Element] { return self.map {$0.abs()} }
+    func floor() -> [Self.Iterator.Element] { return self.map {$0.floor()} }
+    func ceil() -> [Self.Iterator.Element] { return self.map {$0.ceil()} }
+    func round() -> [Self.Iterator.Element] { return self.map {$0.round()} }
+    func fract() -> [Self.Iterator.Element] { return self.map {$0.fract()} }
 
-    public func sqrt() -> [Self.Iterator.Element] { return self.map {$0.sqrt()} }
-    public func pow(_ value: Self.Iterator.Element) -> [Self.Iterator.Element] { return self.map {$0.pow(value)} }
+    func sqrt() -> [Self.Iterator.Element] { return self.map {$0.sqrt()} }
+    func pow(_ value: Self.Iterator.Element) -> [Self.Iterator.Element] { return self.map {$0.pow(value)} }
 
-    public func exp() -> [Self.Iterator.Element] { return self.map {$0.exp()} }
-    public func log() -> [Self.Iterator.Element] { return self.map {$0.log()} }
+    func exp() -> [Self.Iterator.Element] { return self.map {$0.exp()} }
+    func log() -> [Self.Iterator.Element] { return self.map {$0.log()} }
 
-    public func cos() -> [Self.Iterator.Element] { return self.map {$0.cos()} }
-    public func sin() -> [Self.Iterator.Element] { return self.map {$0.sin()} }
-    public func hypot(_ value: Self.Iterator.Element) -> [Self.Iterator.Element] { return self.map {$0.hypot(value)} }
-    public func atan2(_ value: Self.Iterator.Element) -> [Self.Iterator.Element] { return self.map {$0.atan2(value)} }
+    func cos() -> [Self.Iterator.Element] { return self.map {$0.cos()} }
+    func sin() -> [Self.Iterator.Element] { return self.map {$0.sin()} }
+    func hypot(_ value: Self.Iterator.Element) -> [Self.Iterator.Element] { return self.map {$0.hypot(value)} }
+    func atan2(_ value: Self.Iterator.Element) -> [Self.Iterator.Element] { return self.map {$0.atan2(value)} }
 
-    public func clamp(_ min: Self.Iterator.Element, _ max: Self.Iterator.Element) -> [Self.Iterator.Element] { return self.map {$0.clamp(min, max)} }
-    public func clamp(_ range: ClosedRange<Self.Iterator.Element>) -> [Self.Iterator.Element] { return self.map {$0.clamp(range)} }
+    func clamp(_ min: Self.Iterator.Element, _ max: Self.Iterator.Element) -> [Self.Iterator.Element] { return self.map {$0.clamp(min, max)} }
+    func clamp(_ range: ClosedRange<Self.Iterator.Element>) -> [Self.Iterator.Element] { return self.map {$0.clamp(range)} }
 }
 
 // Operator

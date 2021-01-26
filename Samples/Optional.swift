@@ -28,7 +28,7 @@ SOFTWARE.
 import Foundation
 import Arithmosophi
 
-public enum OptionalEnum<T: Initializable> : LogicalOperationsType, Equatable, Initializable {
+public enum OptionalEnum<T: Initializable>: LogicalOperationsType, Equatable, Initializable {
     case none
     case some(T)
 

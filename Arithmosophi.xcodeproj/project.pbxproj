@@ -56,6 +56,8 @@
 			isa = PBXBuildRule;
 			compilerSpec = com.apple.compilers.proxy.script;
 			fileType = pattern.proxy;
+			inputFiles = (
+			);
 			isEditable = 1;
 			outputFiles = (
 			);
@@ -65,6 +67,8 @@
 			isa = PBXBuildRule;
 			compilerSpec = com.apple.compilers.proxy.script;
 			fileType = pattern.proxy;
+			inputFiles = (
+			);
 			isEditable = 1;
 			outputFiles = (
 			);
@@ -106,7 +110,6 @@
 		C47004921B30560700EB0C80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C47004931B30560700EB0C80 /* ArithmosophiOSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArithmosophiOSX.h; sourceTree = "<group>"; };
 		C47004991B30560700EB0C80 /* ArithmosophiOSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArithmosophiOSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C470049F1B30560700EB0C80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C47004A01B30560700EB0C80 /* ArithmosophiOSXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArithmosophiOSXTests.swift; sourceTree = "<group>"; };
 		C496F15B1D49648D008A2637 /* Sigma.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sigma.swift; sourceTree = "<group>"; };
 		C4A151901B383EDE00C81C91 /* Parity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parity.swift; sourceTree = "<group>"; };
@@ -256,7 +259,6 @@
 		C470049D1B30560700EB0C80 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				C470049F1B30560700EB0C80 /* Info.plist */,
 				C47004A01B30560700EB0C80 /* ArithmosophiOSXTests.swift */,
 			);
 			path = Tests;
@@ -464,37 +466,43 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = phimage;
 				TargetAttributes = {
 					C43F37AD1C15C10B00C0915D = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = GGU39CDBL2;
+						LastSwiftMigration = 1230;
 					};
 					C43F37BA1C15C12A00C0915D = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = GGU39CDBL2;
+						LastSwiftMigration = 1230;
 					};
 					C47004571B304CE200EB0C80 = {
 						CreatedOnToolsVersion = 6.3.2;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1230;
 					};
 					C470048E1B30560700EB0C80 = {
 						CreatedOnToolsVersion = 6.3.2;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 1230;
 					};
 					C47004981B30560700EB0C80 = {
 						CreatedOnToolsVersion = 6.3.2;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 1230;
+					};
+					C4B1FE731D8B45E200B61C97 = {
+						LastSwiftMigration = 1230;
 					};
 				};
 			};
 			buildConfigurationList = C47004521B304CE200EB0C80 /* Build configuration list for PBXProject "Arithmosophi" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = C470044E1B304CE200EB0C80;
 			productRefGroup = C47004591B304CE200EB0C80 /* Products */;
@@ -707,7 +715,7 @@
 				PRODUCT_NAME = Arithmosophi;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -729,7 +737,7 @@
 				PRODUCT_NAME = Arithmosophi;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -751,7 +759,7 @@
 				PRODUCT_NAME = Arithmosophi;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -772,7 +780,7 @@
 				PRODUCT_NAME = Arithmosophi;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -800,6 +808,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -859,6 +868,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -906,7 +916,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -926,7 +936,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -952,7 +962,7 @@
 				PRODUCT_NAME = Arithmosophi;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -973,7 +983,7 @@
 				PRODUCT_NAME = Arithmosophi;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -990,13 +1000,12 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "tv.phimage.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1008,13 +1017,12 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "tv.phimage.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1034,7 +1042,7 @@
 				PRODUCT_NAME = ArithmosophiSample;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1053,7 +1061,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "tv.phimage.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = ArithmosophiSample;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
